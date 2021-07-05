@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ServeNep</string>
+    <string name="customer">Customer</string>
+    <string name="tasker">Tasker</string>
+    <string name="create_account">Create Account</string>
+    <string name="signup_to_create_account">Signup to create account</string>
+    <string name="servenep">ServeNep</string>
+    <string name="fullname">FullName</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="sign_up">SIGN-UP</string>
+    <string name="already_have_account">Already have account?</string>
 </resources>

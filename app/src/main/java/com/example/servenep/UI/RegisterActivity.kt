@@ -1,4 +1,4 @@
-package com.example.servenep
+package com.example.servenep.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
-import org.w3c.dom.Text
+import com.example.servenep.R
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var etfullname: EditText
