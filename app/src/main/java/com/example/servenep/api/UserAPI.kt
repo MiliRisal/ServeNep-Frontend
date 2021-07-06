@@ -20,7 +20,7 @@ interface UserAPI {
     //for User login
     @FormUrlEncoded
     @POST("user/login")
-    suspend fun userLogin(
+    suspend fun verifyUser(
         @Field("email") email: ContactsContract.CommonDataKinds.Email,
         @Field("password") password: String
     ):Response<LoginResponse>
