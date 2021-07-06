@@ -32,7 +32,7 @@
         android:textColor="#686de0"
         android:textStyle="bold"
         android:textSize="30sp"
-        android:layout_marginTop="10dp"
+
         android:layout_marginLeft="129dp"/>
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etfullname"
@@ -49,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_baseline_account_circle_24"
         android:background="@drawable/edittext"
         android:textColorHint="#000"
         android:padding="8dp"
@@ -63,7 +64,7 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-        android:layout_marginTop="8dp"
+
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etemail"
@@ -71,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:background="@drawable/edittext"
         android:textColorHint="#000"
         android:padding="8dp"
@@ -83,7 +85,7 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-        android:layout_marginTop="8dp"
+
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etaddress"
@@ -92,7 +94,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/edittext"
-
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
 
         android:textColorHint="#000"
         android:padding="8dp"
@@ -105,7 +107,7 @@
         android:textStyle="normal"
         android:textColor="#9b59b6"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etphone"
@@ -114,7 +116,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/edittext"
-
+        android:drawableStart="@drawable/ic_baseline_local_phone_24"
 
         android:textColorHint="#000"
         android:padding="8dp"
@@ -127,7 +129,7 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etpassword"
@@ -138,11 +140,20 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/edittext"
 
-
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:textColorHint="#000"
         android:padding="8dp"
         android:textSize="20sp"
         android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Type"
+        android:textColor="#9b59b6"
+        android:textStyle="normal"
+        android:textSize="20sp"
+
+        android:layout_marginLeft="20dp"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
