@@ -1,6 +1,5 @@
 package com.example.servenep.repository
 
-import android.provider.ContactsContract
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.api.UserAPI
 import com.example.servenep.api.serveNepAPIRequest
@@ -20,7 +19,7 @@ class UserRepository
     }
 
     //for user login
-    suspend fun userLogin(email: ContactsContract.CommonDataKinds.Email, password: String): LoginResponse {
+    suspend fun userLogin(email: String, password: String): LoginResponse {
         return apiRequest {
             userAPI.verifyUser(email,password)
         }

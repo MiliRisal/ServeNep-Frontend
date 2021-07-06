@@ -1,5 +1,6 @@
 package com.example.servenep.UI
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -88,7 +89,15 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                                 this@RegisterActivity,
                                 "Register Successfully!!", Toast.LENGTH_SHORT
                             ).show()
+
                         }
+                        startActivity(
+                            Intent(
+                                this@RegisterActivity,
+                                LoginActivity::class.java
+                            )
+                        )
+                        finish()
                     }
                 } catch (ex: Exception) {
                     withContext(Dispatchers.Main) {

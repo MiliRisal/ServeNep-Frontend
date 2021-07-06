@@ -19,9 +19,9 @@ interface UserAPI {
 
     //for User login
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("/user/login")
     suspend fun verifyUser(
-        @Field("email") email: ContactsContract.CommonDataKinds.Email,
+        @Field("email") email: String,
         @Field("password") password: String
     ):Response<LoginResponse>
 }
