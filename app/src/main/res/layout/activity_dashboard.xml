@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:id="@+id/Dashboard"
     android:layout_height="match_parent"
     tools:context=".UI.DashboardActivity">
 
@@ -18,8 +19,6 @@
             android:src="@drawable/ic_baseline_menu_24"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"/>
-
-
 
         <EditText
             android:layout_width="200dp"
