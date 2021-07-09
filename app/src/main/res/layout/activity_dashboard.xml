@@ -40,18 +40,21 @@
         android:layout_height="60dp">
 
         <ImageView
+            android:id="@+id/homeicon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
             android:src="@drawable/ic_baseline_home_24"/>
         <ImageView
+            android:id="@+id/profileicon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="105dp"
             android:layout_marginTop="5dp"
             android:src="@drawable/account"/>
         <ImageView
+            android:id="@+id/toolsicon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="105dp"

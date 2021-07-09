@@ -14,17 +14,15 @@ class UserManagementTest {
 
     // .....................USERS Login and Register Testing..................//
 
-//    @Test
-//
-//    fun checkLogin() = runBlocking {
-//        UserRepository = UserRepository()
-//        val response= UserRepository!!.loginUser("kishan", "kishan")
-//        val ExpectedResult=true
-//        val ActualResult=response.success
-//        Assert.assertEquals(ExpectedResult, ActualResult)
-//    }
+    @Test
 
-
+    fun checkLogin() = runBlocking {
+        UserRepository = UserRepository()
+        val response= UserRepository!!.userLogin("gautamkiran38@gmail.com", "Happy@#9845")
+        val ExpectedResult=true
+        val ActualResult=response.success
+        Assert.assertEquals(ExpectedResult, ActualResult)
+    }
 
 
     @Test
