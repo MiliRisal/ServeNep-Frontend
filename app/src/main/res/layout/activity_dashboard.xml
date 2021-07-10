@@ -32,7 +32,23 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="570dp"></LinearLayout>
+        android:layout_height="500dp">
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridview"
+            android:verticalSpacing="15dp"
+            android:horizontalSpacing="15dp"
+            android:columnWidth="150dp"
+            android:numColumns="auto_fit"
+            >
+
+
+
+
+        </GridView>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:background="@drawable/button"
