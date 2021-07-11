@@ -3,6 +3,7 @@ package com.example.servenep.UI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.*
 import com.example.servenep.R
@@ -23,7 +24,10 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var rduser: RadioButton
     private lateinit var rdtasker: RadioButton
     private lateinit var btnsignup: Button
-    private lateinit var haveaccount: TextView
+    private lateinit var tvSignin: TextView
+
+    val MIN_PASSWORD_LENGTH = 6
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -36,14 +40,23 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         rdtasker=findViewById(R.id.rdtasker)
         etpassword=findViewById(R.id.etpassword)
         btnsignup=findViewById(R.id.btnsignup)
-        haveaccount=findViewById(R.id.haveaccount)
+        tvSignin=findViewById(R.id.tvSignin)
 
         btnsignup.setOnClickListener(this)
+        tvSignin.setOnClickListener(this)
     }
     override fun onClick(v: View?) {
         when (v?.id){
             R.id.btnsignup->{
                 insertUser()
+            }
+            R.id.tvSignin->{
+                val intent= Intent(
+                    this,
+                    LoginActivity::class.java
+                )
+                startActivity(intent)
+                Toast.makeText(this,"Welcome to login page !!",Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -65,11 +78,26 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
 
-//        if (password != confirmPassword) {
-//            etpassword.error = "Password does not match!!"
-//            etpassword.requestFocus()
-//            return
-//        } else {
+        if (fullName == "") {
+            etfullname.error = "Fill up !!"
+            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            etemail.error = "Please enter valid email address !!"
+            Toast.makeText(this, "Please enter valid email address !!", Toast.LENGTH_SHORT).show()
+        }
+        if (phone == "") {
+            etphone.error = "Fill up !!"
+            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
+        }
+        if (address == "") {
+            etaddress.error = "Fill up !!"
+            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
+        }
+        if (password.length < MIN_PASSWORD_LENGTH) {
+            etpassword.error = "Too weak! At least 6 characters required!"
+        } else {
+            //APi starts
             val users = Users(
                 fullName = fullName,
                 email = email,
@@ -90,17 +118,20 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                                 "Register Successfully!!", Toast.LENGTH_SHORT
                             ).show()
 
-                        }
-                        startActivity(
-                            Intent(
-                                this@RegisterActivity,
-                                LoginActivity::class.java
+
+                            startActivity(
+                                Intent(
+                                    this@RegisterActivity,
+                                    LoginActivity::class.java
+                                )
                             )
-                        )
-                        finish()
+                        }
                     }
                 } catch (ex: Exception) {
                     withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@RegisterActivity, "error" + ex.toString(), Toast.LENGTH_SHORT
+                        ).show()
                         /*val snack =
                             Snackbar.make(
                                 linearLayout,
@@ -111,8 +142,6 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                     }
                 }
             }
-        //}
+        }
     }
-
-
 }

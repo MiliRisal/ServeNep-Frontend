@@ -48,14 +48,14 @@
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etemail"
-        android:layout_width="320dp"
-        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:layout_width="match_parent"
+        android:inputType="textEmailAddress"
+        android:drawableEnd="@drawable/ic_baseline_email_24"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edittext"
-
-
+        android:layout_marginRight="20dp"
         android:textColorHint="#000"
         android:padding="8dp"
         android:textSize="20dp"
@@ -72,40 +72,57 @@
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etpassword"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-
+        android:drawableEnd="@drawable/ic_baseline_lock_24"
+        android:layout_marginRight="20dp"
         android:background="@drawable/edittext"
-
         android:layout_marginTop="10dp"
         android:textColorHint="#000"
+        android:inputType="textPassword"
         android:padding="8dp"
         android:textSize="20dp"
         android:textStyle="bold"/>
-
-    <Button
-        android:id="@+id/btnlogin"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:background="@drawable/button"
-        android:padding="10dp"
-        android:text="Log-in"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
     <TextView
         android:id="@+id/forgetpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Froget your password?"
+        android:text="Forgot password?"
         android:textStyle="normal"
         android:textColor="#4834d4"
         android:textSize="19dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="100dp"/>
+        android:layout_marginTop="5dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="20dp"
+        />
 
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:text="Sign In"
+        android:background="@drawable/button" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New at ServeNep? "
+            android:textSize="17dp"/>
+        <TextView
+            android:id="@+id/tvSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Sign-up"
+            android:textColor="#4834d4"
+            android:textSize="19dp"/>
+    </LinearLayout>
 
 </LinearLayout>
