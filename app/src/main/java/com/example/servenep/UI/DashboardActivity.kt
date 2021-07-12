@@ -55,6 +55,10 @@ class DashboardActivity : AppCompatActivity() {
         arrayList.add(Category(R.drawable.electric,"Electrician"))
         arrayList.add(Category(R.drawable.cleaner,"sweeper"))
         arrayList.add(Category(R.drawable.cleaner,"carpenter"))
+        arrayList.add(Category(R.drawable.delivery,"Delivery"))
+        arrayList.add(Category(R.drawable.carpenter,"carpenter"))
+        arrayList.add(Category(R.drawable.plumber,"Plumber"))
+        arrayList.add(Category(R.drawable.mechanic,"Mechanic"))
         return arrayList
     }
 }
