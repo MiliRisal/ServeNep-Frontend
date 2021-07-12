@@ -22,9 +22,7 @@ class LoginTest {
     val testRule =ActivityScenarioRule(LoginActivity::class.java)
 
     @Test
-
-    fun testLoginUI()
-    {
+    fun testLoginUI() {
         Espresso.onView(ViewMatchers.withId(R.id.etemail))
             .perform(ViewActions.typeText("gautamkiran38@gmail.com")).perform(ViewActions.closeSoftKeyboard());
 
@@ -38,10 +36,26 @@ class LoginTest {
         Thread.sleep(3000)
 
 
-        Espresso.onView(ViewMatchers.withId(R.id.main))
+        Espresso.onView(ViewMatchers.withId(R.id.MainPage))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+
+//            Espresso.onView(withId(R.id.etemail))
+//                .perform(ViewActions.typeText("gautamkiran38@gmail.com"))
+//
+//            Espresso.onView(withId(R.id.etpassword))
+//                .perform(ViewActions.typeText("Happy@#9845"))
+//
+//            Espresso.closeSoftKeyboard()
+//
+//            Espresso.onView(withId(R.id.btnlogin))
+//                .perform(ViewActions.click())
+//
+//            Thread.sleep(2000)
+//
+//            Espresso.onView(withId(R.id.MainPage))
+//                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        }
 
 
     }
 
-}
