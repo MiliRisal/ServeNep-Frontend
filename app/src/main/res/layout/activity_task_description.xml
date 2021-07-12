@@ -110,7 +110,7 @@
             android:layout_gravity="center">
 
             <RadioButton
-                android:id="@+id/minhour"
+                android:id="@+id/rbminhour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext"
@@ -122,7 +122,7 @@
                 android:textSize="17sp"
                 android:textStyle="bold" />
             <RadioButton
-                android:id="@+id/midhour"
+                android:id="@+id/rbmidhour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext"
@@ -135,7 +135,7 @@
                 android:textStyle="bold" />
 
             <RadioButton
-                android:id="@+id/maxhour"
+                android:id="@+id/rbmaxhour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
