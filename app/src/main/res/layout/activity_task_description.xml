@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.TaskDescriptionActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/background"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_menu_24"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:hint="Create task description"
+                android:background="@drawable/searchbar"
+                android:textSize="20dp"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title:"
+            android:textColor="#9b59b6"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="25dp"/>
+        <EditText
+            android:id="@+id/ettitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:drawableEnd="@drawable/title"
+            android:hint="Eg; Cleaning backyard"
+            android:background="@drawable/edittext"
+            android:padding="8dp"
+            android:textSize="20sp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Description:"
+            android:textColor="#9b59b6"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+
+        <EditText
+            android:id="@+id/ettaskdes"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="4"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            android:hint="Provide summary of the task. Be sure to include any specifications, tools and equipments."
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext"
+            android:padding="8dp"
+            android:textSize="18dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estimated hour:"
+            android:textColor="#9b59b6"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <RadioButton
+                android:id="@+id/minhour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext"
+                android:textColor="#9b59b6"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:paddingRight="10dp"
+                android:text="1-2 hours"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+            <RadioButton
+                android:id="@+id/midhour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext"
+                android:textColor="#9b59b6"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingRight="10dp"
+                android:text="2-3 hours"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/maxhour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="25dp"
+                android:textColor="#9b59b6"
+                android:background="@drawable/edittext"
+                android:text="3 - more"
+                android:paddingRight="10dp"
+                android:layout_marginTop="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price:"
+            android:textStyle="normal"
+            android:textColor="#9b59b6"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+        <EditText
+            android:id="@+id/etprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext"
+            android:drawableEnd="@drawable/price"
+            android:layout_marginRight="25dp"
+            android:textColorHint="#000"
+            android:padding="8dp"
+            android:textSize="20sp"/>
+
+
+        <Button
+            android:id="@+id/btnsubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:padding="10dp"
+            android:text="Submit"
+            android:drawableEnd="@drawable/next"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginTop="30dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/background"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="37dp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+            <ImageView
+                android:id="@+id/homeicon"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_baseline_home_24"
+                android:layout_width="match_parent" />
+
+            <ImageView
+                android:id="@+id/profileicon"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/account"
+                android:layout_width="match_parent" />
+            <ImageView
+                android:id="@+id/toolsicon"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_baseline_construction_24"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
