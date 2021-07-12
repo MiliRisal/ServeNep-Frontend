@@ -3,17 +3,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="12dp">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/icons"
             android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="30dp"
+            android:layout_height="200dp"
+            android:layout_margin="15dp"
             android:src="@drawable/cleaner">
 
         </ImageView>
@@ -22,11 +22,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cleaner"
-            android:textColor="@color/black"
-            android:layout_marginTop="150dp"
+            android:textSize="25dp"
+            android:textColor="#4834d4"
+            android:layout_marginTop="180dp"
             android:gravity="center"
             android:textStyle="bold"
-            android:layout_marginLeft="70dp"/>
+            android:layout_marginLeft="40dp"/>
 
     </RelativeLayout>
 

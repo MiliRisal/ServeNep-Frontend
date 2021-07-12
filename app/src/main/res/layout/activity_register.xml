@@ -19,7 +19,7 @@
         android:textColor="#686de0"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"/>
     <TextView
         android:layout_width="wrap_content"
@@ -37,8 +37,8 @@
         android:textColor="#686de0"
         android:textStyle="bold"
         android:textSize="30sp"
-
-        android:layout_marginLeft="129dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,20 +46,21 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"/>
     <EditText
         android:id="@+id/etfullname"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/ic_baseline_account_circle_24"
+        android:drawableEnd="@drawable/ic_baseline_account_circle_24"
         android:background="@drawable/edittext"
-        android:textColorHint="#000"
         android:padding="8dp"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        />
 
 
     <TextView
@@ -69,20 +70,21 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"/>
     <EditText
         android:id="@+id/etemail"
-        android:layout_width="320dp"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawableEnd="@drawable/ic_baseline_email_24"
         android:background="@drawable/edittext"
-        android:textColorHint="#000"
         android:padding="8dp"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,17 +92,17 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"/>
     <EditText
         android:id="@+id/etaddress"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/edittext"
-        android:drawableStart="@drawable/ic_baseline_location_on_24"
-
+        android:drawableEnd="@drawable/ic_baseline_location_on_24"
         android:textColorHint="#000"
         android:padding="8dp"
         android:textSize="20sp"
@@ -112,17 +114,17 @@
         android:textStyle="normal"
         android:textColor="#9b59b6"
         android:textSize="20sp"
-
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"/>
     <EditText
         android:id="@+id/etphone"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/edittext"
-        android:drawableStart="@drawable/ic_baseline_local_phone_24"
-
+        android:drawableEnd="@drawable/ic_baseline_local_phone_24"
+        android:layout_marginRight="25dp"
         android:textColorHint="#000"
         android:padding="8dp"
         android:textSize="20sp"
@@ -134,75 +136,101 @@
         android:textColor="#9b59b6"
         android:textStyle="normal"
         android:textSize="20sp"
-
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"/>
     <EditText
         android:id="@+id/etpassword"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/edittext"
-
-        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:layout_marginRight="25dp"
+        android:drawableEnd="@drawable/ic_baseline_lock_24"
         android:textColorHint="#000"
         android:padding="8dp"
         android:textSize="20sp"
         android:textStyle="bold"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User Type"
-        android:textColor="#9b59b6"
-        android:textStyle="normal"
-        android:textSize="20sp"
 
-        android:layout_marginLeft="20dp"/>
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Type:"
+            android:textColor="#9b59b6"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"/>
 
         <RadioButton
             android:id="@+id/rduser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext"
             android:textColor="#9b59b6"
-            android:layout_marginLeft="29dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:paddingRight="20dp"
             android:text="@string/customer"
-            android:textSize="15sp"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/rdtasker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="29dp"
+            android:layout_marginLeft="10dp"
             android:textColor="#9b59b6"
+            android:background="@drawable/edittext"
             android:text="@string/tasker"
-            android:textSize="15sp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="17sp"
             android:textStyle="bold" />
     </RadioGroup>
+
     <Button
         android:id="@+id/btnsignup"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:background="@drawable/button"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:padding="10dp"
         android:text="@string/sign_up"
         android:textColor="@color/white"
-        android:textSize="20sp" />
-    <TextView
-        android:id="@+id/haveaccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/already_have_account"
-        android:textStyle="normal"
-        android:textColor="#4834d4"
-        android:textSize="19sp"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="100dp"/>
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? "
+                android:textSize="17dp"/>
+            <TextView
+                android:id="@+id/tvSignin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Sign-in"
+                android:textColor="#4834d4"
+                android:textSize="19dp"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>
