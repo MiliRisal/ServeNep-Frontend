@@ -38,9 +38,8 @@ class LoginTest {
         Thread.sleep(3000)
 
 
-        Espresso.onView(ViewMatchers.withId(R.id.btnlogin))
+        Espresso.onView(ViewMatchers.withId(R.id.main))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-
 
 
     }
