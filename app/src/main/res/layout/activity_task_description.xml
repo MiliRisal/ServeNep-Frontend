@@ -103,6 +103,13 @@
             android:layout_marginTop="25dp"
             android:layout_marginLeft="25dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_weight="3">
+
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,9 +125,10 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="5dp"
                 android:paddingRight="10dp"
-                android:text="1-2 hours"
+                android:text="1-2 hrs"
                 android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_weight="1"/>
             <RadioButton
                 android:id="@+id/rbmidhour"
                 android:layout_width="wrap_content"
@@ -130,9 +138,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:paddingRight="10dp"
-                android:text="2-3 hours"
+                android:text="2-3 hrs"
                 android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_weight="1"/>
 
             <RadioButton
                 android:id="@+id/rbmaxhour"
@@ -142,12 +151,14 @@
                 android:layout_marginRight="25dp"
                 android:textColor="#9b59b6"
                 android:background="@drawable/edittext"
-                android:text="3 - more"
+                android:text="3-more"
                 android:paddingRight="10dp"
                 android:layout_marginTop="5dp"
                 android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_weight="1"/>
         </RadioGroup>
+    </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"

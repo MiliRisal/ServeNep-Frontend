@@ -1,23 +1,29 @@
 package com.example.servenep
 
 import android.content.Context
+import android.content.Intent
+import android.os.Parcel
+import android.os.Parcelable
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 
-class CategoryAdapter(var context: Context, var arrayList: ArrayList<Category>):BaseAdapter() {
+class CategoryAdapter(
+    var context: Context,
+    var arrayList: ArrayList<Category>
+):BaseAdapter() {
+
     override fun getCount(): Int {
-       return arrayList.size
+        return arrayList.size
     }
 
     override fun getItem(position: Int): Any {
-       return arrayList.get(position)
+        return arrayList.get(position)
     }
 
     override fun getItemId(position: Int): Long {
-       return position.toLong()
+        return position.toLong()
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -31,4 +37,5 @@ class CategoryAdapter(var context: Context, var arrayList: ArrayList<Category>):
 
         return view
     }
+
 }
