@@ -23,6 +23,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etpassword: EditText
     private lateinit var btnlogin: Button
     private lateinit var forgetpassword: TextView
+    private lateinit var tvSignup: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +32,25 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         etpassword=findViewById(R.id.etpassword)
         btnlogin=findViewById(R.id.btnlogin)
         forgetpassword=findViewById(R.id.forgetpassword)
+        tvSignup=findViewById(R.id.tvSignup)
 
         btnlogin.setOnClickListener(this)
+        tvSignup.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id){
             R.id.btnlogin->{
                 loginUser()
+                validation()
+            }
+            R.id.tvSignup->{
+                val intent= Intent(
+                    this,
+                    RegisterActivity::class.java
+                )
+                startActivity(intent)
+                Toast.makeText(this,"Welcome to Registration page !!",Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -56,7 +68,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     startActivity(
                         Intent(
                             this@LoginActivity,
-                            MainActivity::class.java
+                            DashboardActivity::class.java
                         )
                     )
                     finish()
@@ -65,7 +77,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@LoginActivity,
-                            "Login Successfully!!", Toast.LENGTH_SHORT
+                            "Login Unsucessful!!", Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
@@ -80,4 +92,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+    private fun validation():Boolean {
+        if(etemail.text.toString()==""){
+            etemail.error="Please enter your username"
+        }
+        if(etpassword.text.toString()==""){
+            etpassword.error="Please enter your password"
+        }
+        return true
+    }
+
 }

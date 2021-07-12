@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UI.DashboardActivity">
+        <activity android:name=".UI.TaskDescriptionActivity"></activity>
+        <activity android:name=".UI.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.LoginActivity" />
-        <activity android:name=".UI.RegisterActivity">
-
-        </activity>
+        <activity android:name=".UI.DashboardActivity"></activity>
         <activity android:name=".UI.MainActivity" />
     </application>
 
