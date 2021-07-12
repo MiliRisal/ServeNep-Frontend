@@ -179,6 +179,7 @@
             android:drawableEnd="@drawable/price"
             android:layout_marginRight="25dp"
             android:textColorHint="#000"
+            android:inputType="number"
             android:padding="8dp"
             android:textSize="20sp"/>
 

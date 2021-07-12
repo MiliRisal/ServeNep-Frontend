@@ -1,13 +1,19 @@
 package com.example.servenep.UI
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.TextView
+import android.widget.*
 import com.example.servenep.R
+import com.example.servenep.entities.Description
+import com.example.servenep.entities.Users
+import com.example.servenep.repository.DescriptionRepository
+import com.example.servenep.repository.UserRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -37,6 +43,56 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        when(v?.id){
+            R.id.btnsubmit -> {
+                insertDescription()
+            }
+        }
+    }
+
+    private fun insertDescription() {
+        val title = ettile.text.toString().trim()
+        val taskDescription = ettaskdes.text.toString().trim()
+        val price = etprice.text.toString().trim()
+        var estimatedTime = ""
+        when {
+            rbminhour.isChecked -> {
+                estimatedTime = "1-2 hrs"
+            }
+            rbmidhour.isChecked -> {
+                estimatedTime = "2-3 hrs"
+            }
+            rbmaxhour.isChecked -> {
+                estimatedTime = "3-more"
+            }
+        }
+        val description = Description(
+            title = title,
+            taskDescription = taskDescription,
+            price = price,
+            estimatedTime = estimatedTime
+        )
+        CoroutineScope(Dispatchers.IO).launch {
+            // for API
+            try {
+                val descriptionRepository = DescriptionRepository()
+                val response = descriptionRepository.descriptionInsert(description)
+                if (response.success == true) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@TaskDescriptionActivity,
+                            "Insert Successfully!!", Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+            } catch (ex: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(
+                        this@TaskDescriptionActivity, "error" + ex.toString(), Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+
     }
 }
