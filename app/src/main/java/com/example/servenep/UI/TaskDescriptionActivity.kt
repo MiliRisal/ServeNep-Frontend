@@ -81,7 +81,7 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                     withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@TaskDescriptionActivity,
-                            "Insert Successfully!!", Toast.LENGTH_SHORT
+                            "Inserted Successfully!!", Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
