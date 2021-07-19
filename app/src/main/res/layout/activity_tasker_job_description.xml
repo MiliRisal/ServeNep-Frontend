@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Adapter.TaskerAdapter">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/background"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_menu_24"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:hint="Add specifications"
+                android:background="@drawable/searchbar"
+                android:textSize="20dp"
+                android:layout_marginRight="30dp"
+                android:textAlignment="center"
+                android:textStyle="bold">
+            </TextView>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#9b59b6"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="25dp"/>
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:scrollbars="vertical"
+            android:hint="Enter your Name"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext"
+            android:textSize="18dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose your Category:"
+            android:textColor="#9b59b6"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+        <Spinner
+            android:id="@+id/spTaskerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:drawableEnd="@drawable/title"
+            android:hint="Eg; Cleaning backyard"
+            android:background="@drawable/edittext"
+            android:padding="8dp"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Charge Per Hour:"
+            android:textColor="#9b59b6"
+            android:textStyle="normal"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+
+        <EditText
+            android:id="@+id/etRate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:scrollbars="vertical"
+            android:hint="Eg; Rs.500 "
+            android:inputType="number"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext"
+            android:textSize="18dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Area:"
+            android:textStyle="normal"
+            android:textColor="#9b59b6"
+            android:textSize="20sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"/>
+        <EditText
+            android:id="@+id/etArea"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="3"
+            android:gravity="top"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            android:hint="Sagarmatha colony, kadaghari kathmandu"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edittext"
+            android:padding="8dp"
+            android:textSize="18dp"/>
+
+
+        <Button
+            android:id="@+id/btnTaskerSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:padding="10dp"
+            android:text="Submit"
+            android:drawableEnd="@drawable/next"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginTop="70dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/background"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="37dp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+            <ImageView
+                android:id="@+id/homeicon"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:src="@drawable/ic_baseline_home_24"
+                android:layout_width="match_parent" />
+
+            <ImageView
+                android:id="@+id/profileicon"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/account"
+                android:layout_width="match_parent" />
+            <ImageView
+                android:id="@+id/toolsicon"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_baseline_construction_24"
+                android:layout_width="match_parent" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

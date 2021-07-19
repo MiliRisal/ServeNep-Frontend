@@ -1,8 +1,10 @@
 package com.example.servenep
 
 import com.example.servenep.entities.Description
+import com.example.servenep.entities.TaskerSpecification
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
+import com.example.servenep.repository.SpecificationRepository
 import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -13,6 +15,7 @@ class UserManagementTest {
 
     private var UserRepository: UserRepository? = null
     private var DescriptionRepository: DescriptionRepository? = null
+    private var SpecificationRepository: SpecificationRepository?=null
 
 
     // .....................USERS Login and Register Testing..................//
@@ -33,13 +36,13 @@ class UserManagementTest {
     fun checkRegister() = runBlocking {
 
         val users = Users(
-            fullName = "Kiran Gautam", email = "gautamkiran38@gmail.com",
-            phone = "9845969973", address = "bharatpur", password = "Happy@#9845", role = "Customer"
+            fullName = "jitendra sah", email = "sahjitendra731@gmail.com",
+            phone = "9807278869", address = "birjung", password = "jetu", role = "Customer"
         )
 
         UserRepository = UserRepository()
         val response = UserRepository!!.userRegister(users)
-        val ExpectedResult = true
+        val ExpectedResult = false
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
 
@@ -68,8 +71,25 @@ class UserManagementTest {
 
     }
 
+    @Test
+
+    fun checkspecification() = runBlocking {
+
+        val TaskerSpecification = TaskerSpecification(
+            name = "Ramesh",
+            category = "Electrician",
+            price = 5000,
+            area = "baneshor height"
+
+        )
+
+        SpecificationRepository= SpecificationRepository()
+        val response = SpecificationRepository!!. specification(TaskerSpecification)
+        val ExpectedResult = true
+        val ActualResult = response.success
+        Assert.assertEquals(ExpectedResult, ActualResult)
 
 
-
+    }
 
 }

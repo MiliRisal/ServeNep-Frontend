@@ -9,7 +9,7 @@ import retrofit2.http.POST
 interface DescriptionAPI {
 
     //for Inserting Task DescriptionRepository
-    @POST("/description/insert")
+    @POST("description/insert")
     suspend fun descriptionInsert(
         @Body description: Description
     ): Response<DescriptionResponse>

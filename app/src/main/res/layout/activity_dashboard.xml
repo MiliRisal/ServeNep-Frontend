@@ -23,16 +23,18 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_menu_24"
                 android:layout_margin="20dp"/>
-            <EditText
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:padding="10dp"
                 android:layout_margin="20dp"
                 android:hint="Looking For? ; cleaner..."
                 android:background="@drawable/searchbar"
                 android:drawableStart="@drawable/ic_baseline_search_24">
-            </EditText>
+            </Spinner>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -46,33 +48,39 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:background="@drawable/background"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="3">
-            <ImageView
-                android:id="@+id/homeicon"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:src="@drawable/ic_baseline_home_24"
-                android:layout_width="match_parent" />
-            <ImageView
-                android:id="@+id/profileicon"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/account"
-                android:layout_width="match_parent" />
-            <ImageView
-                android:id="@+id/toolsicon"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_baseline_construction_24"
-                android:layout_width="match_parent" />
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/background"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/homeicon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_home_24" />
+
+                <ImageView
+                    android:id="@+id/profileicon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/account" />
+
+                <ImageView
+                    android:id="@+id/toolsicon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_construction_24" />
+            </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

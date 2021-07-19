@@ -3,6 +3,7 @@ package com.example.servenep.UI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.*
 import com.example.servenep.R
@@ -66,30 +67,53 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 estimatedTime = "3-more"
             }
         }
-        val description = Description(
-            title = title,
-            taskDescription = taskDescription,
-            price = price,
-            estimatedTime = estimatedTime
-        )
-        CoroutineScope(Dispatchers.IO).launch {
-            // for API
-            try {
-                val descriptionRepository = DescriptionRepository()
-                val response = descriptionRepository.descriptionInsert(description)
-                if (response.success == true) {
+
+        if (title == "") {
+            ettile.error = "Fill up !!"
+            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
+        }
+        if (taskDescription == "") {
+            ettaskdes.error = "Fill up !!"
+            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
+        }
+        if (price == "") {
+            etprice.error = "Fill up !!"
+            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            val description = Description(
+                title = title,
+                taskDescription = taskDescription,
+                price = price,
+                estimatedTime = estimatedTime
+            )
+            CoroutineScope(Dispatchers.IO).launch {
+                // for API
+                try {
+                    val descriptionRepository = DescriptionRepository()
+                    val response = descriptionRepository.descriptionInsert(description)
+                    if (response.success == true) {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(
+                                this@TaskDescriptionActivity,
+                                "Inserted Successfully!!", Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        startActivity(
+                            Intent(
+                                this@TaskDescriptionActivity,
+                                RecyclerviewActivity::class.java
+                            )
+                        )
+                    }
+                } catch (ex: Exception) {
                     withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@TaskDescriptionActivity,
-                            "Insert Successfully!!", Toast.LENGTH_SHORT
+                            "error" + ex.toString(),
+                            Toast.LENGTH_SHORT
                         ).show()
                     }
-                }
-            } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        this@TaskDescriptionActivity, "error" + ex.toString(), Toast.LENGTH_SHORT
-                    ).show()
                 }
             }
         }
