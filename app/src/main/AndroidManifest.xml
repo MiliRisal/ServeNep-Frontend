@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UI.AddSpecActivity"></activity>
+        <activity android:name=".UI.TaskerJobDescriptionActivity"></activity>
+        <activity android:name=".UI.AddSpecActivity" />
         <activity android:name=".UI.DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.RegisterActivity" />
-        <activity android:name=".UI.RecyclerviewActivity"></activity>
+        <activity android:name=".UI.RecyclerviewActivity" />
         <activity
             android:name=".Adapter.TaskerAdapter"
             tools:ignore="Instantiatable" />
