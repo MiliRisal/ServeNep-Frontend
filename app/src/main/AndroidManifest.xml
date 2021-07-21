@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
+        <activity android:name=".UI.TaskerBookingActivity"></activity>
         <activity android:name=".UI.JobNotificationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.TaskerJobDescriptionActivity">
-
-        </activity>
-        <activity android:name=".UI.DashboardActivity"></activity>
+        <activity android:name=".UI.TaskerJobDescriptionActivity"></activity>
+        <activity android:name=".UI.DashboardActivity" />
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.RecyclerviewActivity" />
         <activity
