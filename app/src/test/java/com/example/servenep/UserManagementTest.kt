@@ -1,8 +1,10 @@
 package com.example.servenep
 
+import com.example.servenep.Adapter.TaskerAdapter
 import com.example.servenep.entities.Description
 import com.example.servenep.entities.TaskerSpecification
 import com.example.servenep.entities.Users
+import com.example.servenep.model.Tasker
 import com.example.servenep.repository.DescriptionRepository
 import com.example.servenep.repository.SpecificationRepository
 import com.example.servenep.repository.UserRepository
@@ -16,6 +18,7 @@ class UserManagementTest {
     private var UserRepository: UserRepository? = null
     private var DescriptionRepository: DescriptionRepository? = null
     private var SpecificationRepository: SpecificationRepository?=null
+    private var TaskerAdapter:TaskerAdapter?=null
 
 
     // .....................USERS Login and Register Testing..................//
@@ -91,5 +94,15 @@ class UserManagementTest {
 
 
     }
+
+//    @Test
+//
+//    fun checkTaskerAdapter() = runBlocking {
+//
+//        val Tasker = Tasker(TaskerId ="",TaskerName = ""
+//
+//
+//        )
+//    }
 
 }
