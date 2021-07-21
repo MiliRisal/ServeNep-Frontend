@@ -23,7 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.TaskerJobDescriptionActivity"></activity>
-        <activity android:name=".UI.DashboardActivity" />
+        <activity android:name=".UI.DashboardActivity" >
+
+        </activity>
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.RecyclerviewActivity" />
         <activity
