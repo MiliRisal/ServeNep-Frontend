@@ -51,7 +51,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:background="@drawable/background"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -80,6 +80,14 @@
                     android:layout_gravity="end"
                     android:layout_weight="1"
                     android:src="@drawable/ic_baseline_construction_24" />
+
+                <ImageView
+                    android:id="@+id/notificationicon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_notifications_active_24" />
             </LinearLayout>
 
     </LinearLayout>

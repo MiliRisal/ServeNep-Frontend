@@ -18,6 +18,7 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
     private lateinit var homeicon:ImageView
     private lateinit var profileicon:ImageView
     private lateinit var toolsicon: ImageView
+    private lateinit var notificationicon: ImageView
     private var gridView:GridView ?=null
     private var arrayList:ArrayList<Category> ?=null
     private var CategoryAdapter:CategoryAdapter ?=null
@@ -30,6 +31,8 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
         homeicon=findViewById(R.id.homeicon)
         profileicon=findViewById(R.id.profileicon)
         toolsicon=findViewById(R.id.toolsicon)
+        notificationicon=findViewById(R.id.notificationicon)
+
         gridView=findViewById(R.id.gridview)
         spinner = findViewById(R.id.spinner)
 
@@ -39,7 +42,7 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
         gridView?.adapter=CategoryAdapter
 
         gridView?.setOnItemClickListener(this)
-
+        notificationicon.setOnClickListener(this)
 
         //array apdater for items
         val adapter = object: ArrayAdapter<String>(

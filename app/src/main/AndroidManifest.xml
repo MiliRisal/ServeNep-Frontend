@@ -14,17 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UI.TaskerBookingActivity"></activity>
-        <activity android:name=".UI.JobNotificationActivity">
+
+        <activity android:name=".UI.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".UI.TaskerBookingActivity"></activity>
+        <activity android:name=".UI.JobNotificationActivity"></activity>
         <activity android:name=".UI.TaskerJobDescriptionActivity"></activity>
         <activity android:name=".UI.DashboardActivity" />
-        <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.RecyclerviewActivity" />
         <activity
             android:name=".Adapter.TaskerAdapter"
