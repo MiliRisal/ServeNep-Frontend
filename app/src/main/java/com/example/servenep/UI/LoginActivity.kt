@@ -1,4 +1,4 @@
-package com.example.servenep.UI
+package com.example.servenep;
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.servenep.R
+import com.example.servenep.UI.DashboardActivity
+import com.example.servenep.UI.RegisterActivity
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.repository.UserRepository
 import com.google.android.material.snackbar.Snackbar
