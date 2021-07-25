@@ -6,4 +6,5 @@ data class Description (
     val taskDescription : String? = null,
     val estimatedTime : String? = null,
     val price : String? = null
+
 )

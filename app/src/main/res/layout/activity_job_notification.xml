@@ -27,13 +27,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="160dp"
         android:text="Anil Sapkota"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp" />
     <TextView
         android:id="@+id/tvCategory"
         android:layout_width="197dp"
@@ -41,13 +40,13 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:text="Fixing the Lights"
-        android:textColor="@color/white"
-
-        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        android:layout_marginLeft="20dp" />
 
     <TextView
         android:id="@+id/tvArea"
@@ -55,11 +54,10 @@
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:textStyle="italic"
         android:text="The Lights from all rooms should be relpaced "
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
         app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
 
@@ -69,12 +67,12 @@
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:text="Estimated time is 2-3 hours"
         android:textColor="@color/white"
+        android:text="Estimated time is 2-3 hours"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvArea" />
+        app:layout_constraintTop_toBottomOf="@+id/tvArea"
+        android:layout_marginLeft="20dp" />
 
     <TextView
         android:id="@+id/tvestRate"
@@ -82,12 +80,12 @@
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:text="Rs. 500 per hour"
         android:textColor="@color/white"
+        android:text="Rs. 500 per hour"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+        android:layout_marginLeft="20dp" />
     <LinearLayout
         android:id="@+id/iconlayout"
         android:layout_width="match_parent"
