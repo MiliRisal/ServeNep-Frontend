@@ -36,6 +36,7 @@
         <activity android:name=".UI.TaskDescriptionActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.MainActivity" />
+        
 
     </application>
 
