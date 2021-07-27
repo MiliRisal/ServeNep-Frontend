@@ -5,7 +5,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -16,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UI.TaskerBookingActivity"></activity>
+        <activity android:name=".UI.TaskerProfileActivity"></activity>
+        <activity android:name=".UI.TaskerBookingActivity" />
         <activity android:name=".UI.JobNotificationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.TaskerJobDescriptionActivity"></activity>
-        <activity android:name=".UI.DashboardActivity" >
-
-        </activity>
+        <activity android:name=".UI.TaskerJobDescriptionActivity" />
+        <activity android:name=".UI.DashboardActivity"></activity>
         <activity android:name=".UI.RegisterActivity" />
         <activity android:name=".UI.RecyclerviewActivity" />
         <activity
@@ -36,8 +34,6 @@
         <activity android:name=".UI.TaskDescriptionActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.MainActivity" />
-        
-
     </application>
 
 </manifest>
