@@ -109,7 +109,7 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
         startActivity(
             Intent(
                 this@DashboardActivity,
-                TaskDescriptionActivity::class.java
+                RecyclerviewActivity::class.java
             )
         )
     }

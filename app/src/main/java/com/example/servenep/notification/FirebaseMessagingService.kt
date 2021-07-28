@@ -8,6 +8,8 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.os.Vibrator
 import androidx.core.app.NotificationCompat
+import com.example.servenep.UI.LoginActivity
+import com.example.servenep.UI.RegisterActivity
 import com.example.servenep.UI.TaskerBookingActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -42,8 +44,12 @@ class FirebaseMessagingService : FirebaseMessagingService() {
             builder.setSmallIcon(resourceImage)
         }
 
-
-         Intent resultIntent = new Intent(this, TaskerBookingActivity.class);
+        startActivity(
+            Intent(
+                this,
+                TaskerBookingActivity::class.java
+            )
+        )
         //  PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentTitle(remoteMessage.notification!!.title)
         builder.setContentText(remoteMessage.notification!!.body)

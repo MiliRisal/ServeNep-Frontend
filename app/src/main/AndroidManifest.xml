@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,7 +26,6 @@
 
         <activity android:name=".UI.TaskerBookingActivity"></activity>
         <activity android:name=".UI.JobNotificationActivity"></activity>
-        <activity android:name=".UI.TaskerJobDescriptionActivity"></activity>
         <activity android:name=".UI.DashboardActivity" />
         <activity android:name=".UI.RecyclerviewActivity" />
         <activity

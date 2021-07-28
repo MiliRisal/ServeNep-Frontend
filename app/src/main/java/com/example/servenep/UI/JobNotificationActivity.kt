@@ -1,8 +1,8 @@
 package com.example.servenep.UI
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.servenep.R
@@ -16,20 +16,21 @@ class JobNotificationActivity : AppCompatActivity() {
     private lateinit var tvName: TextView
     private lateinit var tvTitle: TextView
     private lateinit var tvArea: TextView
-    private lateinit var tvestTime: TextView
-    private lateinit var tvestRate: TextView
+    private lateinit var tvEstTime: TextView
+    private lateinit var tvEstRate: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_job_notification)
         tvName = findViewById(R.id.tvName)
         tvTitle = findViewById(R.id.tvCategory)
         tvArea = findViewById(R.id.tvArea)
-        tvestTime = findViewById(R.id.tvestTime)
-        tvestRate = findViewById(R.id.tvestRate)
+        tvEstTime = findViewById(R.id.tvEstTime)
+        tvEstRate = findViewById(R.id.tvEstRate)
 
         getDescription()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getDescription() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -38,10 +39,10 @@ class JobNotificationActivity : AppCompatActivity() {
                 withContext(Dispatchers.Main) {
                     if (response.success == true) {
                         val task = response.data!!
-                        tvTitle.setText("${task[0].title}")
-                        tvArea.setText("${task[0].taskDescription}")
-                        tvestTime.setText("Estimated time is ${task[0].estimatedTime}")
-                        tvestRate.setText("Rs.${task[0].price} per hour.")
+                        tvTitle.text = "${task[0].title}"
+                        tvArea.text = "${task[0].taskDescription}"
+                        tvEstTime.text = "Estimated time is ${task[0].estimatedTime}"
+                        tvEstRate.text = "Rs.${task[0].price} per hour."
                     }
                 }
 
@@ -49,7 +50,7 @@ class JobNotificationActivity : AppCompatActivity() {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
                         this@JobNotificationActivity,
-                        "Error : ${ex}", Toast.LENGTH_SHORT
+                        "Error : $ex", Toast.LENGTH_SHORT
                     ).show()
                 }
             }
