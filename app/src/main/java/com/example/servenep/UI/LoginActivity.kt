@@ -1,4 +1,4 @@
-package com.example.servenep;
+package com.example.servenep.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
