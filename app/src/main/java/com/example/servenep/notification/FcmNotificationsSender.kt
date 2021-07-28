@@ -1,4 +1,4 @@
-package com.example.servenep.notification
+package com.example.servenep;
 
 import android.app.Activity
 import android.content.Context
