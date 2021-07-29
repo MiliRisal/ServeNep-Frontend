@@ -24,6 +24,8 @@
 
         <activity android:name=".UI.RegisterActivity"
             tools:ignore="IntentFilterExportedReceiver">
+        </activity>
+        <activity android:name=".UI.TaskerProfileActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
