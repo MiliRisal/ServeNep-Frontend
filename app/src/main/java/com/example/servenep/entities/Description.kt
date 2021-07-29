@@ -5,6 +5,7 @@ data class Description (
     val title : String? = null,
     val taskDescription : String? = null,
     val estimatedTime : String? = null,
-    val price : String? = null
+    val price : String? = null,
+    val addedBy: String? =null
 
 )

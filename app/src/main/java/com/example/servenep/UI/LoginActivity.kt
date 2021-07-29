@@ -1,4 +1,4 @@
-package com.example.servenep;
+package com.example.servenep.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +13,6 @@ import com.example.servenep.UI.DashboardActivity
 import com.example.servenep.UI.RegisterActivity
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.repository.UserRepository
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

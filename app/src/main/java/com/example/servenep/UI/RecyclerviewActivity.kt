@@ -20,7 +20,6 @@ class RecyclerviewActivity : AppCompatActivity() {
         layoutManager=LinearLayoutManager(this)
         recyclerview.layoutManager=layoutManager
 
-        adapter=TaskerAdapter()
         recyclerview.adapter=adapter
     }
 }

@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
 
     <TextView
-        android:id="@+id/tvestTime"
+        android:id="@+id/tvEstTime"
         android:layout_width="197dp"
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
@@ -74,7 +74,7 @@
         android:layout_marginLeft="20dp" />
 
     <TextView
-        android:id="@+id/tvestRate"
+        android:id="@+id/tvEstRate"
         android:layout_width="197dp"
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
@@ -83,13 +83,13 @@
         android:text="Rs. 500 per hour"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvestTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstTime"
         android:layout_marginLeft="20dp" />
     <LinearLayout
         android:id="@+id/iconlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tvestRate"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstRate"
         android:layout_marginTop="70dp"
         >
 

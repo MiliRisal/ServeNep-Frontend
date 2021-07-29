@@ -6,17 +6,17 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.*
-import com.example.servenep.LoginActivity
+//import com.example.servenep.LoginActivity
 import com.example.servenep.R
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.UserRepository
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
+
     private lateinit var etfullname: EditText
     private lateinit var etemail: EditText
     private lateinit var etaddress: EditText

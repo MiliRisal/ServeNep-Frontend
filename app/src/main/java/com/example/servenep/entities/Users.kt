@@ -7,5 +7,8 @@ data class Users(
     val phone : String? = null,
     val address : String? = null,
     val password : String? = null,
-    val role : String? = null
+    val role : String? = null,
+    val category : String? = null,
+    val price : Int? = null,
+    val profileImage : String? = null
 )
