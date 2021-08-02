@@ -2,13 +2,11 @@ package com.example.servenep.api
 
 import android.provider.ContactsContract
 import com.example.servenep.entities.Users
+import com.example.servenep.response.GetTaskerCategory
 import com.example.servenep.response.LoginResponse
 import com.example.servenep.response.RegisterResponse
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface UserAPI {
     //for User Registration
@@ -24,4 +22,11 @@ interface UserAPI {
         @Field("email") email: String,
         @Field("password") password: String
     ):Response<LoginResponse>
+
+    //for filtering helpers according to category
+    @GET("tasker/{category}")
+    suspend fun getTaskerByCategory(
+        @Header("Authorization") token : String,
+        @Path("taskerCategory") taskerCategory: String
+    ):Response<GetTaskerCategory>
 }

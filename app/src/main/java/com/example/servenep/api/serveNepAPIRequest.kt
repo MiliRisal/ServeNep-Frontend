@@ -13,7 +13,7 @@ abstract class serveNepAPIRequest {
         if(response.isSuccessful){
             return response.body()!!
         }else{
-            //if api request was not sucecss
+            //if api request was not success
             val error =response.errorBody()?.string()
             val message = StringBuilder()
             error?.let {
@@ -29,3 +29,4 @@ abstract class serveNepAPIRequest {
         }
     }
 }
+

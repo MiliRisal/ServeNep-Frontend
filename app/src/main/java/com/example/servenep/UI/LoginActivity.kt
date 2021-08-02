@@ -1,23 +1,20 @@
 package com.example.servenep.UI
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.servenep.R
-import com.example.servenep.UI.DashboardActivity
-import com.example.servenep.UI.RegisterActivity
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Exception
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etemail: EditText
@@ -78,7 +75,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@LoginActivity,
-                            "Login Unsucessful!!", Toast.LENGTH_SHORT
+                            "Login Unsuccessful!!", Toast.LENGTH_SHORT
                         ).show()
                     }
                 }

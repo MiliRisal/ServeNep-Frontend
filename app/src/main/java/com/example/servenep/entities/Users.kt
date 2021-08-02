@@ -9,6 +9,6 @@ data class Users(
     val password : String? = null,
     val role : String? = null,
     val category : String? = null,
-    val price : Int? = null,
+    val price : String? = null,
     val profileImage : String? = null
 )

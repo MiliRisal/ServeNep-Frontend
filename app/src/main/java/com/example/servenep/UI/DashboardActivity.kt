@@ -3,8 +3,6 @@ package com.example.servenep.UI
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.servenep.Category
@@ -22,7 +20,6 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
     private var gridView:GridView ?=null
     private var arrayList:ArrayList<Category> ?=null
     private var CategoryAdapter:CategoryAdapter ?=null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,37 +60,22 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
             object:AdapterView.OnItemSelectedListener{
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                startActivity(
-                    Intent(
-                        this@DashboardActivity,
-                        TaskDescriptionActivity::class.java
-                    )
-                )
+//                startActivity(
+//                    Intent(
+//                        this@DashboardActivity,
+//                        TaskerProfileActivity::class.java
+//                    )
+//                )
             }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
-
+                    TODO("Not yet implemented")
                 }
             }
 
 
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.nav_menu,menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when(item.itemId){
-//            R.id.abc->Toast.makeText(applicationContext,"abc clicked",Toast.LENGTH_SHORT)
-//            R.id.cde->Toast.makeText(applicationContext,"cde clicked",Toast.LENGTH_SHORT)
-//            R.id.fgh->Toast.makeText(applicationContext,"fgh clicked",Toast.LENGTH_SHORT)
-//            R.id.ijk->Toast.makeText(applicationContext,"ijk clicked", Toast.LENGTH_SHORT)
-//
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
     private fun setDataList():ArrayList<Category>{
         var arrayList:ArrayList<Category> = ArrayList()
         arrayList.add(Category(R.drawable.cleaner,"Cleaner"))
@@ -109,7 +91,7 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
         startActivity(
             Intent(
                 this@DashboardActivity,
-                RecyclerviewActivity::class.java
+                TaskerRecyclerViewActivity::class.java
             )
         )
     }
@@ -117,6 +99,5 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
     override fun onClick(v: View?) {
         TODO("Not yet implemented")
     }
-
 
 }

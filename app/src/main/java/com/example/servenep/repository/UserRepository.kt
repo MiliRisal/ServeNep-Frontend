@@ -4,6 +4,7 @@ import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.api.UserAPI
 import com.example.servenep.api.serveNepAPIRequest
 import com.example.servenep.entities.Users
+import com.example.servenep.response.GetTaskerCategory
 import com.example.servenep.response.LoginResponse
 import com.example.servenep.response.RegisterResponse
 
@@ -25,5 +26,13 @@ class UserRepository
         }
     }
 
+    //to filter tasker according to their category
+    suspend fun getTaskerCategory(taskerCategory: String): GetTaskerCategory{
+        return apiRequest {
+            userAPI.getTaskerByCategory(
+                ServiceBuilder.token!!, taskerCategory
+            )
+        }
+    }
 
 }

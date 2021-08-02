@@ -1,16 +1,13 @@
 package com.example.servenep.UI
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.servenep.R
 import com.example.servenep.entities.Description
-import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
-import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -102,7 +99,7 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                         startActivity(
                             Intent(
                                 this@TaskDescriptionActivity,
-                                RecyclerviewActivity::class.java
+                                TaskerRecyclerViewActivity::class.java
                             )
                         )
                     }

@@ -17,6 +17,10 @@
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
 
+        <activity android:name=".UI.TaskerRecyclerViewActivity">
+
+        </activity>
+
         <activity android:name=".UI.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +31,7 @@
         <activity android:name=".UI.TaskerBookingActivity"></activity>
         <activity android:name=".UI.JobNotificationActivity"></activity>
         <activity android:name=".UI.DashboardActivity" />
-        <activity android:name=".UI.RecyclerviewActivity" />
+
         <activity
             android:name=".Adapter.TaskerAdapter"
             tools:ignore="Instantiatable" />
