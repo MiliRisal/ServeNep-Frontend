@@ -58,7 +58,7 @@
         android:orientation="vertical">
         <EditText
             android:id="@+id/Name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name: Sofia Khadka"
             android:textStyle="bold"
@@ -68,43 +68,43 @@
             android:layout_marginLeft="90dp"/>
         <EditText
             android:id="@+id/Address"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address: Sagarmatha colony,Kadaghari, kageshwori manahora"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_marginLeft="19dp"
+
             android:layout_marginTop="10dp"/>
         <EditText
             android:id="@+id/Role"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Role: Tasker"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:textSize="23dp"
-            android:layout_marginLeft="130dp"/>
+           />
         <EditText
             android:id="@+id/Category"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Category: Plumber"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="5dp"
             android:textSize="23dp"
-            android:layout_marginLeft="120dp"/>
+           />
         <EditText
             android:id="@+id/Rate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Rate per hour: Rs.500"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="5dp"
             android:textSize="23dp"
-            android:layout_marginLeft="110dp"/>
+           />
         <Button
             android:id="@+id/savechange"
             android:layout_width="wrap_content"
