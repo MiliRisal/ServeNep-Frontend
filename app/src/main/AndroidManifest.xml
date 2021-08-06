@@ -4,7 +4,14 @@
     package="com.example.servenep">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -14,54 +21,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-        <service
-            android:name=".notification.MyFirebasemessingServices"
-            android:enabled="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter></service>
 
-        <activity android:name=".UI.TaskerRecyclerViewActivity"></activity>
-        <activity
-            android:name=".UI.RegisterActivity"
-            tools:ignore="IntentFilterExportedReceiver"></activity>
-        <activity android:name=".UI.TaskerProfileActivity">
+<<<<<<< HEAD
+        <activity android:name=".UI.TaskerRecyclerViewActivity">
+
+        </activity>
+
+        <activity android:name=".UI.RegisterActivity">
+=======
+        <activity android:name=".UI.RegisterActivity"
+            tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.TaskerBookingActivity">
+        <activity android:name=".UI.TaskerProfileActivity">
+>>>>>>> dee0529636445e33aade3ca4e5293f28e2b8cd3e
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".UI.JobNotificationActivity"
-            tools:ignore="WrongManifestParent" />
-        <activity
-            android:name=".UI.DashboardActivity"
-            tools:ignore="WrongManifestParent" />
+
+        <activity android:name=".UI.TaskerBookingActivity"></activity>
+        <activity android:name=".UI.JobNotificationActivity"></activity>
+        <activity android:name=".UI.DashboardActivity" />
+
         <activity
             android:name=".Adapter.TaskerAdapter"
             tools:ignore="Instantiatable" />
-        <activity
-            android:name=".UI.TaskDescriptionActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".UI.LoginActivity"
-            tools:ignore="WrongManifestParent" />
-        <activity
-            android:name=".UI.MainActivity"
-            tools:ignore="WrongManifestParent" />
+        <activity android:name=".UI.TaskDescriptionActivity" />
+        <activity android:name=".UI.LoginActivity" />
+        <activity android:name=".UI.MainActivity" />
     </application>
 
 </manifest>
