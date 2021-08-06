@@ -9,12 +9,20 @@ apply plugin: 'com.google.gms.google-services'  // Google Services plugin
 apply plugin:"kotlin-kapt"
 
 android {
+
+    buildFeatures {
+
+        dataBinding = true
+
+        // for view binding:
+        // viewBinding = true
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.servenep"
-        minSdkVersion 26
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -46,16 +54,15 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-<<<<<<< HEAD
-    implementation 'com.google.firebase:firebase-functions:19.0.2'
-    implementation 'com.google.firebase:firebase-messaging:20.2.4'
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-=======
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
     implementation 'com.google.firebase:firebase-functions:20.0.0'
->>>>>>> dee0529636445e33aade3ca4e5293f28e2b8cd3e
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.google.firebase:firebase-functions:20.0.0'
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
