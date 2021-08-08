@@ -20,8 +20,8 @@ import java.util.*
 class TaskerProfileActivity : AppCompatActivity() {
     private lateinit var Profile:EditText
     private lateinit var Name:EditText
+    private lateinit var Email:EditText
     private lateinit var Address:EditText
-    private lateinit var Role:EditText
     private lateinit var Category:EditText
     private lateinit var Rate:EditText
     private lateinit var savechange:Button
@@ -37,7 +37,7 @@ class TaskerProfileActivity : AppCompatActivity() {
         Profile=findViewById(R.id.Profile)
         Name=findViewById(R.id.Name)
         Address=findViewById(R.id.Address)
-        Role=findViewById(R.id.Role)
+        Email=findViewById(R.id.Email)
         Category=findViewById(R.id.Category)
         Rate=findViewById(R.id.Rate)
         savechange=findViewById(R.id.savechange)
