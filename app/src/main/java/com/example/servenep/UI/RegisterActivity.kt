@@ -5,10 +5,15 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.*
+<<<<<<< HEAD
 
 import androidx.appcompat.app.AppCompatActivity
 
 //import com.example.servenep.LoginActivity
+=======
+import androidx.appcompat.app.AppCompatActivity
+
+>>>>>>> 5fcfccaf5ea2c5626e11750c680942ee4c557ebd
 import com.example.servenep.R
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.UserRepository

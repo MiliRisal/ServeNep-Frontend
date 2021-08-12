@@ -34,87 +34,289 @@
 
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="vertical"
-        android:background="#718093">
+        android:gravity="center"
+        android:background="@color/teal_200">
 
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/Profile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/girl"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_width="220px"
+            android:layout_height="220px"
+            android:layout_marginTop="25px"
+            android:layout_marginBottom="30px"
+            android:src="@drawable/user"/>
 
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="430dp"
-        android:background="#dfe6e9"
-        android:orientation="vertical">
-        <EditText
+        <TextView
             android:id="@+id/Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Name: Sofia Khadka"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-
-            android:textSize="30dp"
-            android:layout_marginLeft="90dp"/>
-        <EditText
-            android:id="@+id/Address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Address: Sagarmatha colony,Kadaghari, kageshwori manahora"
-            android:textStyle="bold"
             android:textSize="20dp"
-            android:layout_marginLeft="19dp"
-            android:layout_marginTop="10dp"/>
-        <EditText
-            android:id="@+id/Role"
+            android:textStyle="bold"
+            android:text="Mili Risal"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tvln"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Role: Tasker"
+            android:text="Cleaner"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textSize="15dp"
             android:layout_marginTop="10dp"
-            android:textSize="23dp"
-            android:layout_marginLeft="130dp"/>
-        <EditText
-            android:id="@+id/Category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Category: Plumber"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:layout_marginTop="5dp"
-            android:textSize="23dp"
-            android:layout_marginLeft="120dp"/>
-        <EditText
-            android:id="@+id/Rate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Rate per hour: Rs.500"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="5dp"
-            android:textSize="23dp"
-            android:layout_marginLeft="110dp"/>
-        <Button
-            android:id="@+id/savechange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save Changes"
-            android:layout_marginTop="19dp"
-            android:layout_marginLeft="140dp"
-            android:background="@drawable/background"/>
-
+            />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_email_24"
+                android:layout_marginTop="20dp"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_location_on_24"
+            android:layout_marginTop="29dp"/>
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_category_24"
+                android:layout_marginTop="35dp"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_attach_money_24"
+                android:layout_marginTop="35dp"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_local_phone_24"
+                android:layout_marginTop="30dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tvFn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="risalmili123@gmail.com"
+                android:textColor="@color/black"/>
+
+
+            <TextView
+                android:id="@+id/tvAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pepsicola"
+                android:textColor="@color/black"/>
+
+
+
+            <TextView
+                android:id="@+id/tvUn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/Category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tasker"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvEm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate per hour"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+
+            <EditText
+                android:id="@+id/Rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rs.500 "
+
+                android:textColor="@color/black"/>
+
+
+            <TextView
+                android:id="@+id/tvEm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                />
+
+            <EditText
+                android:id="@+id/Rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="986765446 "
+
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+                android:id="@+id/savechange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Changes"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="140dp" />
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="180dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:background="#718093">-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/Profile"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:src="@drawable/girl"-->
+<!--            android:layout_marginLeft="140dp"-->
+<!--            android:layout_marginTop="20dp"/>-->
+
+
+<!--    </LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="430dp"-->
+<!--        android:background="#dfe6e9"-->
+<!--        android:orientation="vertical">-->
+<!--        <EditText-->
+<!--            android:id="@+id/Name"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Name: Sofia Khadka"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black"-->
+
+<!--            android:textSize="30dp"-->
+<!--            android:layout_marginLeft="90dp"/>-->
+<!--        <EditText-->
+<!--            android:id="@+id/Address"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Address: Sagarmatha colony,Kadaghari, kageshwori manahora"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="20dp"-->
+
+<!--            android:layout_marginTop="10dp"/>-->
+<!--        <EditText-->
+<!--            android:id="@+id/Role"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Role: Tasker"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:textSize="23dp"-->
+<!--           />-->
+<!--        <EditText-->
+<!--            android:id="@+id/Category"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Category: Plumber"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:textSize="23dp"-->
+<!--           />-->
+<!--        <EditText-->
+<!--            android:id="@+id/Rate"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Rate per hour: Rs.500"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:textSize="23dp"-->
+<!--           />-->
+<!--        <Button-->
+<!--            android:id="@+id/savechange"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Save Changes"-->
+<!--            android:layout_marginTop="19dp"-->
+<!--            android:layout_marginLeft="140dp"-->
+<!--            android:background="@drawable/background"/>-->
+
+<!--    </LinearLayout>-->
 
 
 
@@ -152,6 +354,7 @@
             android:layout_weight="1"
             android:src="@drawable/ic_baseline_construction_24" />
     </LinearLayout>
+
 
 
 
