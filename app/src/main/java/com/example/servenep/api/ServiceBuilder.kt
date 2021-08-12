@@ -6,11 +6,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilder {
 
-//  private const val BASE_URL = "http://10.0.2.2:90/"
+ private const val BASE_URL = "http://10.0.2.2:90/"
 //
 //    private const val BASE_URL = "http://localhost:90/"
 
-    private const val BASE_URL = "http://192.168.1.65:90/"
+    //private const val BASE_URL = "http://192.168.1.65:90/"
 
 
     var token: String?= null
@@ -31,5 +31,11 @@ object ServiceBuilder {
     //Generic function
     fun <T> buildService(serviceType : Class<T>): T{
         return retrofit.create(serviceType)
+    }
+
+    // Load image path in Service Builder class
+    fun loadImagePath(): String {
+
+        return BASE_URL + "uploads/"
     }
 }

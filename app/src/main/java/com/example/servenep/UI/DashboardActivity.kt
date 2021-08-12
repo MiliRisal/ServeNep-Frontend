@@ -39,6 +39,7 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
         gridView?.adapter=CategoryAdapter
 
         gridView?.setOnItemClickListener(this)
+        profileicon.setOnClickListener(this)
         notificationicon.setOnClickListener(this)
 
         //array apdater for items
@@ -73,7 +74,19 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
                 }
             }
 
+    }
 
+    override fun onClick(v: View?) {
+        when (v?.id){
+            R.id.profileicon->{
+                val intent= Intent(
+                    this,
+                    TaskerProfileActivity::class.java
+                )
+                startActivity(intent)
+                Toast.makeText(this,"Welcome to Your Profile !!",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun setDataList():ArrayList<Category>{
@@ -94,10 +107,6 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
                 TaskerRecyclerViewActivity::class.java
             )
         )
-    }
-
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
     }
 
 }
