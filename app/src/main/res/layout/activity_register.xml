@@ -177,6 +177,100 @@
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
 
+<<<<<<< HEAD
+=======
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation='horizontal'
+            android:layout_weight="2"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp">
+            <TextView
+                android:id="@+id/tvcat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:layout_weight="1"
+                android:textStyle="normal"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price per hour"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:layout_marginStart="60dp"
+               />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation='horizontal'
+            android:layout_weight="2">
+            <Spinner
+                android:id="@+id/etCat"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+
+                android:padding="4dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/edittext"
+                android:textColorHint="#000"/>
+
+            <EditText
+                android:id="@+id/etPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:layout_weight="1"
+
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/edittext"
+                android:textColorHint="#000"
+                android:padding="8dp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+<!--        <EditText-->
+<!--            android:id="@+id/etPrice"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:backgroundTint="@android:color/transparent"-->
+<!--            android:hint="Rate per hour"-->
+<!--            android:inputType="textEmailAddress"-->
+<!--            android:padding="10dp"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textColorHint="@android:color/white" />-->
+<!--        <EditText-->
+<!--            android:id="@+id/etCat"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:backgroundTint="@android:color/transparent"-->
+<!--            android:hint="Category"-->
+<!--            android:inputType="textEmailAddress"-->
+<!--            android:padding="10dp"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textColorHint="@android:color/white" />-->
+
+>>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -185,6 +279,7 @@
             android:layout_marginEnd="30dp"
             android:background="#B1B1B1" />
 
+<<<<<<< HEAD
 
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -200,6 +295,15 @@
                 android:layout_weight="2"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp">
+=======
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+>>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
                 <TextView
                     android:id="@+id/tvCat"
                     android:layout_width="wrap_content"

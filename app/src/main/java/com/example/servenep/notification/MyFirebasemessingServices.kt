@@ -14,7 +14,7 @@ import android.os.IBinder
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
-import com.example.servenep.UI.DashboardActivity
+import com.example.servenep.Home_Menu_Activity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import java.util.*
@@ -24,7 +24,7 @@ class MyFirebasemessingServices : FirebaseMessagingService() {
 
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
-        val intent = Intent(this, DashboardActivity::class.java)
+        val intent = Intent(this, Home_Menu_Activity::class.java)
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val notificationID = Random().nextInt(3000)
 
@@ -71,6 +71,6 @@ class MyFirebasemessingServices : FirebaseMessagingService() {
         adminChannel.enableLights(true)
         adminChannel.lightColor = Color.RED
         adminChannel.enableVibration(true)
-        notificationManager?.createNotificationChannel(adminChannel)
+        notificationManager.createNotificationChannel(adminChannel)
     }
 }

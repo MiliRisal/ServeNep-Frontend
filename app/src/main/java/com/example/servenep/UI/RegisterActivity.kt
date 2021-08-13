@@ -45,8 +45,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         etemail=findViewById(R.id.etemail)
         etaddress=findViewById(R.id.etaddress)
         etphone=findViewById(R.id.etphone)
-        spCat=findViewById(R.id.spCat)
+        spCat=findViewById(R.id.etCat)
         etPrice=findViewById(R.id.etPrice)
+<<<<<<< HEAD
+=======
+        tvCat=findViewById(R.id.tvcat)
+>>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
         tvPrice=findViewById(R.id.tvPrice)
         tvCat=findViewById(R.id.tvCat)
         rduser=findViewById(R.id.rduser)

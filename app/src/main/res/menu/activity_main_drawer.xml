@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Menu">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_dashboard"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="@string/menu_dashboard" />
+                <item
+                    android:id="@+id/nav_MyOffers"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_MyOffers" />
+                <item
+                    android:id="@+id/nav_MyBookings"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="@string/menu_MyBookings" />
+                <item
+                    android:id="@+id/nav_AcceptedTasks"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="@string/menu_AcceptedTasks" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Profile Details">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/person"
+                    android:title="@string/menu_profile" />
+                <item
+                    android:id="@+id/nav_updateprofile"
+                    android:icon="@drawable/update"
+                    android:title="@string/menu_updateprofile"/>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/login"
+                    android:title="@string/menu_logout" />
+            </group>
+
+        </menu>
+    </item>
+</menu>

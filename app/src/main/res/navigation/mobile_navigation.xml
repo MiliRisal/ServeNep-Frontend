@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.servenep.ui.home.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_MyOffers"
+        android:name="com.example.servenep.UI.myOffers.MyOffersFragment"
+        android:label="@string/menu_MyOffers"
+        tools:layout="@layout/fragment_myoffers" />
+
+
+    <fragment
+        android:id="@+id/nav_MyBookings"
+        android:name="com.example.servenep.UI.myBookings.MyBookingsFragment"
+        android:label="@string/menu_MyBookings"
+        tools:layout="@layout/fragment_mybookings" />
+
+    <fragment
+        android:id="@+id/nav_AcceptedTasks"
+        android:name="com.example.servenep.UI.acceptedTasks.AcceptedTasksFragment"
+        android:label="@string/menu_AcceptedTasks"
+        tools:layout="@layout/fragment_accepted_tasks" />
+</navigation>

@@ -4,7 +4,10 @@ plugins {
 
 }
 apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+<<<<<<< HEAD
 
+=======
+>>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
 apply plugin:"kotlin-kapt"
 
 android {
@@ -26,6 +29,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
@@ -67,6 +71,10 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+<<<<<<< HEAD
+=======
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+>>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
