@@ -5,12 +5,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
-
-
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -21,32 +17,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-
-<<<<<<< HEAD
-        <activity android:name=".UI.TaskerRecyclerViewActivity">
-
-        </activity>
-
-        <activity android:name=".UI.RegisterActivity">
-=======
-        <activity android:name=".UI.RegisterActivity"
-            tools:ignore="IntentFilterExportedReceiver">
+        <activity
+            android:name=".Home_Menu_Activity"
+            android:exported="true"
+            android:label="@string/title_activity_home_menu"
+            android:theme="@style/Theme.ServeNep.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.TaskerProfileActivity">
->>>>>>> dee0529636445e33aade3ca4e5293f28e2b8cd3e
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+        <activity android:name=".UI.TaskerRecyclerViewActivity"></activity>
+        <activity
+            android:name=".UI.RegisterActivity"
+            tools:ignore="IntentFilterExportedReceiver"></activity>
+        <activity android:name=".UI.TaskerProfileActivity"></activity>
         <activity android:name=".UI.TaskerBookingActivity"></activity>
-        <activity android:name=".UI.JobNotificationActivity"></activity>
-        <activity android:name=".UI.DashboardActivity" />
+        <activity android:name=".UI.JobNotificationActivity" />
 
         <activity
             android:name=".Adapter.TaskerAdapter"

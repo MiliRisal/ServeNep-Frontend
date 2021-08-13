@@ -1,49 +1,50 @@
-package com.example.servenep.UI
+package com.example.servenep.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.servenep.Category
 import com.example.servenep.CategoryAdapter
 import com.example.servenep.R
+import com.example.servenep.UI.TaskDescriptionActivity
+import com.example.servenep.UI.TaskerRecyclerViewActivity
 
-class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnItemClickListener {
+class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
+
     private val cat = arrayOf("---Choose category---","Cleaner","Electrician","Delivery","Carpenter","Plumber","Mechanic")
     private lateinit var spinner: Spinner
-
-    private lateinit var homeicon:ImageView
-    private lateinit var profileicon:ImageView
+    private lateinit var homeicon: ImageView
+    private lateinit var profileicon: ImageView
     private lateinit var toolsicon: ImageView
-    private lateinit var notificationicon: ImageView
-    private var gridView:GridView ?=null
+    private var gridView: GridView?=null
     private var arrayList:ArrayList<Category> ?=null
-    private var CategoryAdapter:CategoryAdapter ?=null
+    private var CategoryAdapter: CategoryAdapter?=null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
-
-        homeicon=findViewById(R.id.homeicon)
-        profileicon=findViewById(R.id.profileicon)
-        toolsicon=findViewById(R.id.toolsicon)
-        notificationicon=findViewById(R.id.notificationicon)
-
-        gridView=findViewById(R.id.gridview)
-        spinner = findViewById(R.id.spinner)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
+       // homeicon=view.findViewById(R.id.homeicon)
+       // profileicon=view.findViewById(R.id.profileicon)
+       // toolsicon=view.findViewById(R.id.toolsicon)
+        gridView=view.findViewById(R.id.gridview)
+        spinner = view.findViewById(R.id.spinner)
 
         arrayList= ArrayList()
         arrayList=setDataList()
-        CategoryAdapter= CategoryAdapter(applicationContext, arrayList!!)
+        CategoryAdapter= CategoryAdapter(view.context, arrayList!!)
         gridView?.adapter=CategoryAdapter
 
         gridView?.setOnItemClickListener(this)
-        notificationicon.setOnClickListener(this)
-
         //array apdater for items
         val adapter = object: ArrayAdapter<String>(
-            this,
+            requireContext(),
             android.R.layout.simple_list_item_1,
             cat){
             override fun isEnabled(position: Int): Boolean {
@@ -57,25 +58,24 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
         spinner.adapter = adapter
         //on item listener
         spinner.onItemSelectedListener=
-            object:AdapterView.OnItemSelectedListener{
+            object: AdapterView.OnItemSelectedListener{
 
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                startActivity(
-//                    Intent(
-//                        this@DashboardActivity,
-//                        TaskerProfileActivity::class.java
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+//                    startActivity(
+//                        Intent(
+//                            context,
+//                            TaskDescriptionActivity::class.java
+//                        )
 //                    )
-//                )
-            }
+                }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
-                    TODO("Not yet implemented")
+
                 }
             }
 
-
+        return view
     }
-
     private fun setDataList():ArrayList<Category>{
         var arrayList:ArrayList<Category> = ArrayList()
         arrayList.add(Category(R.drawable.cleaner,"Cleaner"))
@@ -90,14 +90,9 @@ class DashboardActivity : AppCompatActivity(), View.OnClickListener, AdapterView
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         startActivity(
             Intent(
-                this@DashboardActivity,
+                context,
                 TaskerRecyclerViewActivity::class.java
             )
         )
     }
-
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
-    }
-
 }

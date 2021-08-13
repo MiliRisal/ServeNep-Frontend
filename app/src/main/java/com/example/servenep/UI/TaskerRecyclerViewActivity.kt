@@ -27,12 +27,12 @@ class TaskerRecyclerViewActivity : AppCompatActivity() {
         loadTasker()
 
         //refresh layout
-        swipeRefreshLayout.setOnRefreshListener {
-
-            if(swipeRefreshLayout.isRefreshing){
-                swipeRefreshLayout.setRefreshing(false)
-            }
-        }
+//        swipeRefreshLayout.setOnRefreshListener {
+//
+//            if(swipeRefreshLayout.isRefreshing){
+//                swipeRefreshLayout.setRefreshing(false)
+//            }
+//        }
 
     }
 

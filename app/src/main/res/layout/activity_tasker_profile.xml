@@ -175,7 +175,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/tvEm"
+                android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rate per hour"
@@ -186,11 +186,10 @@
                 />
 
             <EditText
-                android:id="@+id/Rate"
+                android:id="@+id/taskerRate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rs.500 "
-
                 android:textColor="@color/black"/>
 
 
@@ -202,38 +201,24 @@
                 android:textStyle="bold"
                 android:textSize="17dp"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/Rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="986765446 "
-
                 android:textColor="@color/black"/>
-
-
         </LinearLayout>
     </LinearLayout>
 
     <Button
-                android:id="@+id/savechange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Save Changes"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="140dp" />
-
-
-
-
-
-
-
-
-
-
+        android:id="@+id/savechange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="140dp" />
 
 
     <!--    <LinearLayout-->
@@ -317,45 +302,4 @@
 <!--            android:background="@drawable/background"/>-->
 
 <!--    </LinearLayout>-->
-
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:id="@+id/homeicon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_home_24" />
-
-        <ImageView
-            android:id="@+id/profileicon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/account" />
-
-        <ImageView
-            android:id="@+id/toolsicon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_construction_24" />
-    </LinearLayout>
-
-
-
-
 </LinearLayout>

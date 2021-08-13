@@ -82,9 +82,4 @@ class TaskerProfileActivity : AppCompatActivity() {
         startActivityForResult(cameraIntent, REQUEST_CAMERA_CODE)
     }
 
-
-
-
-
-
     }
