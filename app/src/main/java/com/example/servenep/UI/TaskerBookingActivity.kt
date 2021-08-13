@@ -1,19 +1,19 @@
-package com.example.servenep
+package com.example.servenep.UI
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.servenep.R
-
+import com.example.servenep.databinding.ActivityTaskerBookingBinding
 import com.google.firebase.messaging.FirebaseMessaging
 import org.json.JSONException
 import org.json.JSONObject
@@ -37,12 +37,10 @@ class TaskerBookingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_tasker_booking)
+        setContentView(R.layout.activity_tasker_booking)
+        val binding = DataBindingUtil.setContentView<ActivityTaskerBookingBinding>(this, R.layout.activity_tasker_booking )
 
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/Enter_topic")
-
-
-        setContentView(R.layout.activity_tasker_booking)
 
         imgProfile=findViewById(R.id.imgProfile)
         tvName=findViewById(R.id.tvName)
@@ -54,7 +52,7 @@ class TaskerBookingActivity : AppCompatActivity() {
 
 
         tvBook.setOnClickListener{
-            if (!TextUtils.isEmpty(binding.msg.text)) {
+            if (!TextUtils.isEmpty(binding.tvName.text)) {
                 val topic = "/topics/Enter_topic" //topic has to match what the receiver subscribed to
 
                 val notification = JSONObject()
@@ -62,7 +60,7 @@ class TaskerBookingActivity : AppCompatActivity() {
 
                 try {
                     notifcationBody.put("title", "Firebase Notification")
-                    notifcationBody.put("message", binding.msg.text)
+                    notifcationBody.put("message", binding.tvName.text)
                     notification.put("to", topic)
                     notification.put("data", notifcationBody)
                     Log.e("TAG", "try")

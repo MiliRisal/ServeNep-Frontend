@@ -5,15 +5,9 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.*
-<<<<<<< HEAD
+
 
 import androidx.appcompat.app.AppCompatActivity
-
-//import com.example.servenep.LoginActivity
-=======
-import androidx.appcompat.app.AppCompatActivity
-
->>>>>>> 5fcfccaf5ea2c5626e11750c680942ee4c557ebd
 import com.example.servenep.R
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.UserRepository
@@ -53,8 +47,8 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         etphone=findViewById(R.id.etphone)
         spCat=findViewById(R.id.spCat)
         etPrice=findViewById(R.id.etPrice)
-        tvCat=findViewById(R.id.tvCat)
         tvPrice=findViewById(R.id.tvPrice)
+        tvCat=findViewById(R.id.tvCat)
         rduser=findViewById(R.id.rduser)
         rdtasker=findViewById(R.id.rdtasker)
         radioGroup=findViewById(R.id.radioGroup)

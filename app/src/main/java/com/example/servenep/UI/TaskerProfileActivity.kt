@@ -17,13 +17,15 @@ import kotlinx.coroutines.withContext
 import java.util.*
 
 class TaskerProfileActivity : AppCompatActivity() {
-    private lateinit var Profile:ImageView
-    private lateinit var Name:EditText
-    private lateinit var Email:EditText
-    private lateinit var Address:EditText
-    private lateinit var Category:EditText
-    private lateinit var Rate:EditText
-    private lateinit var savechange:Button
+    private lateinit var imgProfile:ImageView
+    private lateinit var tvName:TextView
+    private lateinit var tvRole:TextView
+    private lateinit var etEmail:EditText
+    private lateinit var etAddress:EditText
+    private lateinit var etCategory:EditText
+    private lateinit var etRate:EditText
+    private lateinit var etPhone:EditText
+    private lateinit var btnSaveChanges:Button
 
     private val permissions = arrayOf(
         android.Manifest.permission.CAMERA,
@@ -35,20 +37,22 @@ class TaskerProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tasker_profile)
 
-        Profile=findViewById(R.id.Profile)
-        Name=findViewById(R.id.Name)
-        Address=findViewById(R.id.Address)
-        Email=findViewById(R.id.Email)
-        Category=findViewById(R.id.Category)
-        Rate=findViewById(R.id.Rate)
-        savechange=findViewById(R.id.savechange)
+        imgProfile=findViewById(R.id.imgProfile)
+        tvName=findViewById(R.id.tvName)
+        tvRole=findViewById(R.id.tvRole)
+        etAddress=findViewById(R.id.etAddress)
+        etEmail=findViewById(R.id.etEmail)
+        etCategory=findViewById(R.id.etCategory)
+        etRate=findViewById(R.id.etRate)
+        etPhone=findViewById(R.id.etPhone)
+        btnSaveChanges=findViewById(R.id.btnSaveChanges)
 
-        Profile.setOnClickListener {
+        imgProfile.setOnClickListener {
             loadPopUpMenu()
         }
         loadMyProfile()
 
-        savechange.setOnClickListener {
+        btnSaveChanges.setOnClickListener {
             SaveChanges()
         }
 
@@ -63,7 +67,7 @@ class TaskerProfileActivity : AppCompatActivity() {
     }
     private fun loadPopUpMenu() {
         // Load pop up menu
-        val popupMenu = PopupMenu(this@TaskerProfileActivity, Profile)
+        val popupMenu = PopupMenu(this@TaskerProfileActivity, imgProfile)
         popupMenu.menuInflater.inflate(R.menu.menu, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
@@ -99,11 +103,14 @@ class TaskerProfileActivity : AppCompatActivity() {
                     val user = response.data!!
                     withContext(Dispatchers.Main){
                         val user = response.data!!
-                        Name.setText("${user.fullName}")
-                        Address.setText("${user.address}")
-                        Role.setText("${user.role}")
-                        Category.setText("${user.category}")
-                        Rate.setText("${user.price}")
+                        tvName.setText("${user.fullName}")
+                        tvRole.setText("${user.role}")
+                        etEmail.setText("${user.email}")
+                        etAddress.setText("${user.address}")
+                        etCategory.setText("${user.category}")
+                        etRate.setText("${user.price}")
+                        etPhone.setText("${user.phone}")
+
                     }
                 }
             }
@@ -117,13 +124,13 @@ class TaskerProfileActivity : AppCompatActivity() {
     }
 
     private fun SaveChanges() {
-        val fn = Name.text.toString()
-        val add = Address.text.toString()
-        val role = Role.text.toString()
-        val cat = Category.text.toString()
-        val rate = Rate.text.toString()
+        val email = etEmail.text.toString()
+        val add = etAddress.text.toString()
+        val cat = etCategory.text.toString()
+        val rate = etRate.text.toString()
+        val phone = etPhone.text.toString()
 
-        val userData = Users(fullName = fn, address = add, role = role, category = cat, price = rate)
+        val userData = Users(email = email, address = add, category = cat, price = rate, phone = phone)
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val userRepository =UserRepository()
@@ -146,9 +153,5 @@ class TaskerProfileActivity : AppCompatActivity() {
             }
         }
     }
-
-
-
-
 
 }

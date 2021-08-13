@@ -44,7 +44,7 @@
 
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/Profile"
+            android:id="@+id/imgProfile"
             android:layout_width="220px"
             android:layout_height="220px"
             android:layout_marginTop="25px"
@@ -52,7 +52,7 @@
             android:src="@drawable/user"/>
 
         <TextView
-            android:id="@+id/Name"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
@@ -61,7 +61,7 @@
             android:textColor="@color/black"
             />
         <TextView
-            android:id="@+id/tvln"
+            android:id="@+id/tvRole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cleaner"
@@ -121,7 +121,6 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/tvFn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"
@@ -131,7 +130,7 @@
                 android:textColor="@color/black"
                 />
             <EditText
-                android:id="@+id/Email"
+                android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="risalmili123@gmail.com"
@@ -139,7 +138,6 @@
 
 
             <TextView
-                android:id="@+id/tvAd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Address"
@@ -149,7 +147,7 @@
                 android:textColor="@color/black"
                 />
             <EditText
-                android:id="@+id/Address"
+                android:id="@+id/etAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pepsicola"
@@ -158,7 +156,6 @@
 
 
             <TextView
-                android:id="@+id/tvUn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Category"
@@ -168,14 +165,13 @@
                 android:textColor="@color/black"
                 />
             <EditText
-                android:id="@+id/Category"
+                android:id="@+id/etCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tasker"
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/tvEm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rate per hour"
@@ -186,7 +182,7 @@
                 />
 
             <EditText
-                android:id="@+id/Rate"
+                android:id="@+id/etRate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rs.500 "
@@ -195,7 +191,6 @@
 
 
             <TextView
-                android:id="@+id/tvEm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone"
@@ -206,11 +201,10 @@
                 />
 
             <EditText
-                android:id="@+id/Rate"
+                android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="986765446 "
-
                 android:textColor="@color/black"/>
 
 
@@ -218,7 +212,7 @@
     </LinearLayout>
 
     <Button
-                android:id="@+id/savechange"
+                android:id="@+id/btnSaveChanges"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Save Changes"

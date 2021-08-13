@@ -26,10 +26,7 @@
         <activity android:name=".UI.TaskerRecyclerViewActivity">
         </activity>
 
-        <activity android:name=".UI.RegisterActivity">
-<<<<<<< HEAD
-=======
-=======
+
         <activity android:name=".UI.RegisterActivity"
             tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
@@ -38,17 +35,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.TaskerProfileActivity">
->>>>>>> dee0529636445e33aade3ca4e5293f28e2b8cd3e
->>>>>>> 5fcfccaf5ea2c5626e11750c680942ee4c557ebd
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".UI.TaskerProfileActivity">
-
-
         </activity>
 
         <activity android:name=".UI.TaskerBookingActivity"></activity>
