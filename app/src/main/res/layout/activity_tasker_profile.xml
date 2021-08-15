@@ -61,7 +61,7 @@
             android:textColor="@color/black"
             />
         <TextView
-            android:id="@+id/tvln"
+            android:id="@+id/tvRole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cleaner"

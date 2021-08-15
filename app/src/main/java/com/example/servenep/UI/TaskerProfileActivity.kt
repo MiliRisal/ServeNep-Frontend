@@ -23,6 +23,7 @@ class TaskerProfileActivity : AppCompatActivity() {
     private lateinit var Address:EditText
     private lateinit var Category:EditText
     private lateinit var Rate:EditText
+    private lateinit var tvRole:TextView
     private lateinit var savechange:Button
 
     private val permissions = arrayOf(
@@ -37,6 +38,7 @@ class TaskerProfileActivity : AppCompatActivity() {
 
         Profile=findViewById(R.id.Profile)
         Name=findViewById(R.id.Name)
+        tvRole=findViewById(R.id.tvRole)
         Address=findViewById(R.id.Address)
         Email=findViewById(R.id.Email)
         Category=findViewById(R.id.Category)
@@ -101,7 +103,7 @@ class TaskerProfileActivity : AppCompatActivity() {
                         val user = response.data!!
                         Name.setText("${user.fullName}")
                         Address.setText("${user.address}")
-                        Role.setText("${user.role}")
+                        tvRole.setText("${user.role}")
                         Category.setText("${user.category}")
                         Rate.setText("${user.price}")
                     }
@@ -119,11 +121,10 @@ class TaskerProfileActivity : AppCompatActivity() {
     private fun SaveChanges() {
         val fn = Name.text.toString()
         val add = Address.text.toString()
-        val role = Role.text.toString()
         val cat = Category.text.toString()
         val rate = Rate.text.toString()
 
-        val userData = Users(fullName = fn, address = add, role = role, category = cat, price = rate)
+        val userData = Users(fullName = fn, address = add, category = cat, price = rate)
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val userRepository =UserRepository()
