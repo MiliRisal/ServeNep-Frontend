@@ -36,14 +36,14 @@ class TaskerProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tasker_profile)
 
-        Profile=findViewById(R.id.Profile)
-        Name=findViewById(R.id.Name)
+        Profile=findViewById(R.id.imgProfile)
+        Name=findViewById(R.id.tvName)
         tvRole=findViewById(R.id.tvRole)
-        Address=findViewById(R.id.Address)
-        Email=findViewById(R.id.Email)
-        Category=findViewById(R.id.Category)
-        Rate=findViewById(R.id.Rate)
-        savechange=findViewById(R.id.savechange)
+        Address=findViewById(R.id.etAddress)
+        Email=findViewById(R.id.etEmail)
+        Category=findViewById(R.id.etCategory)
+        Rate=findViewById(R.id.etRate)
+        savechange=findViewById(R.id.etPhone)
 
         Profile.setOnClickListener {
             loadPopUpMenu()

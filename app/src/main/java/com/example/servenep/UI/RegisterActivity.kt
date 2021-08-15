@@ -43,16 +43,16 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         etemail=findViewById(R.id.etemail)
         etaddress=findViewById(R.id.etaddress)
         etphone=findViewById(R.id.etphone)
-        spCat=findViewById(R.id.etCat)
+        spCat=findViewById(R.id.spCat)
         etPrice=findViewById(R.id.etPrice)
-        tvCat=findViewById(R.id.tvcat)
         tvPrice=findViewById(R.id.tvPrice)
+        tvCat=findViewById(R.id.tvCat)
         rduser=findViewById(R.id.rduser)
         rdtasker=findViewById(R.id.rdtasker)
         radioGroup=findViewById(R.id.radioGroup)
         etpassword=findViewById(R.id.etpassword)
         btnsignup=findViewById(R.id.btnsignup)
-        tvSignin=findViewById(R.id.tvSignin)
+        tvSignin=findViewById(R.id.tvSignup)
 
         btnsignup.setOnClickListener(this)
         tvSignin.setOnClickListener(this)
@@ -108,7 +108,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnsignup->{
                 insertUser()
             }
-            R.id.tvSignin->{
+            R.id.tvSignup->{
                 val intent= Intent(
                     this,
                     LoginActivity::class.java
