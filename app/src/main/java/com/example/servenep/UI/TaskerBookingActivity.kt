@@ -14,10 +14,6 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.servenep.R
 import com.example.servenep.databinding.ActivityTaskerBookingBinding
-<<<<<<< HEAD
-=======
-
->>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
 import com.google.firebase.messaging.FirebaseMessaging
 import org.json.JSONException
 import org.json.JSONObject
@@ -40,19 +36,13 @@ class TaskerBookingActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-<<<<<<< HEAD
 
-=======
->>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
         setContentView(R.layout.activity_tasker_booking)
         val binding = DataBindingUtil.setContentView<ActivityTaskerBookingBinding>(this, R.layout.activity_tasker_booking )
 
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/Enter_topic")
 
-<<<<<<< HEAD
-=======
 
->>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
         imgProfile=findViewById(R.id.imgProfile)
         tvName=findViewById(R.id.tvName)
         tvCategory=findViewById(R.id.tvCategory)
