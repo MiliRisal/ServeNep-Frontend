@@ -17,29 +17,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".UI.FeedbackActivity"
+            android:exported="true" />
         <activity
             android:name=".Home_Menu_Activity"
             android:exported="true"
             android:label="@string/title_activity_home_menu"
-            android:theme="@style/Theme.ServeNep.NoActionBar" >
-
+            android:theme="@style/Theme.ServeNep.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".UI.TaskerRecyclerViewActivity"></activity>
+        <activity android:name=".UI.TaskerRecyclerViewActivity" />
         <activity
             android:name=".UI.RegisterActivity"
-            tools:ignore="IntentFilterExportedReceiver"></activity>
-        <activity android:name=".UI.TaskerProfileActivity"></activity>
-
-        <activity android:name=".UI.TaskerBookingActivity"></activity>
+            tools:ignore="IntentFilterExportedReceiver" />
+        <activity android:name=".UI.TaskerProfileActivity" />
+        <activity android:name=".UI.TaskerBookingActivity" />
         <activity android:name=".UI.JobNotificationActivity" />
-
         <activity
             android:name=".Adapter.TaskerAdapter"
             tools:ignore="Instantiatable" />
