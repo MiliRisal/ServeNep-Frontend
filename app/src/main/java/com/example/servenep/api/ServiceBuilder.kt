@@ -15,7 +15,7 @@ object ServiceBuilder {
 
     var token: String?= null
     var usertype: String?= null
-    var Id: String? = null
+    var id: String? = null
 
     private val okHttp = OkHttpClient.Builder()
 
@@ -35,7 +35,7 @@ object ServiceBuilder {
 
     // Load image path in Service Builder class
     fun loadImagePath(): String {
+        return BASE_URL+ "uploads/"
 
-        return BASE_URL + "uploads/"
     }
 }

@@ -8,6 +8,7 @@ data class Users(
     val address : String? = null,
     val password : String? = null,
     val role : String? = null,
+    val bio : String? =null,
     val category : String? = null,
     val price : String? = null,
     val profileImage : String? = null
