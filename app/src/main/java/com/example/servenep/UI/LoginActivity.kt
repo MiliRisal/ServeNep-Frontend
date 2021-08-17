@@ -64,6 +64,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 val response = repository.userLogin(email,password)
                 if (response.success == true){
                     ServiceBuilder.token = "Bearer ${response.token}"
+                    ServiceBuilder.id = "${response.data!!._id}"
                     startActivity(
                         Intent(
                             this@LoginActivity,

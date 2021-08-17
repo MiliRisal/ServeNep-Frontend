@@ -2,6 +2,7 @@ package com.example.servenep.api
 
 import com.example.servenep.entities.Users
 import com.example.servenep.response.*
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -40,4 +41,13 @@ interface UserAPI {
         @Path("id") id: String,
         @Body users: Users
     ): Response<UpdateUserResponse>
+
+    //profile upload
+    @Multipart
+    @PUT("user/profile/{id}")
+    suspend fun uploadProfile(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+        @Part file: MultipartBody.Part
+    ): Response<ProfilePhotoResponse>
 }

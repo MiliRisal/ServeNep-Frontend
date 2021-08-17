@@ -5,6 +5,7 @@ import com.example.servenep.api.UserAPI
 import com.example.servenep.api.serveNepAPIRequest
 import com.example.servenep.entities.Users
 import com.example.servenep.response.*
+import okhttp3.MultipartBody
 
 class UserRepository
     :serveNepAPIRequest() {
@@ -48,6 +49,15 @@ class UserRepository
            userAPI.updateUser(
                ServiceBuilder.token!!,id,users
            )
+        }
+    }
+
+    //upload Profile Image
+    suspend fun uploadProfile(id: String, body : MultipartBody.Part): ProfilePhotoResponse {
+        return apiRequest {
+            userAPI.uploadProfile(
+                ServiceBuilder.token!!, id, body
+            )
         }
     }
 

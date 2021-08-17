@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.servenep">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -17,34 +22,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-
         <activity
-            android:name=".Home_Menu_Activity"
-            android:exported="true"
-            android:label="@string/title_activity_home_menu"
-            android:theme="@style/Theme.ServeNep.NoActionBar" >
-
+            android:name=".UI.profile.UpdateProfileActivity"
+            android:exported="true" />
+        <activity android:name=".UI.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".Home_Menu_Activity"
+            android:exported="true"
+            android:label="@string/title_activity_home_menu"
+            android:theme="@style/Theme.ServeNep.NoActionBar"></activity>
         <activity android:name=".UI.TaskerRecyclerViewActivity"></activity>
         <activity
             android:name=".UI.RegisterActivity"
             tools:ignore="IntentFilterExportedReceiver"></activity>
-        <activity android:name=".UI.TaskerProfileActivity"></activity>
-
         <activity android:name=".UI.TaskerBookingActivity"></activity>
         <activity android:name=".UI.JobNotificationActivity" />
-
         <activity
             android:name=".Adapter.TaskerAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".UI.TaskDescriptionActivity" />
-        <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.MainActivity" />
     </application>
 

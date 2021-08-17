@@ -2,6 +2,9 @@ package com.example.servenep
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,7 +14,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.databinding.ActivityHomeMenuBinding
+import com.example.servenep.repository.UserRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class Home_Menu_Activity : AppCompatActivity() {
 
@@ -35,9 +45,43 @@ class Home_Menu_Activity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home_menu)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        val hView = navView.getHeaderView(0)
+        val textViewName = hView.findViewById(R.id.textViewName) as TextView
+        val textViewEmail = hView.findViewById(R.id.textViewEmail) as TextView
+        val textuser = hView.findViewById(R.id.textuser) as TextView
+        val navImage = hView.findViewById(R.id.imageView) as ImageView
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val userRepository = UserRepository()
+                val response = userRepository.getUser()
+                if(response.success == true){
+                    val  user = response.data!!
+                    withContext(Dispatchers.Main) {
+                        val image = ServiceBuilder.loadImagePath() + user.profileImage
+                        textViewName.setText("${user.fullName}")
+                        textViewEmail.setText("${user.email}")
+                        textuser.setText("${user.role}")
+                        if (!user.profileImage.equals("")) {
+                            Glide.with(this@Home_Menu_Activity)
+                                .load(image)
+                                .into(navImage)
+                        }
+                    }
+                }
+
+            }catch (ex: Exception){
+                withContext(Dispatchers.Main){
+                    Toast.makeText(
+                        this@Home_Menu_Activity,
+                        "Error : ${ex}", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_dashboard, R.id.nav_MyOffers, R.id.nav_MyBookings, R.id.nav_AcceptedTasks
+                R.id.nav_dashboard, R.id.nav_MyOffers, R.id.nav_MyBookings, R.id.nav_AcceptedTasks, R.id.nav_profile
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
