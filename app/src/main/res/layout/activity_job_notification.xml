@@ -1,4 +1,3 @@
-<layout>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -102,36 +101,77 @@
         android:layout_marginTop="70dp"
         >
 
-        <Button
-            android:id="@+id/btnAccept"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginLeft="65dp"
-            android:background="@color/green"
-            android:src="@drawable/check"
-            android:textColor="@color/white"
-            android:text="Accept"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="39dp"
-            tools:layout_editor_absoluteY="467dp" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:layout_marginLeft="65dp"
+        android:src="@drawable/check"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="467dp"
+        tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/btnReject"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+        <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
             android:layout_marginLeft="87dp"
-            android:background="@color/red"
-            android:textColor="@color/white"
+        android:background="@color/white"
+        android:src="@drawable/ic_baseline_cancel_24"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="467dp"
+        tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="70dp"
+            android:background="@color/white"
             android:src="@drawable/ic_baseline_cancel_24"
-            android:text="REJECT"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteX="304dp"
             tools:layout_editor_absoluteY="467dp" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/iconlayout"
+        android:layout_marginTop="20dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accept Task"
+        android:textColor="@color/teal_700"
+        android:layout_marginLeft="35dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reject Task"
+        android:textColor="@color/teal_700"
+        android:layout_marginLeft="75dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="301dp"
+        android:layout_marginLeft="40dp"
+        tools:layout_editor_absoluteY="560dp" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-    </layout>
