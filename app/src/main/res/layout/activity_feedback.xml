@@ -6,28 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_700"
-    android:orientation="vertical"
-    tools:context=".UI.FeedbackActivity">
+    tools:context=".UI.feedback.FeedbackActivity"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
         android:gravity="center"
-        android:text="Customer Feedback"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:text="Cυʂƚσɱҽɾ Rҽʋιҽɯ"
         android:textColor="@color/black"
-        android:textSize="30dp" />
+        android:textSize="25dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            android:layout_centerInParent="true"
+            android:progressTint= "@android:color/holo_orange_dark"
+            android:progressBackgroundTint="@color/white"
+            android:stepSize="0.1" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="5dp"
             android:layout_height="wrap_content">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etfeedtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,10 +53,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_height="wrap_content">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etfeeddescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,13 +71,33 @@
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="70dp"
+         android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
             android:hint="Submit"
+            android:layout_marginTop="10dp"
             android:textColorHint="@color/red"
             android:background="@color/green"
             android:padding="10dp"
+            android:textStyle="bold"
             android:textSize="20sp">
-
         </Button>
+
+        <Button
+            android:id="@+id/btnCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:hint="Check"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/red"
+            android:background="@color/green"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp">
+        </Button>
+
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

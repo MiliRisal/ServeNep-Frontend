@@ -45,9 +45,7 @@ class JobNotificationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_job_notification)
-        val binding = DataBindingUtil.setContentView<ActivityJobNotificationBinding>(
-            this,
-            R.layout.activity_job_notification
+        val binding = DataBindingUtil.setContentView<ActivityJobNotificationBinding>(this, R.layout.activity_job_notification
         )
 
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/Enter_topic")
