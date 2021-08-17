@@ -35,7 +35,6 @@
         <activity
             android:name=".UI.RegisterActivity"
             tools:ignore="IntentFilterExportedReceiver" />
-        <activity android:name=".UI.TaskerProfileActivity" />
         <activity android:name=".UI.TaskerBookingActivity" />
         <activity android:name=".UI.JobNotificationActivity" />
         <activity

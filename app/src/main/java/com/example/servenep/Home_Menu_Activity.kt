@@ -1,5 +1,6 @@
 package com.example.servenep
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.widget.ImageView
@@ -14,6 +15,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.databinding.ActivityHomeMenuBinding
@@ -25,11 +27,20 @@ import kotlinx.coroutines.withContext
 
 class Home_Menu_Activity : AppCompatActivity() {
 
+    private val permissions = arrayOf(
+        android.Manifest.permission.CAMERA,
+        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        android.Manifest.permission.ACCESS_FINE_LOCATION
+    )
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (!hasPermission()) {
+            requestPermission()
+        }
 
         binding = ActivityHomeMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -87,6 +98,30 @@ class Home_Menu_Activity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
+
+    private fun requestPermission() {
+        ActivityCompat.requestPermissions(
+            this@Home_Menu_Activity,
+            permissions, 1
+        )
+
+    }
+
+    private fun hasPermission():Boolean {
+        var hasPermission = true
+        for (permission in permissions) {
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    permission
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                hasPermission = false
+            }
+        }
+        return hasPermission
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
