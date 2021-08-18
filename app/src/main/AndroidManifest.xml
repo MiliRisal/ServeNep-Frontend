@@ -39,20 +39,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".UI.location.ShareLocationActivity"
-            android:exported="true"
-            android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".UI.location.LiveLocationActivity"
-            android:exported="true"
-            android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".UI.location.livelocation"
-            android:exported="true"
-            android:label="@string/title_activity_livelocation" />
-
         <service
             android:name=".notification.MyFirebasemessingServices"
             android:enabled="true"
@@ -62,6 +48,15 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".UI.location.ShareLocationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".UI.location.LiveLocationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps" />
 
         <activity
             android:name=".UI.feedback.ViewFeedbackActivity"
