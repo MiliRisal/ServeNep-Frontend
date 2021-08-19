@@ -6,6 +6,7 @@ import com.example.servenep.entities.Description
 import com.example.servenep.entities.Feedback
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
+import com.example.servenep.repository.FeedbackRespository
 import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -16,6 +17,7 @@ class UserManagementTest {
 
     private var UserRepository: UserRepository? = null
     private var DescriptionRepository: DescriptionRepository? = null
+    private var FeedbackRespository:FeedbackRespository? =null
 
     // .....................USERS Login and Register Testing..................//
 
@@ -72,5 +74,25 @@ class UserManagementTest {
 
 
     }
+
+    @Test
+
+    fun checkfeedback() = runBlocking {
+
+        val feedback = Feedback(
+            _id = "611babe020f9973940900a95",
+            feedtitle = "happy",
+            feeddescription = "good service from tasker"
+        )
+
+       FeedbackRespository = FeedbackRespository()
+        val response = FeedbackRespository!!.insertFeedback(feedback)
+        val ExpectedResult = true
+        val ActualResult = response.success
+        Assert.assertEquals(ExpectedResult, ActualResult)
+
+
+    }
+
 
 }
