@@ -29,7 +29,7 @@ class RegisterTest {
             .perform(ViewActions.typeText("Kiran Gautam")).perform(ViewActions.closeSoftKeyboard());
 
 
-        Espresso.onView(withId(R.id.etemail))
+        Espresso.onView(withId(R.id.etEmail))
             .perform(ViewActions.typeText("gautamkiran38@gmail.com")).perform(ViewActions.closeSoftKeyboard());
 
 
@@ -43,7 +43,7 @@ class RegisterTest {
             .perform(ViewActions.typeText("9845969973")).perform(ViewActions.closeSoftKeyboard());
 
 
-        Espresso.onView(withId(R.id.etpassword))
+        Espresso.onView(withId(R.id.etPassword))
             .perform(ViewActions.typeText("Happy@#9845")).perform(ViewActions.closeSoftKeyboard());
 
 

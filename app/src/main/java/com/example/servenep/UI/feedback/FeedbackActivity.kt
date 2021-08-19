@@ -19,8 +19,7 @@ import java.lang.Exception
 class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etfeedtitle:EditText
     private lateinit var etfeeddescription:EditText
-    private lateinit var btnSubmit:Button
-    private lateinit var btncheck :Button
+    private lateinit var btnfeedbacksubmit:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,13 +27,13 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
 
         etfeedtitle = findViewById(R.id.etfeedtitle)
         etfeeddescription = findViewById(R.id.etfeeddescription)
-        btnSubmit = findViewById(R.id.btnSubmit)
-        btncheck = findViewById(R.id.btnCheck)
-        btnSubmit.setOnClickListener(this)
+        btnfeedbacksubmit = findViewById(R.id.btnFeedbackSubmit)
+
+        btnfeedbacksubmit.setOnClickListener(this)
     }
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.btnSubmit-> {
+            R.id.btnFeedbackSubmit-> {
                 insertFeedback ()
             }
         }
