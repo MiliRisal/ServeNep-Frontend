@@ -3,6 +3,7 @@ package com.example.servenep.UI
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -29,7 +30,7 @@ class TaskerBookingActivity : AppCompatActivity() {
     private lateinit var tvDesc:TextView
     private lateinit var tvestRate:TextView
     private lateinit var IconBook:ImageView
-    private lateinit var tvBook:TextView
+    private lateinit var tvBook:Button
 
     private val requestQueue : RequestQueue by lazy {
         Volley.newRequestQueue(this.applicationContext)

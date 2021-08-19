@@ -7,6 +7,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.filters.LargeTest
 import com.example.servenep.UI.JobNotificationActivity
+import com.example.servenep.UI.TaskerBookingActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -15,24 +16,21 @@ import org.junit.runners.JUnit4
 
 @LargeTest
 @RunWith(JUnit4::class)
-class BookingNotificationTest {
+class TaskerBookingTest {
 
     @get:Rule
 
-    val testRule = ActivityScenarioRule(JobNotificationActivity::class.java)
+    val testRule = ActivityScenarioRule(TaskerBookingActivity::class.java)
 
     @Test
-    fun testBookingNotificationUI() {
+    fun testTaskerBookingUI() {
 
-
-        Espresso.onView(ViewMatchers.withId(R.id.btnReject))
+        Espresso.onView(ViewMatchers.withId(R.id.tvBook))
             .perform(ViewActions.click())
 
         Thread.sleep(3000)
 
-
-        Espresso.onView(ViewMatchers.withId(R.id.btnReject))
+        Espresso.onView(ViewMatchers.withId(R.id.tvBook))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
-
 }
