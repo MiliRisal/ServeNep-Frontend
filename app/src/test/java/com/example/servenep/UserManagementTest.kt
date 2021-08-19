@@ -1,12 +1,10 @@
 package com.example.servenep
 
 import com.example.servenep.Adapter.TaskerAdapter
-
+import com.example.servenep.UI.TaskerBookingActivity
 import com.example.servenep.entities.Description
-import com.example.servenep.entities.Feedback
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
-import com.example.servenep.repository.FeedbackRespository
 import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -17,7 +15,8 @@ class UserManagementTest {
 
     private var UserRepository: UserRepository? = null
     private var DescriptionRepository: DescriptionRepository? = null
-    private var FeedbackRespository:FeedbackRespository? =null
+    private var TaskerBookingActivity:TaskerAdapter?=null
+
 
     // .....................USERS Login and Register Testing..................//
 
@@ -25,7 +24,7 @@ class UserManagementTest {
 
     fun checkLogin() = runBlocking {
         UserRepository = UserRepository()
-        val response = UserRepository!!.userLogin("kiran@gmail.com", "123123")
+        val response = UserRepository!!.userLogin("gautamkiran38@gmail.com", "Happy@#9845")
         val ExpectedResult = true
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
@@ -37,21 +36,20 @@ class UserManagementTest {
     fun checkRegister() = runBlocking {
 
         val users = Users(
-
-            fullName = "KiranGautam", email = "kiran12@gmail.com",
-            phone = "1234", address = "ktm", password = "123123", role = "Tasker", bio = "good at cleaning room", price = "200",
-            category = "Cleaner"
+            _id = "60e3debe8c0ad71584500268",
+            fullName = "Kiran Gautam", email = "gautamkiran38@gmail.com",
+            phone = "9845969973", address = "bharatpur", password = "Happy@#9845", role = "Customer"
         )
 
         UserRepository = UserRepository()
         val response = UserRepository!!.userRegister(users)
-        val expectedResult = false
-        val actualResult = response.success
-        Assert.assertEquals(expectedResult, actualResult)
+        val ExpectedResult = false
+        val ActualResult = response.success
+        Assert.assertEquals(ExpectedResult, ActualResult)
 
     }
 
-    // .....................Task Description Test.................//
+   // .....................Task Description Test.................//
 
 
     @Test
@@ -68,25 +66,6 @@ class UserManagementTest {
 
         DescriptionRepository = DescriptionRepository()
         val response = DescriptionRepository!!.descriptionInsert(description)
-        val ExpectedResult = true
-        val ActualResult = response.success
-        Assert.assertEquals(ExpectedResult, ActualResult)
-
-
-    }
-
-    @Test
-
-    fun checkfeedback() = runBlocking {
-
-        val feedback = Feedback(
-            _id = "611babe020f9973940900a95",
-            feedtitle = "happy",
-            feeddescription = "good service from tasker"
-        )
-
-       FeedbackRespository = FeedbackRespository()
-        val response = FeedbackRespository!!.insertFeedback(feedback)
         val ExpectedResult = true
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
