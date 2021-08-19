@@ -80,8 +80,10 @@
         <activity
             android:name=".UI.RegisterActivity"
             tools:ignore="IntentFilterExportedReceiver" />
-        <activity android:name=".UI.TaskerBookingActivity" />
-        <activity android:name=".UI.JobNotificationActivity" />
+        <activity android:name=".UI.TaskerBookingActivity"
+            android:exported="true"/>
+        <activity android:name=".UI.JobNotificationActivity"
+            android:exported="true"/>
         <activity
             android:name=".Adapter.TaskerAdapter"
             tools:ignore="Instantiatable" />
