@@ -3,8 +3,10 @@ package com.example.servenep
 import com.example.servenep.Adapter.TaskerAdapter
 import com.example.servenep.UI.TaskerBookingActivity
 import com.example.servenep.entities.Description
+import com.example.servenep.entities.Feedback
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
+import com.example.servenep.repository.FeedbackRespository
 import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -16,6 +18,7 @@ class UserManagementTest {
     private var UserRepository: UserRepository? = null
     private var DescriptionRepository: DescriptionRepository? = null
     private var TaskerBookingActivity:TaskerAdapter?=null
+    private var FeedbackRepository:FeedbackRespository? =null
 
 
     // .....................USERS Login and Register Testing..................//
@@ -66,6 +69,26 @@ class UserManagementTest {
 
         DescriptionRepository = DescriptionRepository()
         val response = DescriptionRepository!!.descriptionInsert(description)
+        val ExpectedResult = true
+        val ActualResult = response.success
+        Assert.assertEquals(ExpectedResult, ActualResult)
+
+
+    }
+
+    @Test
+
+    fun checkfeedback() = runBlocking {
+
+        val feedback = Feedback(
+            _id = "611df97e0501df47f4319677",
+            feedtitle = "electrician",
+            feeddescription = "not satisfy"
+
+        )
+
+        FeedbackRepository = FeedbackRespository()
+        val response = FeedbackRepository!!.insertFeedback(feedback)
         val ExpectedResult = true
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
