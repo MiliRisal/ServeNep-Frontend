@@ -60,7 +60,7 @@ class TaskerBookingActivity : AppCompatActivity() {
                 val notifcationBody = JSONObject()
 
                 try {
-                    notifcationBody.put("title", "Firebase Notification")
+                    notifcationBody.put("title", " Notification")
                     notifcationBody.put("message", binding.tvName.text)
                     notification.put("to", topic)
                     notification.put("data", notifcationBody)

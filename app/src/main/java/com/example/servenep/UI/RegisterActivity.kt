@@ -17,12 +17,12 @@ import kotlinx.coroutines.withContext
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     private val category = arrayOf("--Select--","Cleaner","Electrician","Delivery","Carpenter","Plumber","Mechanic")
-    private lateinit var selectedItem : String
+    private var selectedItem : String? = ""
     private lateinit var etfullname: EditText
     private lateinit var etemail: EditText
     private lateinit var etaddress: EditText
     private lateinit var etphone: EditText
-    private lateinit var etpassword: EditText
+    private lateinit var etPassword: EditText
     private lateinit var tvCat: TextView
     private lateinit var tvPrice: TextView
     private lateinit var spCat: Spinner
@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_register)
 
         etfullname=findViewById(R.id.etfullname)
-        etemail=findViewById(R.id.etemail)
+        etemail=findViewById(R.id.etEmail)
         etaddress=findViewById(R.id.etaddress)
         etphone=findViewById(R.id.etphone)
         spCat=findViewById(R.id.spCat)
@@ -50,7 +50,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         rduser=findViewById(R.id.rduser)
         rdtasker=findViewById(R.id.rdtasker)
         radioGroup=findViewById(R.id.radioGroup)
-        etpassword=findViewById(R.id.etpassword)
+        etPassword=findViewById(R.id.etPassword)
         btnsignup=findViewById(R.id.btnsignup)
         tvSignin=findViewById(R.id.tvSignup)
 
@@ -124,7 +124,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         val email = etemail.text.toString().trim()
         val phone = etphone.text.toString().trim()
         val address = etaddress.text.toString().trim()
-        val password = etpassword.text.toString().trim()
+        val password = etPassword.text.toString().trim()
         val price = etPrice.text.toString()
         val category = selectedItem
 
@@ -156,54 +156,100 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
             Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
         }
         if (password.length < MIN_PASSWORD_LENGTH) {
-            etpassword.error = "Too weak! At least 6 characters required!"
+            etPassword.error = "Too weak! At least 6 characters required!"
         } else {
-            //APi starts
-            val users = Users(
-                fullName = fullName,
-                email = email,
-                phone = phone,
-                password = password,
-                address = address,
-                role = role,
-                category= category,
-                price = price
+            if(role == "Customer"){
+                //APi starts
+                 val users = Users(
+                    fullName = fullName,
+                    email = email,
+                    phone = phone,
+                    password = password,
+                    address = address,
+                    role = role
+                )
+                CoroutineScope(Dispatchers.IO).launch {
+                    // for API
+                    try {
+                        val userRepository = UserRepository()
+                        val response = userRepository.userRegister(users)
+                        if (response.success == true) {
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    this@RegisterActivity,
+                                    "Register Successfully!!", Toast.LENGTH_SHORT
+                                ).show()
 
 
-            )
-            CoroutineScope(Dispatchers.IO).launch {
-                // for API
-                try {
-                    val userRepository = UserRepository()
-                    val response = userRepository.userRegister(users)
-                    if (response.success == true) {
+                                startActivity(
+                                    Intent(
+                                        this@RegisterActivity,
+                                        LoginActivity::class.java
+                                    )
+                                )
+                            }
+                        }
+                    } catch (ex: Exception) {
                         withContext(Dispatchers.Main) {
                             Toast.makeText(
-                                this@RegisterActivity,
-                                "Register Successfully!!", Toast.LENGTH_SHORT
+                                this@RegisterActivity, "error" + ex.toString(), Toast.LENGTH_SHORT
                             ).show()
-
-
-                            startActivity(
-                                Intent(
-                                    this@RegisterActivity,
-                                    LoginActivity::class.java
+                            /*val snack =
+                                Snackbar.make(
+                                    linearLayout,
+                                    "Username and Email cannot be Duplicate!!",
+                                    Snackbar.LENGTH_SHORT
                                 )
-                            )
+                            snack.show()*/
                         }
                     }
-                } catch (ex: Exception) {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(
-                            this@RegisterActivity, "error" + ex.toString(), Toast.LENGTH_SHORT
-                        ).show()
-                        /*val snack =
-                            Snackbar.make(
-                                linearLayout,
-                                "Username and Email cannot be Duplicate!!",
-                                Snackbar.LENGTH_SHORT
-                            )
-                        snack.show()*/
+                }
+            }else{
+                //APi starts
+                val users = Users(
+                    fullName = fullName,
+                    email = email,
+                    phone = phone,
+                    password = password,
+                    address = address,
+                    role = role,
+                    category= category,
+                    price = price
+                )
+                CoroutineScope(Dispatchers.IO).launch {
+                    // for API
+                    try {
+                        val userRepository = UserRepository()
+                        val response = userRepository.userRegister(users)
+                        if (response.success == true) {
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(
+                                    this@RegisterActivity,
+                                    "Register Successfully!!", Toast.LENGTH_SHORT
+                                ).show()
+
+
+                                startActivity(
+                                    Intent(
+                                        this@RegisterActivity,
+                                        LoginActivity::class.java
+                                    )
+                                )
+                            }
+                        }
+                    } catch (ex: Exception) {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(
+                                this@RegisterActivity, "error" + ex.toString(), Toast.LENGTH_SHORT
+                            ).show()
+                            /*val snack =
+                                Snackbar.make(
+                                    linearLayout,
+                                    "Username and Email cannot be Duplicate!!",
+                                    Snackbar.LENGTH_SHORT
+                                )
+                            snack.show()*/
+                        }
                     }
                 }
             }
