@@ -52,7 +52,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         radioGroup=findViewById(R.id.radioGroup)
         etPassword=findViewById(R.id.etPassword)
         btnsignup=findViewById(R.id.btnsignup)
-        tvSignin=findViewById(R.id.tvSignup)
+        tvSignin=findViewById(R.id.tvSignin)
 
         btnsignup.setOnClickListener(this)
         tvSignin.setOnClickListener(this)

@@ -3,6 +3,7 @@ package com.example.servenep
 import com.example.servenep.Adapter.TaskerAdapter
 
 import com.example.servenep.entities.Description
+import com.example.servenep.entities.Feedback
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
 import com.example.servenep.repository.UserRepository
@@ -22,7 +23,7 @@ class UserManagementTest {
 
     fun checkLogin() = runBlocking {
         UserRepository = UserRepository()
-        val response = UserRepository!!.userLogin("gautamkiran38@gmail.com", "Happy@#9845")
+        val response = UserRepository!!.userLogin("kiran@gmail.com", "123123")
         val ExpectedResult = true
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
@@ -34,20 +35,21 @@ class UserManagementTest {
     fun checkRegister() = runBlocking {
 
         val users = Users(
-            _id = "60e3debe8c0ad71584500268",
-            fullName = "Kiran Gautam", email = "gautamkiran38@gmail.com",
-            phone = "9845969973", address = "bharatpur", password = "Happy@#9845", role = "Customer"
+
+            fullName = "KiranGautam", email = "kiran12@gmail.com",
+            phone = "1234", address = "ktm", password = "123123", role = "Tasker", bio = "good at cleaning room", price = "200",
+            category = "Cleaner"
         )
 
         UserRepository = UserRepository()
         val response = UserRepository!!.userRegister(users)
-        val ExpectedResult = false
-        val ActualResult = response.success
-        Assert.assertEquals(ExpectedResult, ActualResult)
+        val expectedResult = false
+        val actualResult = response.success
+        Assert.assertEquals(expectedResult, actualResult)
 
     }
 
-   // .....................Task Description Test.................//
+    // .....................Task Description Test.................//
 
 
     @Test
@@ -71,33 +73,4 @@ class UserManagementTest {
 
     }
 
-//    @Test
-//
-//    fun checkspecification() = runBlocking {
-//
-//        val TaskerSpecification = TaskerSpecification(
-//            name = "Ramesh",
-//            category = "Electrician",
-//            price = 5000,
-//            area = "baneshor height"
-//
-//        )
-//
-//        SpecificationRepository = SpecificationRepository()
-//        val response = SpecificationRepository!!.specification(TaskerSpecification)
-//        val ExpectedResult = true
-//        val ActualResult = response.success
-//        Assert.assertEquals(ExpectedResult, ActualResult)
-
-
-    }
-
-//    @Test
-//    fun checkTaskerAdapter() = runBlocking {
-//
-//         val TaskerAdapter = Tasker(TaskerId = null, TaskerName = null, TaskerCategory = null, TaskerArea = null, TaskerImageURL = null,
-//         TaskerPrice = null)
-//
-//        TaskerBookingActivity = TaskerAdapter()
-////        val response = TaskerBookingActivity!!.onCreateViewHolder()
-//    }
+}
