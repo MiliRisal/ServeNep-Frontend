@@ -145,7 +145,7 @@
             android:layout_marginBottom="50dp">
 
             <TextView
-                android:id="@+id/tvSignup"
+                android:id="@+id/tvSignupLog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -161,8 +161,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
 
+                android:layout_centerInParent="true"
                 android:padding="15dp"
                 android:text="Forgot Password"
                 android:textSize="18sp"
@@ -172,140 +172,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:orientation="vertical"-->
-<!--    tools:context=".UI.LoginActivity">-->
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical">-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text=" Welcome "-->
-<!--        android:textColor="#686de0"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="24dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:layout_marginLeft="20dp"/>-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Signin to continue !"-->
-<!--        android:textStyle="normal"-->
-<!--        android:textColor="#4834d4"-->
-<!--        android:textSize="19dp"-->
-<!--        android:layout_marginTop="2dp"-->
-<!--        android:layout_marginLeft="29dp"/>-->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="ServeNep"-->
-<!--        android:textColor="#686de0"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="30dp"-->
-<!--        android:layout_marginTop="39dp"-->
-
-<!--        android:layout_marginLeft="129dp"/>-->
-
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Email"-->
-<!--        android:textColor="#9b59b6"-->
-<!--        android:textStyle="normal"-->
-<!--        android:textSize="20dp"-->
-<!--        android:layout_marginTop="55dp"-->
-<!--        android:layout_marginLeft="20dp"/>-->
-<!--    <EditText-->
-<!--        android:id="@+id/etemail"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:inputType="textEmailAddress"-->
-<!--        android:drawableEnd="@drawable/ic_baseline_email_24"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:background="@drawable/edittext"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:textColorHint="#000"-->
-<!--        android:padding="8dp"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold"/>-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Password"-->
-<!--        android:textColor="#9b59b6"-->
-<!--        android:textStyle="normal"-->
-<!--        android:textSize="20dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginLeft="20dp"/>-->
-<!--    <EditText-->
-<!--        android:id="@+id/etpassword"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:drawableEnd="@drawable/ic_baseline_lock_24"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        android:background="@drawable/edittext"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:textColorHint="#000"-->
-<!--        android:inputType="textPassword"-->
-<!--        android:padding="8dp"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/forgetpassword"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Forgot password?"-->
-<!--        android:textStyle="normal"-->
-<!--        android:textColor="#4834d4"-->
-<!--        android:textSize="19dp"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_gravity="end"-->
-<!--        android:layout_marginRight="20dp"-->
-<!--        />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btnlogin"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="40dp"-->
-<!--        android:text="Sign In"-->
-<!--        android:background="@drawable/button" />-->
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="5dp">-->
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="New at ServeNep? "-->
-<!--            android:textSize="17dp"/>-->
-<!--        <TextView-->
-<!--            android:id="@+id/tvSignup"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text=" Sign-up"-->
-<!--            android:textColor="#4834d4"-->
-<!--            android:textSize="19dp"/>-->
-<!--    </LinearLayout>-->
-
-<!--    </LinearLayout>-->
-<!--</ScrollView>-->

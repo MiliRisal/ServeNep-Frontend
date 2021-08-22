@@ -172,10 +172,8 @@
                 android:textColor="@color/black"/>
 
             <TextView
-<<<<<<< HEAD
-=======
                 android:id="@+id/tvEmail"
->>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rate per hour"
@@ -186,11 +184,7 @@
                 />
 
             <EditText
-<<<<<<< HEAD
                 android:id="@+id/etRate"
-=======
-                android:id="@+id/taskerRate"
->>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rs.500 "
@@ -216,7 +210,6 @@
     </LinearLayout>
 
     <Button
-<<<<<<< HEAD
                 android:id="@+id/btnSaveChanges"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -226,21 +219,6 @@
 
 
 
-
-
-
-
-
-
-
-=======
-        android:id="@+id/savechange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save Changes"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="140dp" />
->>>>>>> ccb23ec45852e35f146daa27d96daeb06baab1ff
 
 
     <!--    <LinearLayout-->

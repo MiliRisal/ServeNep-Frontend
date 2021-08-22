@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         etpassword=findViewById(R.id.etpassword)
         btnlogin=findViewById(R.id.btnlogin)
         forgetpassword=findViewById(R.id.forgetpassword)
-        tvSignup=findViewById(R.id.tvSignup)
+        tvSignup=findViewById(R.id.tvSignupLog)
 
         btnlogin.setOnClickListener(this)
         tvSignup.setOnClickListener(this)
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 loginUser()
                 validation()
             }
-            R.id.tvSignup->{
+            R.id.tvSignupLog->{
                 val intent= Intent(
                     this,
                     RegisterActivity::class.java
@@ -64,6 +64,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 val response = repository.userLogin(email,password)
                 if (response.success == true){
                     ServiceBuilder.token = "Bearer ${response.token}"
+                    saveSharedPref()
                     startActivity(
                         Intent(
                             this@LoginActivity,
@@ -90,6 +91,17 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    private fun saveSharedPref() {
+        val email = etemail.text.toString()
+        val password = etpassword.text.toString()
+        val sharedPref = getSharedPreferences("MyPref", MODE_PRIVATE)
+
+        val editor = sharedPref.edit()
+        editor.putString("email", email)
+        editor.putString("password", password)
+        editor.apply()
     }
 
     private fun validation():Boolean {

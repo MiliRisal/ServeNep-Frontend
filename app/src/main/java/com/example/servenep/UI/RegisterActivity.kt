@@ -43,10 +43,10 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         etemail=findViewById(R.id.etemail)
         etaddress=findViewById(R.id.etaddress)
         etphone=findViewById(R.id.etphone)
-        spCat=findViewById(R.id.etCat)
+        spCat=findViewById(R.id.spCat)
         etPrice=findViewById(R.id.etPrice)
-        tvCat=findViewById(R.id.tvcat)
         tvPrice=findViewById(R.id.tvPrice)
+        tvCat=findViewById(R.id.tvCat)
         rduser=findViewById(R.id.rduser)
         rdtasker=findViewById(R.id.rdtasker)
         radioGroup=findViewById(R.id.radioGroup)
@@ -182,8 +182,6 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                                 this@RegisterActivity,
                                 "Register Successfully!!", Toast.LENGTH_SHORT
                             ).show()
-
-
                             startActivity(
                                 Intent(
                                     this@RegisterActivity,

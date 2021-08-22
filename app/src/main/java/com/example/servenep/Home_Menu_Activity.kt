@@ -1,5 +1,6 @@
 package com.example.servenep
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.servenep.UI.RegisterActivity
 import com.example.servenep.databinding.ActivityHomeMenuBinding
 
 class Home_Menu_Activity : AppCompatActivity() {
@@ -37,11 +39,24 @@ class Home_Menu_Activity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_dashboard, R.id.nav_MyOffers, R.id.nav_MyBookings, R.id.nav_AcceptedTasks
+                R.id.nav_dashboard, R.id.nav_MyOffers, R.id.nav_MyBookings, R.id.nav_AcceptedTasks, R.id.nav_logout
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.menu.findItem(R.id.nav_logout).setOnMenuItemClickListener { item ->
+            when (item.itemId){
+                R.id.nav_logout -> {
+                    startActivity(Intent(this, RegisterActivity::class.java))
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -54,4 +69,6 @@ class Home_Menu_Activity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home_menu)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 }
