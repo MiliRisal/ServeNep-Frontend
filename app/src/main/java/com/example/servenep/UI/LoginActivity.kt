@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         etpassword=findViewById(R.id.etpassword)
         btnlogin=findViewById(R.id.btnlogin)
         forgetpassword=findViewById(R.id.forgetpassword)
-        tvSignup=findViewById(R.id.tvSignupLog)
+        tvSignup=findViewById(R.id.tvSignup)
 
         btnlogin.setOnClickListener(this)
         tvSignup.setOnClickListener(this)
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 loginUser()
                 validation()
             }
-            R.id.tvSignupLog->{
+            R.id.tvSignup->{
                 val intent= Intent(
                     this,
                     RegisterActivity::class.java
@@ -65,6 +65,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 if (response.success == true){
                     ServiceBuilder.token = "Bearer ${response.token}"
                     saveSharedPref()
+                    ServiceBuilder.id = "${response.data!!._id}"
                     startActivity(
                         Intent(
                             this@LoginActivity,

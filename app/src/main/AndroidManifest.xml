@@ -3,11 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.servenep">
 
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,37 +25,70 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
+
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <service
+            android:name=".notification.MyFirebasemessingServices"
+            android:enabled="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
         <activity
-            android:name=".UI.SplashActivity"
-            android:exported="true">
+            android:name=".UI.location.ShareLocationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".UI.location.LiveLocationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps" />
+
+        <activity
+            android:name=".UI.feedback.ViewFeedbackActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UI.feedback.FeedbackActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Home_Menu_Activity"
+            android:exported="true"
+            android:label="@string/title_activity_home_menu"
+            android:theme="@style/Theme.ServeNep.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Home_Menu_Activity"
-            android:exported="true"
-            android:label="@string/title_activity_home_menu"
-            android:theme="@style/Theme.ServeNep.NoActionBar">
-
-        </activity>
         <activity android:name=".UI.TaskerRecyclerViewActivity" />
         <activity
             android:name=".UI.RegisterActivity"
-            tools:ignore="IntentFilterExportedReceiver">
-
-        </activity>
-        <activity android:name=".UI.TaskerProfileActivity" />
-        <activity android:name=".UI.TaskerBookingActivity" />
-        <activity android:name=".UI.JobNotificationActivity" />
+            tools:ignore="IntentFilterExportedReceiver" />
+        <activity android:name=".UI.TaskerBookingActivity"
+            android:exported="true"/>
+        <activity android:name=".UI.JobNotificationActivity"
+            android:exported="true"/>
         <activity
             android:name=".Adapter.TaskerAdapter"
             tools:ignore="Instantiatable" />
         <activity android:name=".UI.TaskDescriptionActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.MainActivity" />
+
     </application>
 
 </manifest>

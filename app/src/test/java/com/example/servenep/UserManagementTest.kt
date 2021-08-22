@@ -3,11 +3,10 @@ package com.example.servenep
 import com.example.servenep.Adapter.TaskerAdapter
 import com.example.servenep.UI.TaskerBookingActivity
 import com.example.servenep.entities.Description
-import com.example.servenep.entities.TaskerSpecification
+import com.example.servenep.entities.Feedback
 import com.example.servenep.entities.Users
-import com.example.servenep.model.Tasker
 import com.example.servenep.repository.DescriptionRepository
-import com.example.servenep.repository.SpecificationRepository
+import com.example.servenep.repository.FeedbackRespository
 import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -18,8 +17,8 @@ class UserManagementTest {
 
     private var UserRepository: UserRepository? = null
     private var DescriptionRepository: DescriptionRepository? = null
-    private var SpecificationRepository: SpecificationRepository?=null
     private var TaskerBookingActivity:TaskerAdapter?=null
+    private var FeedbackRepository:FeedbackRespository? =null
 
 
     // .....................USERS Login and Register Testing..................//
@@ -79,39 +78,23 @@ class UserManagementTest {
 
     @Test
 
-    fun checkspecification() = runBlocking {
+    fun checkfeedback() = runBlocking {
 
-        val TaskerSpecification = TaskerSpecification(
-            name = "Ramesh",
-            category = "Electrician",
-            price = 5000,
-            area = "baneshor height"
+        val feedback = Feedback(
+            _id = "611df97e0501df47f4319677",
+            feedtitle = "electrician",
+            feeddescription = "not satisfy"
 
         )
 
-        SpecificationRepository = SpecificationRepository()
-        val response = SpecificationRepository!!.specification(TaskerSpecification)
+        FeedbackRepository = FeedbackRespository()
+        val response = FeedbackRepository!!.insertFeedback(feedback)
         val ExpectedResult = true
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
 
 
     }
-
-    @Test
-    fun checkTaskerAdapter() = runBlocking {
-
-         val TaskerAdapter = Tasker(TaskerId = null, TaskerName = null, TaskerCategory = null, TaskerArea = null, TaskerImageURL = null,
-         TaskerPrice = null)
-
-        TaskerBookingActivity = TaskerAdapter()
-//        val response = TaskerBookingActivity!!.onCreateViewHolder()
-    }
-
-
-
-
-
 
 
 }
