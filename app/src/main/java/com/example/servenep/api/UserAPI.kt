@@ -25,7 +25,7 @@ interface UserAPI {
     @GET("tasker/{category}")
     suspend fun getTaskerByCategory(
         @Header("Authorization") token : String,
-        @Path("taskerCategory") taskerCategory: String
+        @Path("category") category: String
     ):Response<GetTaskerCategory>
 
     //view user

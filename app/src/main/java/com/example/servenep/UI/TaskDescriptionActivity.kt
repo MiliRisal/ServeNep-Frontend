@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
+import com.example.servenep.entities.Category
 import com.example.servenep.entities.Description
+import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,6 +25,8 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var rbmaxhour: RadioButton
     private lateinit var etprice: EditText
     private lateinit var btnsubmit: Button
+    private lateinit var backButtonFromAddDesc: ImageView
+    private var category : String? = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +40,10 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
         rbmaxhour=findViewById(R.id.rbmaxhour)
         etprice=findViewById(R.id.etprice)
         btnsubmit=findViewById(R.id.btnsubmit)
+        backButtonFromAddDesc=findViewById(R.id.backButtonFromAddDesc)
 
         btnsubmit.setOnClickListener(this)
+        backButtonFromAddDesc.setOnClickListener(this)
 
     }
 
@@ -45,10 +52,18 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btnsubmit -> {
                 insertDescription()
             }
+            R.id.backButtonFromAddDesc ->{
+                val category = intent.getParcelableExtra<Users>("userDetail")
+                val intent = Intent(this, TaskerRecyclerViewActivity::class.java)
+                intent.putExtra("Category", category?.category.toString() )
+                startActivity(intent)
+            }
         }
     }
 
     private fun insertDescription() {
+        val category = intent.getParcelableExtra<Users>("userDetail")
+        val bookedUserId = category?._id.toString()
         val title = ettile.text.toString().trim()
         val taskDescription = ettaskdes.text.toString().trim()
         val price = etprice.text.toString().trim()
@@ -79,6 +94,7 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
         }
         else {
             val description = Description(
+                bookedUserId = bookedUserId,
                 title = title,
                 taskDescription = taskDescription,
                 price = price,
@@ -99,7 +115,7 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                         startActivity(
                             Intent(
                                 this@TaskDescriptionActivity,
-                                TaskerRecyclerViewActivity::class.java
+                                Home_Menu_Activity::class.java
                             )
                         )
                     }

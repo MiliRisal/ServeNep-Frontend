@@ -5,18 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@color/black"
     tools:context=".UI.TaskerRecyclerViewActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:orientation="horizontal"
+        android:verticalScrollbarPosition="defaultPosition">
+
+        <ImageView
+            android:id="@+id/backButtonFromUser"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="12dp"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Available Tasker"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
     <TextView
+        android:id="@+id/txtCategoryType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Available taskers"
+        android:text="Cleaner"
         android:textStyle="bold"
         android:textSize="30dp"
-        android:layout_margin="40dp"
-        android:layout_gravity="center"
-        />
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:layout_gravity="center" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh"
@@ -24,7 +51,7 @@
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
+            android:id="@+id/viewUserRrecyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

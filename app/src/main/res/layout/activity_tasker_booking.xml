@@ -111,9 +111,6 @@
         android:layout_marginTop="20dp">
 
 
-
-
-
         <TextView
             android:id="@+id/tvBook"
             android:layout_width="wrap_content"

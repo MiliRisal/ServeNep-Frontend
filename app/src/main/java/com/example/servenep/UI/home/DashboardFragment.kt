@@ -7,22 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import com.example.servenep.Category
-import com.example.servenep.CategoryAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.servenep.Adapter.DashboardAdapter
 import com.example.servenep.R
-import com.example.servenep.UI.TaskDescriptionActivity
 import com.example.servenep.UI.TaskerRecyclerViewActivity
+import com.example.servenep.repository.CategoryRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
 
     private val cat = arrayOf("---Choose category---","Cleaner","Electrician","Delivery","Carpenter","Plumber","Mechanic")
     private lateinit var spinner: Spinner
-    private lateinit var homeicon: ImageView
-    private lateinit var profileicon: ImageView
-    private lateinit var toolsicon: ImageView
-    private var gridView: GridView?=null
-    private var arrayList:ArrayList<Category> ?=null
-    private var CategoryAdapter: CategoryAdapter?=null
+    private lateinit var categoryRecyclerview: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,18 +31,8 @@ class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
-       // homeicon=view.findViewById(R.id.homeicon)
-       // profileicon=view.findViewById(R.id.profileicon)
-       // toolsicon=view.findViewById(R.id.toolsicon)
-        gridView=view.findViewById(R.id.gridview)
         spinner = view.findViewById(R.id.spinner)
 
-        arrayList= ArrayList()
-        arrayList=setDataList()
-        CategoryAdapter= CategoryAdapter(view.context, arrayList!!)
-        gridView?.adapter=CategoryAdapter
-
-        gridView?.setOnItemClickListener(this)
         //array apdater for items
         val adapter = object: ArrayAdapter<String>(
             requireContext(),
@@ -74,18 +65,35 @@ class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
                 }
             }
 
+        categoryRecyclerview = view.findViewById(R.id.categoryRecyclerview)
+        allCategories()
+
         return view
     }
-    private fun setDataList():ArrayList<Category>{
-        var arrayList:ArrayList<Category> = ArrayList()
-        arrayList.add(Category(R.drawable.cleaner,"Cleaner"))
-        arrayList.add(Category(R.drawable.electric,"Electrician"))
-        arrayList.add(Category(R.drawable.delivery,"Delivery"))
-        arrayList.add(Category(R.drawable.carpenter,"Carpenter"))
-        arrayList.add(Category(R.drawable.plumber,"Plumber"))
-        arrayList.add(Category(R.drawable.mechanic,"Mechanic"))
-        return arrayList
+
+    private fun allCategories() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val categoryRepository = CategoryRepository()
+                val response = categoryRepository.getAllCategory()
+
+                if(response.success == true){
+                    withContext(Dispatchers.Main){
+                        val listCategory = response.data
+                        categoryRecyclerview.adapter =
+                            listCategory?.let { DashboardAdapter (requireContext(), it) }
+                        categoryRecyclerview.layoutManager = LinearLayoutManager(context)
+                    }
+                }
+            }
+            catch (ex : Exception){
+
+
+            }
+        }
     }
+
+
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         startActivity(

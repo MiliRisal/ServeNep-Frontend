@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".UI.LoginActivity">
 
     <ImageView
@@ -96,46 +97,22 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="#4E525B"
-                android:elevation="0dp"
-                android:src="@drawable/round_arrow_forward_24"
-                android:tint="@android:color/white"
-                app:elevation="0dp"
-                app:fabCustomSize="80dp"
-                tools:ignore="RelativeOverlap" />
             <Button
                 android:id="@+id/btnlogin"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Log-In"
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
-                android:backgroundTint="@color/black"
                 android:layout_marginStart="30dp"
-                android:padding="15dp"/>
+                android:background="@drawable/background"
+                android:padding="15dp"
+                android:text="Log-In"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/btnlogin"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentStart="true"-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:layout_marginStart="30dp"-->
-<!--                android:padding="15dp"-->
-<!--                android:text="Sign in"-->
-<!--                android:textColor="#191919"-->
-<!--                android:textSize="25sp"-->
-<!--                android:textStyle="bold" />-->
         </RelativeLayout>
 
         <RelativeLayout
