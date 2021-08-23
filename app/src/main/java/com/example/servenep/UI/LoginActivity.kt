@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.repository.UserRepository
@@ -63,10 +64,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 val response = repository.userLogin(email,password)
                 if (response.success == true){
                     ServiceBuilder.token = "Bearer ${response.token}"
+                    ServiceBuilder.id = "${response.data!!._id}"
                     startActivity(
                         Intent(
                             this@LoginActivity,
-                            DashboardActivity::class.java
+                            Home_Menu_Activity::class.java
                         )
                     )
                     finish()

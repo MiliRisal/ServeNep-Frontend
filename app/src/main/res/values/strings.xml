@@ -15,4 +15,23 @@
     <string name="user_type">User Type:</string>
     <string name="sign_in">Sign-in</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="title_activity_home_menu">Home_Menu_Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_MyOffers">My Offers</string>
+    <string name="menu_MyBookings">My Bookings</string>
+    <string name="menu_AcceptedTasks">Accepted Tasks</string>
+    <string name="menu_updateprofile">Update Profile</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_logout">Log Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_livelocation">livelocation</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

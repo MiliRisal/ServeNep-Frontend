@@ -1,10 +1,8 @@
 package com.example.servenep.api
 
-import android.provider.ContactsContract
 import com.example.servenep.entities.Users
-import com.example.servenep.response.GetTaskerCategory
-import com.example.servenep.response.LoginResponse
-import com.example.servenep.response.RegisterResponse
+import com.example.servenep.response.*
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -29,4 +27,27 @@ interface UserAPI {
         @Header("Authorization") token : String,
         @Path("taskerCategory") taskerCategory: String
     ):Response<GetTaskerCategory>
+
+    //view user
+    @GET("user/me")
+    suspend fun getUser(
+        @Header("Authorization") token: String
+    ): Response<GetUserResponse>
+
+    //update user
+    @PUT("user/update/{id}")
+    suspend fun updateUser(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+        @Body users: Users
+    ): Response<UpdateUserResponse>
+
+    //profile upload
+    @Multipart
+    @PUT("user/profile/{id}")
+    suspend fun uploadProfile(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+        @Part file: MultipartBody.Part
+    ): Response<ProfilePhotoResponse>
 }

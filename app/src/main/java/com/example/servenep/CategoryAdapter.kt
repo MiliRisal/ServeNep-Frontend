@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat.startActivity
+import com.example.servenep.UI.TaskerRecyclerViewActivity
 
 class CategoryAdapter(
     var context: Context,
@@ -34,6 +36,10 @@ class CategoryAdapter(
 
         icons.setImageResource(category.icons!!)
         name.text=category.name
+
+        val intent = Intent(context, TaskerRecyclerViewActivity::class.java)
+        intent.putExtra("category", name.text )
+
 
         return view
     }
