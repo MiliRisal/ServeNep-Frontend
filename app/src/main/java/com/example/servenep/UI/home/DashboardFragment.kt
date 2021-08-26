@@ -21,7 +21,7 @@ import java.lang.Exception
 
 class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
 
-    private val cat = arrayOf("---Choose category---","Cleaner","Electrician","Delivery","Carpenter","Plumber","Mechanic")
+    private val cat = arrayOf("---Choose category---","Cleaner","Electrician","Carpenter","Plumber","Mechanic")
     private lateinit var spinner: Spinner
     private lateinit var categoryRecyclerview: RecyclerView
 
@@ -88,12 +88,9 @@ class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
             }
             catch (ex : Exception){
 
-
             }
         }
     }
-
-
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         startActivity(

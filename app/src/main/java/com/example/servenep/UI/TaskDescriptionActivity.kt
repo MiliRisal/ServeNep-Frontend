@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
+import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.entities.Category
 import com.example.servenep.entities.Description
 import com.example.servenep.entities.Users
@@ -98,7 +99,8 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 title = title,
                 taskDescription = taskDescription,
                 price = price,
-                estimatedTime = estimatedTime
+                estimatedTime = estimatedTime,
+                addedby = ServiceBuilder.id.toString()
             )
             CoroutineScope(Dispatchers.IO).launch {
                 // for API

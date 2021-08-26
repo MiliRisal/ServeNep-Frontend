@@ -2,29 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
-    <item android:title="Menu">
-        <menu>
-            <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_dashboard"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/home"
                     android:title="@string/menu_dashboard" />
                 <item
                     android:id="@+id/nav_MyOffers"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/offer"
                     android:title="@string/menu_MyOffers" />
                 <item
                     android:id="@+id/nav_MyBookings"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/bookings"
                     android:title="@string/menu_MyBookings" />
                 <item
                     android:id="@+id/nav_AcceptedTasks"
-                    android:icon="@drawable/ic_menu_slideshow"
+                    android:icon="@drawable/accepted"
                     android:title="@string/menu_AcceptedTasks" />
-            </group>
-        </menu>
-    </item>
+                <item
+                    android:id="@+id/nav_AboutUs"
+                    android:icon="@drawable/aboutus"
+                    android:title="@string/menu_AboutUs"/>
 
     <item android:title="Profile Details">
         <menu>
@@ -33,10 +30,6 @@
                     android:id="@+id/nav_profile"
                     android:icon="@drawable/person"
                     android:title="@string/menu_profile" />
-                <item
-                    android:id="@+id/nav_updateprofile"
-                    android:icon="@drawable/update"
-                    android:title="@string/menu_updateprofile"/>
                 <item
                     android:id="@+id/nav_logout"
                     android:icon="@drawable/login"

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black">
+    android:background="#333333">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -11,18 +11,17 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:padding="5dp"
-                android:background="#262627">
+                android:background="#A1A7B1">
 
                 <TextView
                     android:id="@+id/tvTaskTitle"
@@ -33,21 +32,21 @@
                     android:letterSpacing="0.03"
                     android:paddingVertical="5dp"
                     android:text="Task Title"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTaskDesc"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_below="@+id/tvTaskTitle"
                     android:layout_marginLeft="10dp"
-                    android:gravity="center_vertical"
                     android:letterSpacing="0.03"
+                    android:lines="2"
                     android:paddingVertical="5dp"
                     android:text="Task Description"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <TextView
@@ -63,7 +62,7 @@
                     android:layout_marginBottom="10dp"
                     android:gravity="end"
                     android:letterSpacing="0.03"
-                    android:text="More Detail"
+                    android:text="More Detail..."
                     android:textColor="#0019FA"
                     android:textSize="18sp"
                     android:textStyle="bold" />

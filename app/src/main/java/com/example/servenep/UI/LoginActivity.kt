@@ -3,10 +3,7 @@ package com.example.servenep.UI
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
@@ -23,6 +20,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnlogin: Button
     private lateinit var forgetpassword: TextView
     private lateinit var tvSignup: TextView
+    private lateinit var goToRegister: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +30,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         btnlogin=findViewById(R.id.btnlogin)
         forgetpassword=findViewById(R.id.forgetpassword)
         tvSignup=findViewById(R.id.tvSignup)
+        goToRegister=findViewById(R.id.goToRegister)
 
         btnlogin.setOnClickListener(this)
         tvSignup.setOnClickListener(this)
+        goToRegister.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -43,12 +43,21 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 loginUser()
                 validation()
             }
+            R.id.goToRegister->{
+                val intent= Intent(
+                    this,
+                    RegisterActivity::class.java
+                )
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
+            }
             R.id.tvSignup->{
                 val intent= Intent(
                     this,
                     RegisterActivity::class.java
                 )
                 startActivity(intent)
+                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
                 Toast.makeText(this,"Welcome to Registration page !!",Toast.LENGTH_SHORT).show()
             }
         }
@@ -65,6 +74,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 if (response.success == true){
                     ServiceBuilder.token = "Bearer ${response.token}"
                     ServiceBuilder.id = "${response.data!!._id}"
+                    ServiceBuilder.usertype = "${response.data!!.role}"
+                    saveSharedPref()
                     startActivity(
                         Intent(
                             this@LoginActivity,
@@ -101,6 +112,16 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             etpassword.error="Please enter your password"
         }
         return true
+    }
+
+    private fun saveSharedPref() {
+        val email = etemail.text.toString()
+        val password = etpassword.text.toString()
+        val sharedPref = getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("email", email)
+        editor.putString("password", password)
+        editor.apply()
     }
 
 }

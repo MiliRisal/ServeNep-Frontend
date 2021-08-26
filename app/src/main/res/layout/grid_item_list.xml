@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/custom_layout"
-    android:background="#000000">
+    android:id="@+id/custom_layout">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            app:cardBackgroundColor="#CBFADF"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
             android:layout_margin="10dp">
@@ -24,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
+                android:background="@drawable/background"
                 android:padding="10dp">
 
                 <ImageView
@@ -41,7 +40,7 @@
                     android:layout_toRightOf="@+id/imgCategory"
                     android:letterSpacing="0.03"
                     android:text="Category Title"
-                    android:textColor="@color/black"
+                    android:textColor="#FF6D00"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
