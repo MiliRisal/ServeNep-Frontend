@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-=======
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,16 +9,6 @@
     android:focusableInTouchMode="true"
     android:gravity="center"
     tools:context=".UI.RegisterActivity">
-<<<<<<< HEAD
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/background_image_one_signin"
-        android:scaleType="centerCrop"/>
-=======
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -62,94 +47,11 @@
                 app:cardBackgroundColor="@color/whiteTextColor"
                 app:cardCornerRadius="15dp">
 
-<<<<<<< HEAD
-        <EditText
-            android:id="@+id/etfullname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@android:color/transparent"
-            android:drawableEnd="@drawable/ic_baseline_account_circle_24"
-            android:hint="FullName"
-            android:padding="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="30dp"
-            android:background="#B1B1B1" />
-        <EditText
-            android:id="@+id/etemail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:backgroundTint="@android:color/transparent"
-            android:hint="Email"
-            android:drawableEnd="@drawable/ic_baseline_email_24"
-            android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:textColor="#292929"
-            android:textColorHint="#797979"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="30dp"
-            android:background="#B1B1B1" />
-        <EditText
-            android:id="@+id/etaddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:backgroundTint="@android:color/transparent"
-            android:hint="Address"
-            android:drawableEnd="@drawable/ic_baseline_location_on_24"
-            android:padding="10dp"
-            android:textColor="#292929"
-            android:textColorHint="#797979" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="30dp"
-            android:background="#B1B1B1" />
-        <EditText
-            android:id="@+id/etphone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:backgroundTint="@android:color/transparent"
-            android:hint="Phone"
-            android:drawableEnd="@drawable/ic_baseline_local_phone_24"
-            android:padding="10dp"
-            android:textColor="#292929"
-            android:textColorHint="#797979" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="30dp"
-            android:background="#B1B1B1" />
-=======
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:orientation="vertical">
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
 
                     <TextView
                         android:layout_width="match_parent"
@@ -159,36 +61,12 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-<<<<<<< HEAD
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:drawableEnd="@drawable/ic_baseline_lock_24"
-            android:backgroundTint="@android:color/transparent"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColor="#292929"
-            android:textColorHint="#797979" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="30dp"
-            android:background="#B1B1B1" />
-=======
                     <RadioGroup
                         android:id="@+id/radioGroup"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
                         android:gravity="center"
                         android:orientation="horizontal">
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
 
                         <RadioButton
                             android:id="@+id/rduser"
@@ -398,10 +276,6 @@
                     android:src="@drawable/ic_google_plus" />
             </LinearLayout>
         </LinearLayout>
-<<<<<<< HEAD
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
     </ScrollView>
 
     <View
@@ -423,4 +297,3 @@
         android:adjustViewBounds="false"
         android:src="@drawable/ic_back_img" />
 </RelativeLayout>
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
