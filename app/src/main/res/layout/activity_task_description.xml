@@ -51,78 +51,10 @@
                 android:outlineAmbientShadowColor="@color/black"/>
         </LinearLayout>
 
-<<<<<<< HEAD
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title * :"
-            android:textColor="#791F9E"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="25dp"/>
-        <EditText
-            android:id="@+id/ettitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="5dp"
-            android:inputType="text"
-            android:drawableEnd="@drawable/title"
-            android:hint="Eg; Cleaning backyard"
-            android:background="@drawable/edittext"
-            android:padding="8dp"
-            android:textSize="20sp"
-            />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Task Description * :"
-            android:textColor="#791F9E"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"/>
-
-        <EditText
-            android:id="@+id/ettaskdes"
-            android:inputType="textMultiLine"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:lines="4"
-            android:gravity="top"
-            android:overScrollMode="always"
-            android:scrollbarStyle="insideInset"
-            android:scrollHorizontally="false"
-            android:scrollbars="vertical"
-            android:hint="Provide summary of the task."
-            android:layout_marginLeft="25dp"
-            android:padding="8dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edittext"
-            android:textSize="18dp"
-
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estimated hour:"
-            android:textColor="#791F9E"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"/>
-=======
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true">
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -137,116 +69,6 @@
                     app:cardBackgroundColor="@color/whiteTextColor"
                     app:cardCornerRadius="15dp">
 
-<<<<<<< HEAD
-            <RadioButton
-                android:id="@+id/rbminhour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext"
-                android:textColor="#9b59b6"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="5dp"
-                android:paddingRight="10dp"
-                android:text="1-2 Hrs"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_weight="1"/>
-            <RadioButton
-                android:id="@+id/rbmidhour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext"
-                android:textColor="#9b59b6"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:paddingRight="10dp"
-                android:text="2-3 Hrs"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_weight="1"/>
-
-            <RadioButton
-                android:id="@+id/rbmaxhour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="25dp"
-                android:textColor="#9b59b6"
-                android:background="@drawable/edittext"
-                android:text="No Idea"
-                android:paddingRight="10dp"
-                android:layout_marginTop="5dp"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_weight="1"/>
-        </RadioGroup>
-    </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price * :"
-            android:textStyle="bold"
-            android:textColor="#791F9E"
-            android:textSize="20sp"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"/>
-        <EditText
-            android:id="@+id/etprice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/edittext"
-            android:drawableEnd="@drawable/price"
-            android:layout_marginRight="25dp"
-            android:textColorHint="#000"
-            android:inputType="number"
-            android:padding="8dp"
-            android:textSize="20sp"/>
-
-            <Button
-                android:id="@+id/btnlive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button"
-                android:padding="10dp"
-                android:layout_gravity="center"
-                android:text="Share Current Location"
-                android:drawableEnd="@drawable/next"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_marginTop="30dp"/>
-
-            <Button
-                android:id="@+id/btnchoose"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button"
-                android:padding="10dp"
-                android:text="Pick another Location"
-                android:drawableEnd="@drawable/next"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:textSize="20sp"
-                android:layout_marginTop="30dp"/>
-
-
-        <Button
-            android:id="@+id/btnsubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/button"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
-            android:padding="10dp"
-            android:text="Submit"
-            android:drawableEnd="@drawable/next"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:layout_marginTop="30dp"/>
-=======
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -261,7 +83,6 @@
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
 
                         <EditText
                             android:id="@+id/ettitle"
@@ -428,6 +249,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="25dp"
                             android:gravity="center"
+                            android:visibility="gone"
                             android:textColor="#000000"
                             android:textSize="20sp"/>
 
