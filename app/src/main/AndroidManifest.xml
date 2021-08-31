@@ -90,7 +90,9 @@
         <activity android:name=".UI.TaskerBookingActivity"></activity>
         <activity android:name=".UI.JobNotificationActivity" />
         <activity android:name=".UI.TaskDescriptionActivity" />
-        <activity android:name=".UI.LoginActivity" />
+        <activity android:name=".UI.LoginActivity">
+
+        </activity>
         <activity android:name=".UI.MainActivity" />
 
     </application>

@@ -40,8 +40,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btnlogin -> {
-                loginUser()
                 validation()
+                loginUser()
             }
             R.id.goToRegister -> {
                 val intent = Intent(

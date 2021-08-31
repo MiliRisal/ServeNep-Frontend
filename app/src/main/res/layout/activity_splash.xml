@@ -11,6 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="horizontal">
 
         <TextView
@@ -36,5 +37,6 @@
         android:layout_height="match_parent"
         app:lottie_autoPlay="true"
         app:lottie_rawRes="@raw/sj"
-        app:lottie_loop="true"/>
+        app:lottie_loop="true"
+        tools:ignore="MissingClass" />
 </LinearLayout>
