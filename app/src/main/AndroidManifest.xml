@@ -15,7 +15,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
 
     <application
         android:allowBackup="true"
@@ -80,14 +86,9 @@
         <activity android:name=".UI.TaskerRecyclerViewActivity" />
         <activity
             android:name=".UI.RegisterActivity"
-            tools:ignore="IntentFilterExportedReceiver" />
-        <activity android:name=".UI.TaskerBookingActivity"
-            android:exported="true"/>
-        <activity android:name=".UI.JobNotificationActivity"
-            android:exported="true"/>
-        <activity
-            android:name=".Adapter.TaskerAdapter"
-            tools:ignore="Instantiatable" />
+            tools:ignore="IntentFilterExportedReceiver"></activity>
+        <activity android:name=".UI.TaskerBookingActivity"></activity>
+        <activity android:name=".UI.JobNotificationActivity" />
         <activity android:name=".UI.TaskDescriptionActivity" />
         <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.MainActivity" />

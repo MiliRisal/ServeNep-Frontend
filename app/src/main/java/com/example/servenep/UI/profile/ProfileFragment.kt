@@ -79,7 +79,7 @@ class ProfileFragment : Fragment() {
                             tvAddress.setText("${user.address}")
                             tvPhone.setText("${user.phone}")
                             tvBio.setText("${user.bio}")
-                            if (!user.profileImage.equals("")) {
+                            if(!user.profileImage.equals("")) {
                                 Glide.with(this@ProfileFragment)
                                     .load(image)
                                     .into(ppimage)

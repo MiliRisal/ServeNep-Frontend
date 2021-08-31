@@ -3,10 +3,7 @@ package com.example.servenep.UI
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
@@ -23,33 +20,45 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnlogin: Button
     private lateinit var forgetpassword: TextView
     private lateinit var tvSignup: TextView
+    private lateinit var goToRegister: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        etemail=findViewById(R.id.etemail)
-        etpassword=findViewById(R.id.etpassword)
-        btnlogin=findViewById(R.id.btnlogin)
-        forgetpassword=findViewById(R.id.forgetpassword)
-        tvSignup=findViewById(R.id.tvSignup)
+        etemail = findViewById(R.id.etemail)
+        etpassword = findViewById(R.id.etpassword)
+        btnlogin = findViewById(R.id.btnlogin)
+        forgetpassword = findViewById(R.id.forgetpassword)
+        tvSignup = findViewById(R.id.tvSignup)
+        goToRegister = findViewById(R.id.goToRegister)
 
         btnlogin.setOnClickListener(this)
         tvSignup.setOnClickListener(this)
+        goToRegister.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        when (v?.id){
-            R.id.btnlogin->{
+        when (v?.id) {
+            R.id.btnlogin -> {
                 loginUser()
                 validation()
             }
-            R.id.tvSignup->{
-                val intent= Intent(
+            R.id.goToRegister -> {
+                val intent = Intent(
                     this,
                     RegisterActivity::class.java
                 )
                 startActivity(intent)
-                Toast.makeText(this,"Welcome to Registration page !!",Toast.LENGTH_SHORT).show()
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+            }
+            R.id.tvSignup -> {
+                val intent = Intent(
+                    this,
+                    RegisterActivity::class.java
+                )
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+                Toast.makeText(this, "Welcome to Registration page !!", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -60,12 +69,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val repository =UserRepository()
-                val response = repository.userLogin(email,password)
-                if (response.success == true){
+                val repository = UserRepository()
+                val response = repository.userLogin(email, password)
+                if (response.success == true) {
                     ServiceBuilder.token = "Bearer ${response.token}"
                     saveSharedPref()
                     ServiceBuilder.id = "${response.data!!._id}"
+                    ServiceBuilder.usertype = "${response.data!!.role}"
+                    saveSharedPref()
                     startActivity(
                         Intent(
                             this@LoginActivity,
@@ -73,8 +84,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         )
                     )
                     finish()
-                }
-                else{
+                } else {
                     withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@LoginActivity,
@@ -82,8 +92,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         ).show()
                     }
                 }
-            }
-            catch(ex: Exception) {
+            } catch (ex: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
                         this@LoginActivity,
@@ -94,6 +103,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+<<<<<<< HEAD
     private fun saveSharedPref() {
         val email = etemail.text.toString()
         val password = etpassword.text.toString()
@@ -108,11 +118,26 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private fun validation():Boolean {
         if(etemail.text.toString()==""){
             etemail.error="Please enter your username"
+=======
+    private fun validation(): Boolean {
+        if (etemail.text.toString() == "") {
+            etemail.error = "Please enter your username"
+>>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
         }
-        if(etpassword.text.toString()==""){
-            etpassword.error="Please enter your password"
+        if (etpassword.text.toString() == "") {
+            etpassword.error = "Please enter your password"
         }
         return true
+    }
+
+    private fun saveSharedPref() {
+        val email = etemail.text.toString()
+        val password = etpassword.text.toString()
+        val sharedPref = getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("email", email)
+        editor.putString("password", password)
+        editor.apply()
     }
 
 }

@@ -54,8 +54,8 @@ class JobNotificationActivity : AppCompatActivity() {
         tvArea = findViewById(R.id.tvArea)
         tvEstTime = findViewById(R.id.tvEstTime)
         tvEstRate = findViewById(R.id.tvEstRate)
-        btnAccept = findViewById(R.id.btnAccept)
-        btnReject = findViewById(R.id.btnReject)
+//        btnAccept = findViewById(R.id.btnAccept)
+//        btnReject = findViewById(R.id.btnReject)
 
         getDescription()
         btnAccept.setOnClickListener { if(!TextUtils.isEmpty(binding.tvName.text)) {

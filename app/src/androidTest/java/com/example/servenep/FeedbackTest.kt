@@ -12,7 +12,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
-
 @LargeTest
 @RunWith(JUnit4::class)
 class FeedbackTest {
@@ -27,7 +26,6 @@ class FeedbackTest {
                 .perform(ViewActions.typeText("Electrician"))
                 .perform(ViewActions.closeSoftKeyboard());
 
-
             Espresso.onView(ViewMatchers.withId(R.id.etfeeddescription))
                 .perform(ViewActions.typeText("service is satisfy"))
                 .perform(ViewActions.closeSoftKeyboard());
@@ -37,10 +35,8 @@ class FeedbackTest {
 
             Thread.sleep(3000)
 
-
             Espresso.onView(ViewMatchers.withId(R.id.btnFeedbackSubmit))
                 .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
 
         }
-
     }

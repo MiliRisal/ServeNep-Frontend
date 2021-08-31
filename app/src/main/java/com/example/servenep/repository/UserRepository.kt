@@ -26,10 +26,10 @@ class UserRepository
     }
 
     //to filter tasker according to their category
-    suspend fun getTaskerCategory(taskerCategory: String): GetTaskerCategory{
+    suspend fun getTaskerCategory(category: String): GetTaskerCategory{
         return apiRequest {
             userAPI.getTaskerByCategory(
-                ServiceBuilder.token!!, taskerCategory
+                ServiceBuilder.token!!, category
             )
         }
     }

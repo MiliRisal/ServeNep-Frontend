@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.servenep.R
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.UserRepository
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,15 +17,15 @@ import kotlinx.coroutines.withContext
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val category = arrayOf("--Select--","Cleaner","Electrician","Delivery","Carpenter","Plumber","Mechanic")
+    private val category = arrayOf("--Select--","Cleaner","Electrician","Carpenter","Plumber","Mechanic")
     private var selectedItem : String? = ""
     private lateinit var etfullname: EditText
     private lateinit var etemail: EditText
     private lateinit var etaddress: EditText
     private lateinit var etphone: EditText
     private lateinit var etPassword: EditText
-    private lateinit var tvCat: TextView
-    private lateinit var tvPrice: TextView
+    private lateinit var tvCat: TextInputLayout
+    private lateinit var tvPrice: TextInputLayout
     private lateinit var spCat: Spinner
     private lateinit var etPrice: EditText
     private lateinit var rduser: RadioButton
@@ -32,6 +33,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var radioGroup: RadioGroup
     private lateinit var btnsignup: Button
     private lateinit var tvSignin: TextView
+    private lateinit var backToLogin: ImageView
 
     val MIN_PASSWORD_LENGTH = 6
 
@@ -51,11 +53,13 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         rdtasker=findViewById(R.id.rdtasker)
         radioGroup=findViewById(R.id.radioGroup)
         etPassword=findViewById(R.id.etPassword)
+        backToLogin=findViewById(R.id.backToLogin)
         btnsignup=findViewById(R.id.btnsignup)
         tvSignin=findViewById(R.id.tvSignin)
 
         btnsignup.setOnClickListener(this)
         tvSignin.setOnClickListener(this)
+        backToLogin.setOnClickListener(this)
 
 
         //radio group vis/invis
@@ -107,6 +111,19 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id){
             R.id.btnsignup->{
                 insertUser()
+                onBackPressed()
+            }
+<<<<<<< HEAD
+            R.id.tvSignin->{
+=======
+            R.id.backToLogin->{
+>>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
+                val intent= Intent(
+                    this,
+                    LoginActivity::class.java
+                )
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
             }
             R.id.tvSignin->{
                 val intent= Intent(
@@ -114,9 +131,14 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                     LoginActivity::class.java
                 )
                 startActivity(intent)
+                onBackPressed()
                 Toast.makeText(this,"Welcome to login page !!",Toast.LENGTH_SHORT).show()
             }
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
     }
 
     private fun insertUser() {
