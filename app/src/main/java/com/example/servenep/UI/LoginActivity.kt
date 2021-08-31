@@ -73,7 +73,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 val response = repository.userLogin(email, password)
                 if (response.success == true) {
                     ServiceBuilder.token = "Bearer ${response.token}"
-                    saveSharedPref()
                     ServiceBuilder.id = "${response.data!!._id}"
                     ServiceBuilder.usertype = "${response.data!!.role}"
                     saveSharedPref()
@@ -103,26 +102,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-<<<<<<< HEAD
-    private fun saveSharedPref() {
-        val email = etemail.text.toString()
-        val password = etpassword.text.toString()
-        val sharedPref = getSharedPreferences("MyPref", MODE_PRIVATE)
-
-        val editor = sharedPref.edit()
-        editor.putString("email", email)
-        editor.putString("password", password)
-        editor.apply()
-    }
-
-    private fun validation():Boolean {
-        if(etemail.text.toString()==""){
-            etemail.error="Please enter your username"
-=======
     private fun validation(): Boolean {
         if (etemail.text.toString() == "") {
             etemail.error = "Please enter your username"
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
         }
         if (etpassword.text.toString() == "") {
             etpassword.error = "Please enter your password"
@@ -139,5 +121,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         editor.putString("password", password)
         editor.apply()
     }
+
 
 }
