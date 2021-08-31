@@ -26,11 +26,13 @@ class AvailableTaskerAdapter(
         val txtUserName : TextView
         val txtUserAddress : TextView
         val btnBookUser : TextView
+        val btnViewUserData : TextView
         init {
             userProfileImage= view.findViewById(R.id.userProfileImage)
             txtUserName=view.findViewById(R.id.txtUserName)
             txtUserAddress=view.findViewById(R.id.txtUserAddress)
             btnBookUser=view.findViewById(R.id.btnBookUser)
+            btnViewUserData=view.findViewById(R.id.btnViewUserData)
         }
     }
 
@@ -41,22 +43,45 @@ class AvailableTaskerAdapter(
 
     override fun onBindViewHolder(holder: AvailableTaskerViewHolder, position: Int) {
         val tasker = listTasker[position]
-        holder.txtUserName.text=tasker.fullName
-        holder.txtUserAddress.text=tasker.address
+        if(ServiceBuilder.usertype == "Customer"){
+            holder.txtUserName.text=tasker.fullName
+            holder.txtUserAddress.text=tasker.address
 
-        //load image with glide library
-        val image = ServiceBuilder.loadImagePath() + tasker.profileImage
-        if (!tasker.profileImage.equals("")) {
-            Glide.with(context)
-                .load(image)
-                .into(holder.userProfileImage)
-        }
-        holder.btnBookUser.setOnClickListener{
-            val intent = Intent(context, TaskDescriptionActivity::class.java)
-            intent.putExtra("userDetail", tasker)
-            context.startActivity(intent)
+            //load image with glide library
+            val image = ServiceBuilder.loadImagePath() + tasker.profileImage
+            if (!tasker.profileImage.equals("")) {
+                Glide.with(context)
+                    .load(image)
+                    .into(holder.userProfileImage)
+            }
+            holder.btnBookUser.setOnClickListener{
+                val intent = Intent(context, TaskDescriptionActivity::class.java)
+                intent.putExtra("userDetail", tasker)
+                context.startActivity(intent)
 
+            }
         }
+        if (ServiceBuilder.usertype == "Tasker"){
+            holder.txtUserName.text=tasker.fullName
+            holder.txtUserAddress.text=tasker.address
+
+            //load image with glide library
+            val image = ServiceBuilder.loadImagePath() + tasker.profileImage
+            if (!tasker.profileImage.equals("")) {
+                Glide.with(context)
+                    .load(image)
+                    .into(holder.userProfileImage)
+            }
+            holder.btnBookUser.visibility = View.GONE
+            holder.btnViewUserData.visibility = View.VISIBLE
+            holder.btnViewUserData.setOnClickListener{
+                val intent = Intent(context, TaskDescriptionActivity::class.java)
+                intent.putExtra("userDetail", tasker)
+                context.startActivity(intent)
+
+            }
+        }
+
     }
 
     override fun getItemCount(): Int {
