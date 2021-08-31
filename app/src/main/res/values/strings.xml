@@ -35,4 +35,6 @@
 
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
+    <string name="title_activity_livelocation">livelocation</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

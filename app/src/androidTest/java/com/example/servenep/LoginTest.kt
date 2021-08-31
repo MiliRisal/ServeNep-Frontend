@@ -24,38 +24,20 @@ class LoginTest {
     @Test
     fun testLoginUI() {
         Espresso.onView(ViewMatchers.withId(R.id.etemail))
-            .perform(ViewActions.typeText("gautamkiran38@gmail.com")).perform(ViewActions.closeSoftKeyboard());
-
+            .perform(ViewActions.typeText("gautamkiran38@gmail.com"))
+            .perform(ViewActions.closeSoftKeyboard());
 
         Espresso.onView(ViewMatchers.withId(R.id.etpassword))
-            .perform(ViewActions.typeText("Happy@#9845")).perform(ViewActions.closeSoftKeyboard());
+            .perform(ViewActions.typeText("Happy@#9845"))
+            .perform(ViewActions.closeSoftKeyboard());
 
         Espresso.onView(ViewMatchers.withId(R.id.btnlogin))
             .perform(ViewActions.click())
 
         Thread.sleep(3000)
-
-
-        Espresso.onView(ViewMatchers.withId(R.id.MainPage))
+        Espresso.onView(ViewMatchers.withId(R.id.btnlogin))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
 
-//            Espresso.onView(withId(R.id.etemail))
-//                .perform(ViewActions.typeText("gautamkiran38@gmail.com"))
-//
-//            Espresso.onView(withId(R.id.etpassword))
-//                .perform(ViewActions.typeText("Happy@#9845"))
-//
-//            Espresso.closeSoftKeyboard()
-//
-//            Espresso.onView(withId(R.id.btnlogin))
-//                .perform(ViewActions.click())
-//
-//            Thread.sleep(2000)
-//
-//            Espresso.onView(withId(R.id.MainPage))
-//                .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         }
-
-
     }
 

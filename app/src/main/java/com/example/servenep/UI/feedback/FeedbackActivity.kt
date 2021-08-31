@@ -1,4 +1,4 @@
-package com.example.servenep.UI
+package com.example.servenep.UI.feedback
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,6 @@ import android.widget.Toast
 import com.example.servenep.R
 import com.example.servenep.entities.Feedback
 import com.example.servenep.repository.FeedbackRespository
-import com.example.servenep.response.FeedbackResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,25 +19,27 @@ import java.lang.Exception
 class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etfeedtitle:EditText
     private lateinit var etfeeddescription:EditText
-    private lateinit var btnSubmit:Button
+    private lateinit var btnfeedbacksubmit:Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback)
 
         etfeedtitle = findViewById(R.id.etfeedtitle)
         etfeeddescription = findViewById(R.id.etfeeddescription)
+        btnfeedbacksubmit = findViewById(R.id.btnFeedbackSubmit)
 
-        btnSubmit = findViewById(R.id.btnSubmit)
-
-        btnSubmit.setOnClickListener(this)
+        btnfeedbacksubmit.setOnClickListener(this)
     }
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.btnSubmit-> {
+            R.id.btnFeedbackSubmit-> {
                 insertFeedback ()
             }
         }
     }
+
+
 
     private fun insertFeedback() {
         val feedtitle = etfeedtitle.text.toString().trim()
@@ -55,7 +56,7 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
         }
         else {
             val feedback = Feedback(
-                feedtitle=feedtitle,
+                feedtitle = feedtitle,
                 feeddescription = feeddescription
             )
             CoroutineScope(Dispatchers.IO).launch {
@@ -70,7 +71,7 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
                     }
                     startActivity(
                         Intent(
-                            this@FeedbackActivity,FeedbackActivity::class.java
+                            this@FeedbackActivity, FeedbackActivity::class.java
                         )
                     )
                 }

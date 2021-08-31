@@ -4,5 +4,6 @@ import com.example.servenep.entities.Feedback
 
 data class GetFeedback (
     val success: Boolean?= null,
-    val data : List<Feedback>? = null
+    val count:Int?=null,
+    val data : MutableList<Feedback>? = null
 )

@@ -29,7 +29,7 @@ import java.util.HashMap
 class JobNotificationActivity : AppCompatActivity() {
 
     private val FCM_API="https://fcm.googleapis.com/fcm/send"
-    private val serverKey= "key="+ "AAAABfaM5Us:APA91bFaJ928p1v8x9JORngHk7Kd-4AHeIWPKfn8CM8W8Z7zFA1NhBYEcK9cPvQMRUByc47Y_UmUd6iEOL5wMoFv-4g91FH2A84YQWcjIYHkBbZ6o_9JODoDaMahjREXONvrJJnmbMrG "
+    private val serverKey= "key="+ "AAAABfaM5Us:APA91bEWU1zeRwK_7Auwv81eKkK7jLqIIqnlpeFj9HyE_TEHj3RxJSvcbbXstnhP4ST8BcKceu1uPLBMFcOOi9aPFldHIZLSSrFfvsiE97jFykLTffhIHgBCxUlBzybswbketE3K1krE"
     private val contentType = "application/json"
     private lateinit var tvName: TextView
     private lateinit var tvTitle: TextView
@@ -45,9 +45,7 @@ class JobNotificationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_job_notification)
-        val binding = DataBindingUtil.setContentView<ActivityJobNotificationBinding>(
-            this,
-            R.layout.activity_job_notification
+        val binding = DataBindingUtil.setContentView<ActivityJobNotificationBinding>(this, R.layout.activity_job_notification
         )
 
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/Enter_topic")
@@ -66,7 +64,7 @@ class JobNotificationActivity : AppCompatActivity() {
             val notifcationBody=JSONObject()
             try {
                 notifcationBody.put("title", " Accept Task")
-                notifcationBody.put("message", binding.tvName.text)
+                notifcationBody.put("message", "you request has been accepted")
                 notification.put("to", topic)
                 notification.put("data", notifcationBody)
                 Log.e("TAG", "try")
