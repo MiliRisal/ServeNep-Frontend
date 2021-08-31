@@ -113,11 +113,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 insertUser()
                 onBackPressed()
             }
-<<<<<<< HEAD
-            R.id.tvSignin->{
-=======
             R.id.backToLogin->{
->>>>>>> 737ead47a82fd7d0bf60a470215917b74525efeb
                 val intent= Intent(
                     this,
                     LoginActivity::class.java
