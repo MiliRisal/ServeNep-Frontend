@@ -25,12 +25,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        etemail=findViewById(R.id.etemail)
-        etpassword=findViewById(R.id.etpassword)
-        btnlogin=findViewById(R.id.btnlogin)
-        forgetpassword=findViewById(R.id.forgetpassword)
-        tvSignup=findViewById(R.id.tvSignup)
-        goToRegister=findViewById(R.id.goToRegister)
+        etemail = findViewById(R.id.etemail)
+        etpassword = findViewById(R.id.etpassword)
+        btnlogin = findViewById(R.id.btnlogin)
+        forgetpassword = findViewById(R.id.forgetpassword)
+        tvSignup = findViewById(R.id.tvSignup)
+        goToRegister = findViewById(R.id.goToRegister)
 
         btnlogin.setOnClickListener(this)
         tvSignup.setOnClickListener(this)
@@ -38,27 +38,27 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when (v?.id){
-            R.id.btnlogin->{
+        when (v?.id) {
+            R.id.btnlogin -> {
                 loginUser()
                 validation()
             }
-            R.id.goToRegister->{
-                val intent= Intent(
+            R.id.goToRegister -> {
+                val intent = Intent(
                     this,
                     RegisterActivity::class.java
                 )
                 startActivity(intent)
-                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
             }
-            R.id.tvSignup->{
-                val intent= Intent(
+            R.id.tvSignup -> {
+                val intent = Intent(
                     this,
                     RegisterActivity::class.java
                 )
                 startActivity(intent)
-                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
-                Toast.makeText(this,"Welcome to Registration page !!",Toast.LENGTH_SHORT).show()
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+                Toast.makeText(this, "Welcome to Registration page !!", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -69,9 +69,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val repository =UserRepository()
-                val response = repository.userLogin(email,password)
-                if (response.success == true){
+                val repository = UserRepository()
+                val response = repository.userLogin(email, password)
+                if (response.success == true) {
                     ServiceBuilder.token = "Bearer ${response.token}"
                     ServiceBuilder.id = "${response.data!!._id}"
                     ServiceBuilder.usertype = "${response.data!!.role}"
@@ -83,8 +83,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         )
                     )
                     finish()
-                }
-                else{
+                } else {
                     withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@LoginActivity,
@@ -92,8 +91,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         ).show()
                     }
                 }
-            }
-            catch(ex: Exception) {
+            } catch (ex: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
                         this@LoginActivity,
@@ -104,12 +102,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun validation():Boolean {
-        if(etemail.text.toString()==""){
-            etemail.error="Please enter your username"
+    private fun validation(): Boolean {
+        if (etemail.text.toString() == "") {
+            etemail.error = "Please enter your username"
         }
-        if(etpassword.text.toString()==""){
-            etpassword.error="Please enter your password"
+        if (etpassword.text.toString() == "") {
+            etpassword.error = "Please enter your password"
         }
         return true
     }

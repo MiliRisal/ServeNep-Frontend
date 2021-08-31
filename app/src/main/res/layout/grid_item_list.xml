@@ -13,7 +13,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
             android:layout_margin="10dp">
@@ -29,7 +29,7 @@
                     android:id="@+id/imgCategory"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:scaleType="fitXY"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/person" />
 
                 <TextView
