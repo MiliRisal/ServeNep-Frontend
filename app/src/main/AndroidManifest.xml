@@ -47,6 +47,13 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
+        <activity android:name=".UI.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".UI.location.ShareLocationActivity"
@@ -68,11 +75,7 @@
             android:exported="true"
             android:label="@string/title_activity_home_menu"
             android:theme="@style/Theme.ServeNep.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".UI.TaskerRecyclerViewActivity" />
         <activity

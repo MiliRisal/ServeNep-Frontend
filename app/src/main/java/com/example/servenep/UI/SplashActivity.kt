@@ -25,13 +25,13 @@ class SplashActivity : AppCompatActivity() {
 
         linearLayout=findViewById(R.id.linearlayout)
         lottie=findViewById(R.id.lottie)
-        lottie.animate().translationX(-2000F).setDuration(1000).startDelay = 3000
+        lottie.animate().translationY(-2000F).setDuration(1000).startDelay = 3000
 
         getSharedPref()
 
         if (email==""){
             CoroutineScope(Dispatchers.IO).launch {
-                delay(3000)
+                delay(5000)
                 startActivity(
                     Intent(
                         this@SplashActivity, LoginActivity::class.java
@@ -60,7 +60,7 @@ class SplashActivity : AppCompatActivity() {
                 val response = repository.userLogin(email, password)
                 if (response.success == true ) {
                     ServiceBuilder.token = "Bearer ${response.token}"
-                    ServiceBuilder.Id = response.data!!._id
+                    ServiceBuilder.id = response.data!!._id
                     ServiceBuilder.usertype = response.data.role
 
                     startActivity(

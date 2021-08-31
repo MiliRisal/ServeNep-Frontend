@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     private val category = arrayOf("--Select--","Cleaner","Electrician","Delivery","Carpenter","Plumber","Mechanic")
-    private lateinit var selectedItem : String?=""
+    private var selectedItem : String? = ""
     private lateinit var etfullname: EditText
     private lateinit var etemail: EditText
     private lateinit var etaddress: EditText
@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_register)
 
         etfullname=findViewById(R.id.etfullname)
-        etemail=findViewById(R.id.etEmail)
+        etemail=findViewById(R.id.etemail)
         etaddress=findViewById(R.id.etaddress)
         etphone=findViewById(R.id.etphone)
         spCat=findViewById(R.id.spCat)

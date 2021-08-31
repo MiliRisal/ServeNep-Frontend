@@ -55,8 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:drawableEnd="@drawable/ic_baseline_email_24"
             android:backgroundTint="@android:color/transparent"
+            android:drawableEnd="@drawable/ic_baseline_email_24"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
@@ -98,44 +98,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
-                android:backgroundTint="#4E525B"
-                android:elevation="0dp"
-                android:src="@drawable/round_arrow_forward_24"
-                android:tint="@android:color/white"
-                app:elevation="0dp"
-                app:fabCustomSize="80dp"
-                tools:ignore="RelativeOverlap" />
+
             <Button
                 android:id="@+id/btnlogin"
-                android:layout_width="wrap_content"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
-                android:text="Log-In"
                 android:layout_alignParentStart="true"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="139dp"
                 android:backgroundTint="@color/black"
-                android:layout_marginStart="30dp"
-                android:padding="15dp"/>
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Log-In"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/btnlogin"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentStart="true"-->
-<!--                android:layout_centerInParent="true"-->
-<!--                android:layout_marginStart="30dp"-->
-<!--                android:padding="15dp"-->
-<!--                android:text="Sign in"-->
-<!--                android:textColor="#191919"-->
-<!--                android:textSize="25sp"-->
-<!--                android:textStyle="bold" />-->
         </RelativeLayout>
 
         <RelativeLayout
@@ -145,7 +122,7 @@
             android:layout_marginBottom="50dp">
 
             <TextView
-                android:id="@+id/tvSignupLog"
+                android:id="@+id/tvSignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
