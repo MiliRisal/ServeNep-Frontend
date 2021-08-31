@@ -4,5 +4,5 @@ import com.example.servenep.entities.Description
 
 data class GetTaskDescription(
     val success: Boolean?= null,
-    val data : List<Description>? = null
+    val data : MutableList<Description>? = null
 )

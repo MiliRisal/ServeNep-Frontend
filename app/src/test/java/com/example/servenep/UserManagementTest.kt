@@ -1,8 +1,9 @@
 package com.example.servenep
 
-import com.example.servenep.Adapter.TaskerAdapter
-import com.example.servenep.UI.TaskerBookingActivity
 import com.example.servenep.entities.Description
+
+import com.example.servenep.entities.Users
+import com.example.servenep.repository.DescriptionRepository
 import com.example.servenep.entities.Feedback
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
@@ -75,6 +76,39 @@ class UserManagementTest {
 
 
     }
+
+//    @Test
+//
+//    fun checkspecification() = runBlocking {
+//
+//        val TaskerSpecification = TaskerSpecification(
+//            name = "Ramesh",
+//            category = "Electrician",
+//            price = 5000,
+//            area = "baneshor height"
+//
+//        )
+//
+//        SpecificationRepository = SpecificationRepository()
+//        val response = SpecificationRepository!!.specification(TaskerSpecification)
+//        val ExpectedResult = true
+//        val ActualResult = response.success
+//        Assert.assertEquals(ExpectedResult, ActualResult)
+
+
+//    }
+//
+//    @Test
+//    fun checkTaskerAdapter() = runBlocking {
+//
+//         val TaskerAdapter = Tasker(TaskerId = null, TaskerName = null, TaskerCategory = null, TaskerArea = null, TaskerImageURL = null,
+//         TaskerPrice = null)
+//
+//        TaskerBookingActivity = TaskerAdapter()
+////        val response = TaskerBookingActivity!!.onCreateViewHolder()
+//    }
+
+
 
     @Test
 

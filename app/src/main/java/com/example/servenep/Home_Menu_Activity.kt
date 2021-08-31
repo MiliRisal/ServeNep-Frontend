@@ -1,6 +1,7 @@
 package com.example.servenep
 
-import android.content.pm.PackageManager
+
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.widget.ImageView
@@ -15,11 +16,13 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
+import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
+import com.example.servenep.UI.LoginActivity
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.databinding.ActivityHomeMenuBinding
 import com.example.servenep.repository.UserRepository
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -34,25 +37,25 @@ class Home_Menu_Activity : AppCompatActivity() {
     )
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityHomeMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_home_menu)
+
         if (!hasPermission()) {
             requestPermission()
         }
 
-        binding = ActivityHomeMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
-        setSupportActionBar(binding.appBarHomeMenu.toolbar)
-
-        binding.appBarHomeMenu.fab.setOnClickListener { view ->
+        val fab: FloatingActionButton = findViewById(R.id.fab)
+        fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment_content_home_menu)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -92,11 +95,43 @@ class Home_Menu_Activity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_dashboard, R.id.nav_MyOffers, R.id.nav_MyBookings, R.id.nav_AcceptedTasks, R.id.nav_profile
+                R.id.nav_dashboard,
+                R.id.nav_MyOffers,
+                R.id.nav_MyBookings,
+                R.id.nav_AcceptedTasks,
+                R.id.nav_profile,
+                R.id.nav_AboutUs
             ), drawerLayout
         )
+        if (ServiceBuilder.usertype == "Tasker"){
+            navView.menu.removeItem(R.id.nav_MyBookings)
+        }
+        if(ServiceBuilder.usertype == "Customer"){
+            navView.menu.removeItem(R.id.nav_MyOffers)
+        }
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navView.menu.findItem(R.id.nav_logout).setOnMenuItemClickListener { item ->
+            when (item.itemId){
+                R.id.nav_logout -> {
+                    getSharedPref()
+                    ServiceBuilder.token.equals("")
+                    ServiceBuilder.id.equals("")
+                    ServiceBuilder.usertype.equals("")
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    private fun getSharedPref() {
+        val sharedPref = getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.clear()
+        editor.apply()
     }
 
     private fun requestPermission() {
