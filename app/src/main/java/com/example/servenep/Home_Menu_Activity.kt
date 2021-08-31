@@ -1,5 +1,6 @@
 package com.example.servenep
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -29,11 +30,21 @@ import kotlinx.coroutines.withContext
 
 class Home_Menu_Activity : AppCompatActivity() {
 
+    private val permissions = arrayOf(
+        android.Manifest.permission.CAMERA,
+        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        android.Manifest.permission.ACCESS_FINE_LOCATION
+    )
+
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_menu)
+
+        if (!hasPermission()) {
+            requestPermission()
+        }
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -122,6 +133,30 @@ class Home_Menu_Activity : AppCompatActivity() {
         editor.clear()
         editor.apply()
     }
+
+    private fun requestPermission() {
+        ActivityCompat.requestPermissions(
+            this@Home_Menu_Activity,
+            permissions, 1
+        )
+
+    }
+
+    private fun hasPermission():Boolean {
+        var hasPermission = true
+        for (permission in permissions) {
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    permission
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                hasPermission = false
+            }
+        }
+        return hasPermission
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
