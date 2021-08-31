@@ -20,7 +20,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private val category = arrayOf("--Select--","Cleaner","Electrician","Carpenter","Plumber","Mechanic")
     private var selectedItem : String? = ""
     private lateinit var etfullname: EditText
-    private lateinit var etemail: EditText
+    private lateinit var etEmail: EditText
     private lateinit var etaddress: EditText
     private lateinit var etphone: EditText
     private lateinit var etPassword: EditText
@@ -42,7 +42,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_register)
 
         etfullname=findViewById(R.id.etfullname)
-        etemail=findViewById(R.id.etEmail)
+        etEmail=findViewById(R.id.etEmail)
         etaddress=findViewById(R.id.etaddress)
         etphone=findViewById(R.id.etphone)
         spCat=findViewById(R.id.spCat)
@@ -139,7 +139,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun insertUser() {
         val fullName = etfullname.text.toString().trim()
-        val email = etemail.text.toString().trim()
+        val email = etEmail.text.toString().trim()
         val phone = etphone.text.toString().trim()
         val address = etaddress.text.toString().trim()
         val password = etPassword.text.toString().trim()
@@ -162,7 +162,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etemail.error = "Please enter valid email address !!"
+            etEmail.error = "Please enter valid email address !!"
             Toast.makeText(this, "Please enter valid email address !!", Toast.LENGTH_SHORT).show()
         }
         if (phone == "") {
