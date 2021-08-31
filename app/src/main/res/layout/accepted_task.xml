@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#333333">
+    android:background="@drawable/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:padding="5dp"
-                android:background="#000000">
+                android:background="@color/white">
 
                 <TextView
                     android:id="@+id/tvAcceptedTaskTitle"
@@ -48,7 +48,7 @@
                     android:lines="2"
                     android:paddingVertical="5dp"
                     android:text="Task Description"
-                    android:textColor="#888787"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
 
 
@@ -63,7 +63,7 @@
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
                     android:text="Estimated Time"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
                 <TextView
@@ -76,7 +76,7 @@
                     android:layout_marginRight="20dp"
                     android:gravity="center"
                     android:text="Estimated Price"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
