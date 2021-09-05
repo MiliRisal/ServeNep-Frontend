@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/bg8"
     android:focusableInTouchMode="true"
     android:gravity="center"
-    tools:context=".UI.TaskDescriptionActivity">
-
+    tools:context=".UI.myBookings.UpdateBookingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,13 +27,13 @@
                 android:layout_gravity="center_vertical"
                 android:gravity="center"
                 android:layout_weight="6"
-                android:text="Add Description"
+                android:text="Update Description"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/backButtonFromAddDesc"
+                android:id="@+id/backButtonFromUpdateAddDesc"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
@@ -87,7 +86,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/ettitle"
+                            android:id="@+id/etUpdatetitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="25dp"
@@ -111,7 +110,7 @@
                             android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/ettaskdes"
+                            android:id="@+id/etUpdatetaskdes"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="25dp"
@@ -157,7 +156,7 @@
                                     android:orientation="horizontal">
 
                                     <RadioButton
-                                        android:id="@+id/rbminhour"
+                                        android:id="@+id/rbUpdateminhour"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_marginTop="5dp"
@@ -170,7 +169,7 @@
                                         android:textStyle="bold" />
 
                                     <RadioButton
-                                        android:id="@+id/rbmidhour"
+                                        android:id="@+id/rbUpdatemidhour"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_marginLeft="10dp"
@@ -191,7 +190,7 @@
                                     android:orientation="horizontal">
 
                                     <RadioButton
-                                        android:id="@+id/rbmaxhour"
+                                        android:id="@+id/rbUpdatemaxhour"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="5dp"
@@ -204,7 +203,7 @@
                                         android:textStyle="bold" />
 
                                     <RadioButton
-                                        android:id="@+id/rbotherhour"
+                                        android:id="@+id/rbUpdateotherhour"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_marginLeft="10dp"
@@ -232,7 +231,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/etprice"
+                            android:id="@+id/etUpdateprice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="25dp"
@@ -246,17 +245,16 @@
                             android:textSize="20sp" />
 
                         <TextView
-                            android:id="@+id/tvLocation"
+                            android:id="@+id/tvUpdateLocation"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="25dp"
                             android:gravity="center"
-                            android:visibility="gone"
                             android:textColor="#000000"
                             android:textSize="20sp"/>
 
                         <Button
-                            android:id="@+id/btnPickLocation"
+                            android:id="@+id/btnUpdatePickLocation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -269,7 +267,7 @@
                             android:textSize="20sp" />
 
                         <Button
-                            android:id="@+id/btnsubmit"
+                            android:id="@+id/btnUpdatesubmit"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -278,7 +276,7 @@
                             android:background="@drawable/login_btn"
                             android:drawableEnd="@drawable/next"
                             android:padding="10dp"
-                            android:text="Submit"
+                            android:text="Update"
                             android:textColor="@color/white"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -286,5 +284,6 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
 
 </RelativeLayout>

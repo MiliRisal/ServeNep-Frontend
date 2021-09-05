@@ -44,13 +44,6 @@ class UpdateProfileActivity : AppCompatActivity() {
     private lateinit var backButton : ImageView
     private lateinit var Uppimage : CircleImageView
 
-    private val permissions = arrayOf(
-        android.Manifest.permission.CAMERA,
-        android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        android.Manifest.permission.ACCESS_FINE_LOCATION,
-        android.Manifest.permission.READ_EXTERNAL_STORAGE
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_profile)
@@ -102,14 +95,6 @@ class UpdateProfileActivity : AppCompatActivity() {
         updateProfile.setOnClickListener{
             updateUser()
         }
-
-        requestPermissions(permissions)
-    }
-    private fun requestPermissions(permissions : Array<String>) {
-        ActivityCompat.requestPermissions(
-            this,
-            permissions, 1
-        )
     }
 
     private fun getUser() {

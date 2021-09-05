@@ -28,6 +28,13 @@ interface UserAPI {
         @Path("category") category: String
     ):Response<GetTaskerCategory>
 
+    //for filtering user according to id
+    @GET("user/{user_id}")
+    suspend fun getUserById(
+        @Header("Authorization") token : String,
+        @Path("user_id") user_id: String
+    ):Response<GetUserByIDResponse>
+
     //view user
     @GET("user/me")
     suspend fun getUser(

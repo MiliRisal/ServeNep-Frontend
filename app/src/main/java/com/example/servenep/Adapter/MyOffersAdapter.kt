@@ -2,13 +2,17 @@ package com.example.servenep.Adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.servenep.R
+import com.example.servenep.UI.JobNotificationActivity
+import com.example.servenep.UI.TaskDescriptionActivity
 import com.example.servenep.entities.AcceptedTask
 import com.example.servenep.entities.Description
 import com.example.servenep.repository.AcceptedTaskRepository
@@ -28,6 +32,7 @@ class MyOffersAdapter(
         val tvMoreDetail: TextView
         val btnAccept: TextView
         val btnReject: TextView
+        val myOffersCard: CardView
 
         init {
             tvTaskTitle = view.findViewById(R.id.tvTaskTitle)
@@ -35,6 +40,7 @@ class MyOffersAdapter(
             tvMoreDetail = view.findViewById(R.id.tvMoreDetail)
             btnAccept = view.findViewById(R.id.btnAccept)
             btnReject = view.findViewById(R.id.btnReject)
+            myOffersCard = view.findViewById(R.id.myOffersCard)
         }
     }
 
@@ -48,6 +54,17 @@ class MyOffersAdapter(
         val MyOffers = listMyOffers[position]
             holder.tvTaskTitle.text = MyOffers.title
             holder.tvTaskDesc.text = MyOffers.taskDescription
+
+            holder.tvMoreDetail.setOnClickListener {
+                val intent = Intent(context, JobNotificationActivity::class.java)
+                intent.putExtra("MyOffer", MyOffers)
+                context.startActivity(intent)
+            }
+            holder.myOffersCard.setOnClickListener {
+                val intent = Intent(context, JobNotificationActivity::class.java)
+                intent.putExtra("MyOffer", MyOffers)
+                context.startActivity(intent)
+            }
             holder.btnAccept.setOnClickListener {
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
@@ -57,6 +74,8 @@ class MyOffersAdapter(
                                 description = MyOffers.taskDescription,
                                 rate = MyOffers.price,
                                 time = MyOffers.estimatedTime,
+                                longitude = MyOffers.longitude!!.toDouble(),
+                                latitude = MyOffers.latitude!!.toDouble(),
                                 acceptedby = MyOffers.bookedUserId,
                                 userid = MyOffers.addedby.toString()
                             )

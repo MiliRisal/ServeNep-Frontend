@@ -3,27 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black">
+    android:background="@drawable/background">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/bookingCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp">
+            android:layout_margin="5dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:padding="5dp"
-                android:background="#262627">
+                android:background="#FFFFFF">
 
                 <TextView
                     android:id="@+id/tvBookingTaskTitle"
@@ -34,7 +34,7 @@
                     android:letterSpacing="0.03"
                     android:paddingVertical="5dp"
                     android:text="Task Title"
-                    android:textColor="@color/white"
+                    android:textColor="#FF6D00"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                     android:lines="2"
                     android:paddingVertical="5dp"
                     android:text="Task Description"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
 
                 <TextView
@@ -62,7 +62,7 @@
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
                     android:text="Estimated Time"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -76,7 +76,7 @@
                     android:layout_marginRight="20dp"
                     android:gravity="center"
                     android:text="Estimated Price"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 

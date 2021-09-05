@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.servenep.Home_Menu_Activity
@@ -27,12 +28,14 @@ class AvailableTaskerAdapter(
         val txtUserAddress : TextView
         val btnBookUser : TextView
         val btnViewUserData : TextView
+        val taskerCard : CardView
         init {
             userProfileImage= view.findViewById(R.id.userProfileImage)
             txtUserName=view.findViewById(R.id.txtUserName)
             txtUserAddress=view.findViewById(R.id.txtUserAddress)
             btnBookUser=view.findViewById(R.id.btnBookUser)
             btnViewUserData=view.findViewById(R.id.btnViewUserData)
+            taskerCard=view.findViewById(R.id.taskerCard)
         }
     }
 
@@ -46,7 +49,9 @@ class AvailableTaskerAdapter(
         if(ServiceBuilder.usertype == "Customer"){
             holder.txtUserName.text=tasker.fullName
             holder.txtUserAddress.text=tasker.address
+            holder.taskerCard.setOnClickListener {
 
+            }
             //load image with glide library
             val image = ServiceBuilder.loadImagePath() + tasker.profileImage
             if (!tasker.profileImage.equals("")) {

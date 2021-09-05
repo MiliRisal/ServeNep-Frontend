@@ -107,14 +107,15 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                      latitude = place.latLng.latitude
                      longitude = place.latLng.longitude
                     val placeLatLng = "Location: $latitude , $longitude"
-                    tvLocation!!.text = placeLatLng
+                    tvLocation.visibility = View.VISIBLE
+                    tvLocation.text = placeLatLng
                 }
             }
         }
     }
 
     companion object {
-        private const val PLACE_PICKER_REQUEST = 999
+        const val PLACE_PICKER_REQUEST = 999
     }
 
 
@@ -127,30 +128,26 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
         var estimatedTime = ""
         when {
             rbminhour.isChecked -> {
-                estimatedTime = "1-2 hrs"
+                estimatedTime = "1-2 Hrs"
             }
             rbmidhour.isChecked -> {
-                estimatedTime = "2-3 hrs"
+                estimatedTime = "2-3 Hrs"
             }
             rbmaxhour.isChecked -> {
-                estimatedTime = "3-more"
+                estimatedTime = "3-More"
             }
             rbotherhour.isChecked -> {
                 estimatedTime = "Not Sure"
             }
         }
-
         if (title == "") {
             ettile.error = "Fill up !!"
-            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
         }
         if (taskDescription == "") {
             ettaskdes.error = "Fill up !!"
-            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
         }
         if (price == "") {
             etprice.error = "Fill up !!"
-            Toast.makeText(this, "Cannot leave the fields empty !!", Toast.LENGTH_SHORT).show()
         } else {
             val description = Description(
                 bookedUserId = bookedUserId,

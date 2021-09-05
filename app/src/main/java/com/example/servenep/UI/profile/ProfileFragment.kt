@@ -21,7 +21,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ProfileFragment : Fragment() {
-
     private lateinit var tvFullname : TextView
     private lateinit var tvCateg : TextView
     private lateinit var tvRatePer : TextView

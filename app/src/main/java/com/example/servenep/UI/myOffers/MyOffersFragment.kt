@@ -49,7 +49,7 @@ class MyOffersFragment : Fragment() {
 
             }catch (ex: Exception){
                 withContext(Dispatchers.Main){
-                    Toast.makeText(requireContext(),
+                    Toast.makeText(context,
                         "Error : ${ex}", Toast.LENGTH_SHORT).show()
                 }
             }
