@@ -25,11 +25,20 @@ class UserRepository
         }
     }
 
-    //to filter tasker according to their category
+    //to filter user according to their id
     suspend fun getTaskerCategory(category: String): GetTaskerCategory{
         return apiRequest {
             userAPI.getTaskerByCategory(
                 ServiceBuilder.token!!, category
+            )
+        }
+    }
+
+    //to filter tasker according to their category
+    suspend fun getUserById(user_id: String): GetUserByIDResponse{
+        return apiRequest {
+            userAPI.getUserById(
+                ServiceBuilder.token!!, user_id
             )
         }
     }

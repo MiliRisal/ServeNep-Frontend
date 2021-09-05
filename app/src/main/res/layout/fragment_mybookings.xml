@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.myBookings.MyBookingsFragment"
-    android:background="@color/black">
+    tools:context=".UI.myBookings.MyBookingsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myBookingsRecyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         tools:listitem="@layout/my_bookings"/>
 </LinearLayout>

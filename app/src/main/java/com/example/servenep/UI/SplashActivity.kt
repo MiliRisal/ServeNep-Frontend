@@ -28,72 +28,50 @@ class SplashActivity : AppCompatActivity() {
         lottie.animate().translationY(-2000F).setDuration(1000).startDelay = 3000
 
         getSharedPref()
-
-        if (email==""){
+        if (email!=""){
             CoroutineScope(Dispatchers.IO).launch {
-                delay(5000)
-                startActivity(
-                    Intent(
-                        this@SplashActivity, LoginActivity::class.java
-                    )
-                )
+                try {
+                    val repository = UserRepository()
+                    val response = repository.userLogin(email, password)
+                    if (response.success == true) {
+                        ServiceBuilder.token = "Bearer ${response.token}"
+                        ServiceBuilder.id = response.data!!._id
+                        ServiceBuilder.usertype = response.data.role
+                        val intent = Intent(
+                            this@SplashActivity,
+                            Home_Menu_Activity::class.java
+                        )
+                        startActivity(intent)
+                    } else {
+                        startActivity(
+                            Intent(
+                                this@SplashActivity,
+                                LoginActivity::class.java
+                            )
+                        )
+                    }
+                } catch (ex: Exception) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@SplashActivity,
+                            "Login error ${ex}", Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
             }
-        }
-        else{
-            validate()
+        }else{
+            startActivity(
+                Intent(
+                    this@SplashActivity,
+                    LoginActivity::class.java
+                )
+            )
+            finish()
         }
     }
-
     private fun getSharedPref() {
         val sharedPref = getSharedPreferences("MyPref", MODE_PRIVATE)
         email = sharedPref.getString("email", "").toString()
         password = sharedPref.getString("password", "").toString()
     }
-
-    private fun validate() {
-        val email = email
-        val password = password
-        CoroutineScope(Dispatchers.IO).launch {
-            delay(3000)
-            try {
-                val repository = UserRepository()
-                val response = repository.userLogin(email, password)
-                if (response.success == true ) {
-                    ServiceBuilder.token = "Bearer ${response.token}"
-                    ServiceBuilder.id = response.data!!._id
-                    ServiceBuilder.usertype = response.data.role
-
-                    startActivity(
-                        Intent(
-                            this@SplashActivity,
-                            Home_Menu_Activity::class.java
-                        )
-                    )
-                    finish()
-                } else {
-                    withContext(Dispatchers.Main) {
-                        val snack =
-                            Snackbar.make(
-                                linearLayout,
-                                "Invalid credentials",
-                                Snackbar.LENGTH_LONG
-                            )
-                        snack.setAction("OK", View.OnClickListener {
-                            snack.dismiss()
-                        })
-                        snack.show()
-                    }
-                }
-
-            } catch (ex: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        this@SplashActivity,
-                        "$ex", Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-        }
-    }
-
 }

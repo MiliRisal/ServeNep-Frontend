@@ -35,7 +35,8 @@ class Home_Menu_Activity : AppCompatActivity() {
     private val permissions = arrayOf(
         android.Manifest.permission.CAMERA,
         android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        android.Manifest.permission.ACCESS_FINE_LOCATION
+        android.Manifest.permission.ACCESS_FINE_LOCATION,
+        android.Manifest.permission.READ_EXTERNAL_STORAGE
     )
 
     private lateinit var appBarConfiguration: AppBarConfiguration

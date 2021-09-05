@@ -2,13 +2,18 @@ package com.example.servenep.Adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.servenep.R
+import com.example.servenep.UI.JobNotificationActivity
+import com.example.servenep.UI.ViewTasksActivity
+import com.example.servenep.UI.myBookings.UpdateBookingActivity
 import com.example.servenep.entities.Description
 import com.example.servenep.repository.DescriptionRepository
 import kotlinx.coroutines.CoroutineScope
@@ -27,6 +32,7 @@ data class MyBookingsAdapter(
         val tvBookingPrice: TextView
         val btnBookingUpdate: TextView
         val btnBookingCancel: TextView
+        val bookingCardView: CardView
         init {
             tvBookingTaskTitle = view.findViewById(R.id.tvBookingTaskTitle)
             tvBookingTaskDesc = view.findViewById(R.id.tvBookingTaskDesc)
@@ -34,6 +40,7 @@ data class MyBookingsAdapter(
             tvBookingPrice = view.findViewById(R.id.tvBookingPrice)
             btnBookingUpdate = view.findViewById(R.id.btnBookingUpdate)
             btnBookingCancel = view.findViewById(R.id.btnBookingCancel)
+            bookingCardView = view.findViewById(R.id.bookingCardView)
         }
     }
 
@@ -49,6 +56,18 @@ data class MyBookingsAdapter(
         holder.tvBookingTaskDesc.text = MyBooking.taskDescription
         holder.tvBookingPrice.text =  "Estimated Price: \n Rs.${MyBooking.price}"
         holder.tvBookingTime.text = "Estimated Time: \n ${MyBooking.estimatedTime}"
+
+        holder.bookingCardView.setOnClickListener {
+            val intent = Intent(context, JobNotificationActivity::class.java)
+            intent.putExtra("MyOffer", MyBooking)
+            intent.putExtra("Booking", "Booking")
+            context.startActivity(intent)
+        }
+        holder.btnBookingUpdate.setOnClickListener {
+            val intent = Intent(context, UpdateBookingActivity::class.java)
+            intent.putExtra("MyOffer", MyBooking)
+            context.startActivity(intent)
+        }
 
         holder.btnBookingCancel.setOnClickListener {
             val builder = AlertDialog.Builder(context)

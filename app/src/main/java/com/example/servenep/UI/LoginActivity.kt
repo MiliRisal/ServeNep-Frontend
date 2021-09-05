@@ -1,6 +1,9 @@
 package com.example.servenep.UI
 
+import android.app.Activity
 import android.content.Intent
+import android.hardware.biometrics.BiometricManager
+import android.hardware.biometrics.BiometricPrompt
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -40,8 +43,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btnlogin -> {
-                loginUser()
                 validation()
+                loginUser()
             }
             R.id.goToRegister -> {
                 val intent = Intent(
@@ -121,6 +124,5 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         editor.putString("password", password)
         editor.apply()
     }
-
 
 }
