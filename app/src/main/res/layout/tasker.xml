@@ -82,10 +82,10 @@
                     android:layout_marginRight="20dp"
                     android:gravity="center"
                     android:text="View User Profile"
-                    android:textColor="#FFFFFF"
+                    android:visibility="gone"
+                    android:textColor="#224BE1"
                     android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:textStyle="bold" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

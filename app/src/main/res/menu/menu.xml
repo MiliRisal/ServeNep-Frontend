@@ -7,9 +7,5 @@
         android:id="@+id/menuGallery"
         android:title="Browse Gallery"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/menuCamera"
-        android:title="Open Camera"
-        app:showAsAction="never" />
 
 </menu>

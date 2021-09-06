@@ -19,10 +19,10 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
+import com.example.servenep.UI.location.ViewLocationActivity
 import com.example.servenep.databinding.ActivityJobNotificationBinding
 import com.example.servenep.entities.AcceptedTask
 import com.example.servenep.entities.Description
-import com.example.servenep.entities.Users
 import com.example.servenep.repository.AcceptedTaskRepository
 import com.example.servenep.repository.DescriptionRepository
 import com.example.servenep.repository.UserRepository
@@ -36,11 +36,11 @@ import org.json.JSONObject
 import java.util.HashMap
 
 class JobNotificationActivity : AppCompatActivity() {
-    //
-//    private val FCM_API = "https://fcm.googleapis.com/fcm/send"
-//    private val serverKey =
-//        "key=" + "AAAABfaM5Us:APA91bEWU1zeRwK_7Auwv81eKkK7jLqIIqnlpeFj9HyE_TEHj3RxJSvcbbXstnhP4ST8BcKceu1uPLBMFcOOi9aPFldHIZLSSrFfvsiE97jFykLTffhIHgBCxUlBzybswbketE3K1krE"
-//    private val contentType = "application/json"
+
+    private val FCM_API = "https://fcm.googleapis.com/fcm/send"
+    private val serverKey =
+        "key=" + "AAAABfaM5Us:APA91bEWU1zeRwK_7Auwv81eKkK7jLqIIqnlpeFj9HyE_TEHj3RxJSvcbbXstnhP4ST8BcKceu1uPLBMFcOOi9aPFldHIZLSSrFfvsiE97jFykLTffhIHgBCxUlBzybswbketE3K1krE"
+    private val contentType = "application/json"
     private lateinit var tvViewName: TextView
     private lateinit var tvViewTitle: TextView
     private lateinit var tvViewTaskDesc: TextView
@@ -52,9 +52,9 @@ class JobNotificationActivity : AppCompatActivity() {
     private lateinit var backButtonFromViewDesc: ImageView
     private var name: String = ""
 
-//    private val requestQueue: RequestQueue by lazy {
-//        Volley.newRequestQueue(this.applicationContext)
-//    }
+    private val requestQueue: RequestQueue by lazy {
+        Volley.newRequestQueue(this.applicationContext)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,7 +63,7 @@ class JobNotificationActivity : AppCompatActivity() {
             this, R.layout.activity_job_notification
         )
 
-        //FirebaseMessaging.getInstance().subscribeToTopic("/topics/Enter_topic")
+        FirebaseMessaging.getInstance().subscribeToTopic("/topics/Enter_topic")
         tvViewName = findViewById(R.id.tvViewName)
         tvViewTitle = findViewById(R.id.tvViewTitle)
         tvViewTaskDesc = findViewById(R.id.tvViewTaskDesc)
@@ -110,6 +110,8 @@ class JobNotificationActivity : AppCompatActivity() {
                             rate = offer.price,
                             time = offer.estimatedTime,
                             acceptedby = offer.bookedUserId,
+                            latitude = offer.latitude,
+                            longitude = offer.longitude,
                             userid = offer.addedby.toString()
                         )
                         val acceptedTaskRepository = AcceptedTaskRepository()
@@ -136,22 +138,22 @@ class JobNotificationActivity : AppCompatActivity() {
                     }
                 }
             }
-//            if (!TextUtils.isEmpty(binding.tvViewName.text)) {
-//                val topic = "/topics/Enter_topic"
-//                val notification = JSONObject()
-//                val notifcationBody = JSONObject()
-//                try {
-//                    notifcationBody.put("title", " Accept Task")
-//                    notifcationBody.put("message", "you request has been accepted")
-//                    notification.put("to", topic)
-//                    notification.put("data", notifcationBody)
-//                    Log.e("TAG", "try")
-//
-//                } catch (e: JSONException) {
-//                    Log.e("TAG", "OnCreate: " + e.message)
-//                }
-//                sendNotification(notification)
-//            }
+            if (!TextUtils.isEmpty(binding.tvViewName.text)) {
+                val topic = "/topics/Enter_topic"
+                val notification = JSONObject()
+                val notifcationBody = JSONObject()
+                try {
+                    notifcationBody.put("title", " Accept Task")
+                    notifcationBody.put("message", "you request has been accepted")
+                    notification.put("to", topic)
+                    notification.put("data", notifcationBody)
+                    Log.e("TAG", "try")
+
+                } catch (e: JSONException) {
+                    Log.e("TAG", "OnCreate: " + e.message)
+                }
+                sendNotification(notification)
+            }
         }
         btnViewReject.setOnClickListener {
 
@@ -191,52 +193,52 @@ class JobNotificationActivity : AppCompatActivity() {
                 val alertDialog: AlertDialog = builder.create()
                 alertDialog.setCancelable(false)
                 alertDialog.show()
-//            if (!TextUtils.isEmpty(binding.tvViewName.text)) {
-//                val topic = "/topics/Enter_topic"
-//                val notification = JSONObject()
-//                val notifcationBody = JSONObject()
-//                try {
-//                    notifcationBody.put("title", " Notification")
-//                    notifcationBody.put("message", "your request has been rejected")
-//                    notification.put("to", topic)
-//                    notification.put("data", notifcationBody)
-//                    Log.e("TAG", "try")
-//                } catch (e: JSONException) {
-//                    Log.e("TAG", "onCreate: " + e.message)
-//                }
-//                sendNotification(notification)
-//                }
+            if (!TextUtils.isEmpty(binding.tvViewName.text)) {
+                val topic = "/topics/Enter_topic"
+                val notification = JSONObject()
+                val notifcationBody = JSONObject()
+                try {
+                    notifcationBody.put("title", " Notification")
+                    notifcationBody.put("message", "your request has been rejected")
+                    notification.put("to", topic)
+                    notification.put("data", notifcationBody)
+                    Log.e("TAG", "try")
+                } catch (e: JSONException) {
+                    Log.e("TAG", "onCreate: " + e.message)
+                }
+                sendNotification(notification)
+                }
             }
 
         }
     }
 
-    //    private fun sendNotification(notification: JSONObject) {
-//        Log.e("TAG", "sendNotification")
-//        val jsonObjectRequest = object : JsonObjectRequest(FCM_API, notification,
-//            Response.Listener<JSONObject> { response ->
-//                Log.i("TAG", "onResponse: $response")
-//                tvViewName.setText("")
-//            },
-//            Response.ErrorListener {
-//                Toast.makeText(this@JobNotificationActivity, "Request error", Toast.LENGTH_LONG)
-//                    .show()
-//                Log.i("TAG", "onErrorResponse: Didn't work")
-//            }) {
-//
-//            override fun getHeaders(): Map<String, String> {
-//                val params = HashMap<String, String>()
-//                params["Authorization"] = serverKey
-//                params["Content-Type"] = contentType
-//                return params
-//            }
-//        }
-//        requestQueue.add(jsonObjectRequest)
-//
-//
-//    }
-    //    @SuppressLint("SetTextI18n")
-//
+        private fun sendNotification(notification: JSONObject) {
+        Log.e("TAG", "sendNotification")
+        val jsonObjectRequest = object : JsonObjectRequest(FCM_API, notification,
+            Response.Listener<JSONObject> { response ->
+                Log.i("TAG", "onResponse: $response")
+                tvViewName.setText("")
+            },
+            Response.ErrorListener {
+                Toast.makeText(this@JobNotificationActivity, "Request error", Toast.LENGTH_LONG)
+                    .show()
+                Log.i("TAG", "onErrorResponse: Didn't work")
+            }) {
+
+            override fun getHeaders(): Map<String, String> {
+                val params = HashMap<String, String>()
+                params["Authorization"] = serverKey
+                params["Content-Type"] = contentType
+                return params
+            }
+        }
+        requestQueue.add(jsonObjectRequest)
+
+
+    }
+        @SuppressLint("SetTextI18n")
+
     private fun getDescription() {
         CoroutineScope(Dispatchers.IO).launch {
             try {

@@ -2,30 +2,20 @@ package com.example.servenep.UI
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
+import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
-import com.example.servenep.databinding.ActivityViewTasksBinding
+import com.example.servenep.UI.location.ViewLocationActivity
 import com.example.servenep.entities.AcceptedTask
-import com.example.servenep.entities.Description
 import com.example.servenep.repository.UserRepository
-import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.json.JSONException
-import org.json.JSONObject
 import java.util.*
 
 class ViewTasksActivity : AppCompatActivity() {
@@ -50,6 +40,10 @@ class ViewTasksActivity : AppCompatActivity() {
         btnViewAcceptedLocation = findViewById(R.id.btnViewAcceptedLocation)
         backButtonFromViewAcceptedDesc = findViewById(R.id.backButtonFromViewAcceptedDesc)
 
+        backButtonFromViewAcceptedDesc.setOnClickListener {
+            startActivity(Intent(this,Home_Menu_Activity::class.java))
+            finish()
+        }
         btnViewAcceptedLocation.setOnClickListener {
             val location = intent.getParcelableExtra<AcceptedTask>("Task")
             if(location!!.latitude != null && location.longitude != null){

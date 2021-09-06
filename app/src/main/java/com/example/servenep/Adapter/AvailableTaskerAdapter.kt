@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
 import com.example.servenep.UI.TaskDescriptionActivity
+import com.example.servenep.UI.profile.ViewProfileActivity
 import com.example.servenep.api.ServiceBuilder
-import com.example.servenep.entities.Category
 import com.example.servenep.entities.Users
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -50,7 +48,9 @@ class AvailableTaskerAdapter(
             holder.txtUserName.text=tasker.fullName
             holder.txtUserAddress.text=tasker.address
             holder.taskerCard.setOnClickListener {
-
+                val intent = Intent(context, ViewProfileActivity::class.java)
+                intent.putExtra("userDetail", tasker)
+                context.startActivity(intent)
             }
             //load image with glide library
             val image = ServiceBuilder.loadImagePath() + tasker.profileImage
@@ -69,7 +69,11 @@ class AvailableTaskerAdapter(
         if (ServiceBuilder.usertype == "Tasker"){
             holder.txtUserName.text=tasker.fullName
             holder.txtUserAddress.text=tasker.address
-
+            holder.taskerCard.setOnClickListener {
+                val intent = Intent(context, ViewProfileActivity::class.java)
+                intent.putExtra("userDetail", tasker)
+                context.startActivity(intent)
+            }
             //load image with glide library
             val image = ServiceBuilder.loadImagePath() + tasker.profileImage
             if (!tasker.profileImage.equals("")) {
@@ -80,7 +84,7 @@ class AvailableTaskerAdapter(
             holder.btnBookUser.visibility = View.GONE
             holder.btnViewUserData.visibility = View.VISIBLE
             holder.btnViewUserData.setOnClickListener{
-                val intent = Intent(context, TaskDescriptionActivity::class.java)
+                val intent = Intent(context, ViewProfileActivity::class.java)
                 intent.putExtra("userDetail", tasker)
                 context.startActivity(intent)
 
