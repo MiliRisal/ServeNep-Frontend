@@ -19,7 +19,7 @@ import kotlinx.coroutines.withContext
 
 class ViewFeedbackActivity : AppCompatActivity() {
 
-    private lateinit var fab: FloatingActionButton
+    private lateinit var feedbackFab: FloatingActionButton
     private lateinit var feedbackmessage: RecyclerView
     private lateinit var swipeRefresh1: SwipeRefreshLayout
 
@@ -27,13 +27,12 @@ class ViewFeedbackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_feedback)
 
-
-        fab =findViewById(R.id.fab)
+        feedbackFab =findViewById(R.id.feedbackFed)
         feedbackmessage =findViewById(R.id.Feedbackmessage)
         swipeRefresh1 =findViewById(R.id.swipeRefresh1)
         loadfeedback()
 
-        fab.setOnClickListener {
+        feedbackFab.setOnClickListener {
             val intent =Intent(this@ViewFeedbackActivity, FeedbackActivity::class.java)
             startActivity(intent)
         }

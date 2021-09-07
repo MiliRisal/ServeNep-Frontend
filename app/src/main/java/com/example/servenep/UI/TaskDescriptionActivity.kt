@@ -3,10 +3,13 @@ package com.example.servenep.UI
 import android.content.Intent
 import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.Volley
 import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
 import com.example.servenep.api.ServiceBuilder
@@ -21,8 +24,15 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONException
+import org.json.JSONObject
 
 class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
+
+    private val FCM_API = "https://fcm.googleapis.com/fcm/send"
+    private val serverKey =
+        "key=" + "AAAABfaM5Us:APA91bEWU1zeRwK_7Auwv81eKkK7jLqIIqnlpeFj9HyE_TEHj3RxJSvcbbXstnhP4ST8BcKceu1uPLBMFcOOi9aPFldHIZLSSrFfvsiE97jFykLTffhIHgBCxUlBzybswbketE3K1krE"
+    private val contentType = "application/json"
 
     private lateinit var ettile: EditText
     private lateinit var ettaskdes: EditText
@@ -38,6 +48,7 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var wifiManager: WifiManager
     private var latitude: Double? = null
     private var longitude: Double? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

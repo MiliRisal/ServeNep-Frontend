@@ -5,8 +5,6 @@ import com.example.servenep.entities.Description
 import com.example.servenep.entities.Users
 import com.example.servenep.repository.DescriptionRepository
 import com.example.servenep.entities.Feedback
-import com.example.servenep.entities.Users
-import com.example.servenep.repository.DescriptionRepository
 import com.example.servenep.repository.FeedbackRespository
 import com.example.servenep.repository.UserRepository
 import kotlinx.coroutines.runBlocking
@@ -18,9 +16,7 @@ class UserManagementTest {
 
     private var UserRepository: UserRepository? = null
     private var DescriptionRepository: DescriptionRepository? = null
-    private var TaskerBookingActivity:TaskerAdapter?=null
     private var FeedbackRepository:FeedbackRespository? =null
-
 
     // .....................USERS Login and Register Testing..................//
 
@@ -55,7 +51,6 @@ class UserManagementTest {
 
    // .....................Task Description Test.................//
 
-
     @Test
 
     fun checkdescription() = runBlocking {
@@ -74,41 +69,7 @@ class UserManagementTest {
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
 
-
     }
-
-//    @Test
-//
-//    fun checkspecification() = runBlocking {
-//
-//        val TaskerSpecification = TaskerSpecification(
-//            name = "Ramesh",
-//            category = "Electrician",
-//            price = 5000,
-//            area = "baneshor height"
-//
-//        )
-//
-//        SpecificationRepository = SpecificationRepository()
-//        val response = SpecificationRepository!!.specification(TaskerSpecification)
-//        val ExpectedResult = true
-//        val ActualResult = response.success
-//        Assert.assertEquals(ExpectedResult, ActualResult)
-
-
-//    }
-//
-//    @Test
-//    fun checkTaskerAdapter() = runBlocking {
-//
-//         val TaskerAdapter = Tasker(TaskerId = null, TaskerName = null, TaskerCategory = null, TaskerArea = null, TaskerImageURL = null,
-//         TaskerPrice = null)
-//
-//        TaskerBookingActivity = TaskerAdapter()
-////        val response = TaskerBookingActivity!!.onCreateViewHolder()
-//    }
-
-
 
     @Test
 
@@ -127,8 +88,5 @@ class UserManagementTest {
         val ActualResult = response.success
         Assert.assertEquals(ExpectedResult, ActualResult)
 
-
     }
-
-
 }

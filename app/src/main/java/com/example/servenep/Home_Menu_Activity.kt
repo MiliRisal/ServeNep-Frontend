@@ -21,6 +21,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
 import com.example.servenep.UI.LoginActivity
+import com.example.servenep.UI.feedback.FeedbackActivity
+import com.example.servenep.UI.feedback.ViewFeedbackActivity
 import com.example.servenep.api.ServiceBuilder
 import com.example.servenep.databinding.ActivityHomeMenuBinding
 import com.example.servenep.repository.UserRepository
@@ -53,9 +55,11 @@ class Home_Menu_Activity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        fab.setOnClickListener {
+
+            val intent =Intent(this@Home_Menu_Activity, ViewFeedbackActivity::class.java)
+            startActivity(intent)
+
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
