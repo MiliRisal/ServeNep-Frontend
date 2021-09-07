@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat.startActivities
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,11 +20,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
+class DashboardFragment : Fragment() {
 
     private val cat = arrayOf("---Choose category---","Cleaner","Electrician","Carpenter","Plumber","Mechanic")
     private lateinit var spinner: Spinner
     private lateinit var categoryRecyclerview: RecyclerView
+    private var selectedItem : String? = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,8 +38,7 @@ class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
         //array apdater for items
         val adapter = object: ArrayAdapter<String>(
             requireContext(),
-            android.R.layout.simple_list_item_1,
-            cat){
+            android.R.layout.simple_list_item_1, cat){
             override fun isEnabled(position: Int): Boolean {
                 // Disable the first item from Spinner
                 // First item will be used for hint
@@ -52,18 +53,19 @@ class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
             object: AdapterView.OnItemSelectedListener{
 
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-//                    startActivity(
-//                        Intent(
-//                            context,
-//                            TaskDescriptionActivity::class.java
-//                        )
-//                    )
+                    selectedItem = parent?.getItemAtPosition(position).toString()
+                    if(selectedItem != "" && selectedItem != "---Choose category---"){
+                        val intent = Intent(context, TaskerRecyclerViewActivity::class.java)
+                        intent.putExtra("Category", selectedItem)
+                        startActivity(intent)
+                    }
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>?) {
 
                 }
             }
+
 
         categoryRecyclerview = view.findViewById(R.id.categoryRecyclerview)
         allCategories()
@@ -90,14 +92,5 @@ class DashboardFragment : Fragment(), AdapterView.OnItemClickListener  {
 
             }
         }
-    }
-
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        startActivity(
-            Intent(
-                context,
-                TaskerRecyclerViewActivity::class.java
-            )
-        )
     }
 }

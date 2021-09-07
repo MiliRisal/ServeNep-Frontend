@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.servenep">
+
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -33,9 +34,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServeNep"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".UI.myBookings.UpdateBookingActivity"
-            android:exported="true" />
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -49,10 +48,17 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".UI.ViewLocationActivity"
+            android:name=".UI.aboutUS.OfficeMapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_office_maps">
+        </activity>
+        <activity
+            android:name=".UI.myBookings.UpdateBookingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UI.location.ViewLocationActivity"
             android:exported="true"
             android:label="@string/title_activity_view_location" />
-
         <service
             android:name=".notification.MyFirebasemessingServices"
             android:enabled="true"
@@ -88,7 +94,7 @@
             android:name=".Home_Menu_Activity"
             android:exported="true"
             android:label="@string/title_activity_home_menu"
-            android:theme="@style/Theme.ServeNep.NoActionBar"></activity>
+            android:theme="@style/Theme.ServeNep.NoActionBar" />
         <activity android:name=".UI.TaskerRecyclerViewActivity" />
         <activity
             android:name=".UI.RegisterActivity"
@@ -98,7 +104,7 @@
         <activity android:name=".UI.TaskDescriptionActivity" />
         <activity android:name=".UI.profile.UpdateProfileActivity" />
         <activity android:name=".UI.LoginActivity" />
-        <activity android:name=".UI.MainActivity" />
+        <activity android:name=".UI.profile.ViewProfileActivity" />
     </application>
 
 </manifest>

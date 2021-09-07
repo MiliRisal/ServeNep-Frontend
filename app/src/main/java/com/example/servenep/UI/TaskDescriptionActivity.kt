@@ -36,7 +36,6 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnPickLocation: Button
     private lateinit var backButtonFromAddDesc: ImageView
     private lateinit var wifiManager: WifiManager
-    private var category: String? = ""
     private var latitude: Double? = null
     private var longitude: Double? = null
 
@@ -75,10 +74,9 @@ class TaskDescriptionActivity : AppCompatActivity(), View.OnClickListener {
                 pickLocation()
             }
             R.id.backButtonFromAddDesc -> {
-                val category = intent.getParcelableExtra<Users>("userDetail")
-                val intent = Intent(this, TaskerRecyclerViewActivity::class.java)
-                intent.putExtra("Category", category?.category.toString())
+                val intent = Intent(this, Home_Menu_Activity::class.java)
                 startActivity(intent)
+                finish()
             }
         }
     }

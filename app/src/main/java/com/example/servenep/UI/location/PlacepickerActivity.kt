@@ -35,7 +35,6 @@ class PlacepickerActivity : AppCompatActivity() {
         val builder = PlacePicker.IntentBuilder()
         try {
             startActivityForResult(builder.build(this), PLACE_PICKER_REQUEST)
-
             //Enable Wifi
             wifiManager!!.isWifiEnabled = true
         } catch (e: GooglePlayServicesRepairableException) {

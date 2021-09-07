@@ -23,6 +23,7 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -30,6 +31,17 @@
         android:background="@color/register_bk_color"
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="center"
-        app:popupTheme="@style/Theme.ServeNep.PopupOverlay" />
+        app:popupTheme="@style/Theme.ServeNep.PopupOverlay">
+
+        <ImageView
+            android:id="@+id/logoNav"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top|end"
+            android:scaleType="fitCenter"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/servenep"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

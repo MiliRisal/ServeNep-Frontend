@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.example.servenep.Home_Menu_Activity
+import com.example.servenep.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import java.util.*
@@ -36,11 +37,11 @@ class MyFirebasemessingServices : FirebaseMessagingService() {
             this,0,intent, PendingIntent.FLAG_ONE_SHOT
         )
         val largeIcon = BitmapFactory.decodeResource(
-            resources,android.R.drawable.ic_delete
+            resources, R.drawable.servenep
         )
         val notificationSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this,ADMIN_CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_delete)
+            .setSmallIcon(R.drawable.servenep)
             .setLargeIcon(largeIcon)
             .setContentTitle(p0.data["title"])
             . setContentText(p0.data["message"])
