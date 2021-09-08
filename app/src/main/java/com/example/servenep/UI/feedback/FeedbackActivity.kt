@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.servenep.Home_Menu_Activity
 import com.example.servenep.R
 import com.example.servenep.entities.Feedback
 import com.example.servenep.repository.FeedbackRespository
@@ -71,7 +72,7 @@ class FeedbackActivity : AppCompatActivity(), View.OnClickListener {
                     }
                     startActivity(
                         Intent(
-                            this@FeedbackActivity, FeedbackActivity::class.java
+                            this@FeedbackActivity, Home_Menu_Activity::class.java
                         )
                     )
                 }
